@@ -30,7 +30,7 @@ button {
   // height: calc(50vh - 2rem);
   border: 2px solid blue;
   background-color: $band-site-black;
-  @include page-header;
+  @include section-header;
 
   &__logo {
     // border: 2px solid purple;

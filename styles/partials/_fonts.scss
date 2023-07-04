@@ -1,0 +1,47 @@
+
+// Regular: .otf file 
+@font-face {
+  font-family: 'AvenirNextRegular';
+  src: url('/assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+// Regular: .ttf file 
+@font-face {
+  font-family: 'AvenirNextRegular';
+  src: url('/assets/fonts/AvenirNextLTPro.ttf') format('truetype');
+  font-weight: 400;
+}
+
+
+// Demi: .otf file 
+@font-face {
+  font-family: 'AvenirNextDemi';
+  src: url('/assets/fonts/AvenirNextLTPro-Demi.otf') format('opentype');
+  font-weight: 600;
+}
+
+// Demi: .ttf file 
+@font-face {
+  font-family: 'AvenirNextDemi';
+  src: url('/assets/fonts/AvenirNextLTProDemi.ttf') format('truetype');
+  font-weight: 600;
+}
+
+
+// Bold: .otf file 
+@font-face {
+  font-family: 'AvenirNextBold';
+  src: url('/assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+// Bold: .ttf file 
+@font-face {
+  font-family: 'AvenirNextBold';
+  src: url('/assets/fonts/AvenirNextLTProBold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+
+

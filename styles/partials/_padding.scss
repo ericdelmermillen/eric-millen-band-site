@@ -1,0 +1,27 @@
+
+@mixin padding-before-headlines {
+  padding-left: 24px;
+  
+  // Tablet or Desktop
+  @media (min-width: 768px) {
+    padding-left: 48px;
+  }
+}
+
+@mixin padding-after-headlines {
+  padding-right: 16px;
+  
+  // Tablet or Desktop
+  @media (min-width: 768px) {
+    padding-right: 36px;
+  }
+}
+
+@mixin padding-between-components {
+  gap: 16px;
+  
+  // Tablet or Desktop
+  @media (min-width: 768px) {
+    gap: 36px;
+  }
+}

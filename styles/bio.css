@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url("/assets/fonts/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNextDemi";
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "AvenirNextDemi";
+  src: url("/assets/fonts/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "AvenirNextBold";
+  src: url("/assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* html, *::before html, *::after html {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: #323232;
+  border-radius: 4px;
+  color: #fff;
+  height: 40px;
+  padding: 0 32px;
+  text-transform: uppercase;
+  width: 100%;
+}
+button:hover {
+  background: #000;
+}
+@media (min-width: 768px) {
+  button {
+    padding: 8px 32px;
+    min-width: 150px;
+    max-width: 250px;
+  }
+}
+@media (min-width: 768px) {
+  button {
+    background: #323232;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    padding: 0 32px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  button:hover {
+    background: #000;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  button {
+    padding: 8px 32px;
+    min-width: 150px;
+    max-width: 250px;
+  }
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
+  background-color: #323232;
+}
+.hero-section h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "AvenirNextBold", Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .hero-section h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+.hero-section__logo {
+  height: 20px;
+  width: 120px;
+  border: 2px solid red;
+}
+.hero-section__nav-bar {
+  border: 2px dotted #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-section__nav-bar ul {
+  list-style: none;
+}
+.hero-section__nav-bar a a, .hero-section__nav-bar a a:hover, .hero-section__nav-bar a a:visited, .hero-section__nav-bar a a:active, .hero-section__nav-bar a:hover a, .hero-section__nav-bar a:hover a:hover, .hero-section__nav-bar a:hover a:visited, .hero-section__nav-bar a:hover a:active, .hero-section__nav-bar a:visited a, .hero-section__nav-bar a:visited a:hover, .hero-section__nav-bar a:visited a:visited, .hero-section__nav-bar a:visited a:active, .hero-section__nav-bar a:active a, .hero-section__nav-bar a:active a:hover, .hero-section__nav-bar a:active a:visited, .hero-section__nav-bar a:active a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.hero-section__nav-bar .nav-bar__menu {
+  display: flex;
+  align-items: space-around;
+  gap: 2rem;
+}
+.hero-section__nav-bar .nav-bar__menu a, .hero-section__nav-bar .nav-bar__menu a:hover, .hero-section__nav-bar .nav-bar__menu a:visited, .hero-section__nav-bar .nav-bar__menu a:active {
+  text-decoration: none;
+  color: inherit;
+}
+.hero-section__nav-bar .nav-bar__menu li {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.hero-section__nav-bar .nav-bar__menu li::after, .hero-section__nav-bar .nav-bar__menu li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+}
+
+.hero-section__image {
+  background: url("../assets/images/hero-bio.jpg") center center/cover;
+  border: 2px solid red;
+  height: calc(50vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bio-section {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  padding: 0 1rem;
+}
+.bio-section .bio-section__image {
+  max-width: 100%;
+}
+
+footer {
+  background: gray;
+}/*# sourceMappingURL=bio.css.map */

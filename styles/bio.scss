@@ -1,0 +1,93 @@
+@use "./partials/buttons" as *;
+@use "./partials/colors" as *;
+@use "./partials/fonts" as *;
+@use "./partials/global" as *;
+@use "./partials/logo" as *;
+@use "./partials/nav-state" as *;
+@use "./partials/padding" as *;
+@use "./partials/spacing" as *;
+@use "./partials/typography" as *;
+
+*, *::before, *::after {
+  @include css-reset;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  @include primary-cta;
+
+  @media (min-width: 768px) {
+    // Media query for screens wider than 768px
+    @include primary-cta;
+  }
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  // height: calc(50vh - 2rem);
+  border: 2px solid blue;
+  background-color: $band-site-black;
+  @include page-header;
+
+  &__logo {
+    // border: 2px solid purple;
+    // height: 5rem;
+    @include logo;
+  }
+
+  &__nav-bar {
+    border: 2px dotted #000;
+    @include ul-styles;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // height: 4rem;
+    
+    .nav-bar__menu {
+      @include links-styles;
+      display: flex;
+      // justify-content: space-around;
+      align-items: space-around;
+      gap: 2rem;
+      // border: 2px solid red;
+
+      li {
+        @include active-tab;
+
+        }
+      }
+    }
+  }
+
+  .hero-section__image {
+    background: url("../assets/images/hero-bio.jpg") center center / cover;
+    border: 2px solid red;
+    height: calc(50vh - 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  
+  .bio-section {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    padding: 0 1rem;
+    
+    // .bio-section__header {
+      // text-align: center;
+    // }
+    
+    .bio-section__image {
+      max-width: 100%;
+    }
+  }
+
+  footer {
+    background: gray;
+  }

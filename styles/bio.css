@@ -89,9 +89,9 @@ button:hover {
   }
 }
 .hero-section__logo {
+  margin: 1rem 0;
   height: 20px;
   width: 120px;
-  border: 2px solid red;
 }
 .hero-section__nav-bar {
   border: 2px dotted #000;
@@ -106,20 +106,26 @@ button:hover {
   text-decoration: none;
   color: inherit;
 }
+.hero-section__nav-bar .nav-bar__container {
+  border: 2px solid purple;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 .hero-section__nav-bar .nav-bar__menu {
   display: flex;
-  align-items: space-around;
-  gap: 2rem;
+  border: 2px solid green;
+  width: 100%;
 }
-.hero-section__nav-bar .nav-bar__menu a, .hero-section__nav-bar .nav-bar__menu a:hover, .hero-section__nav-bar .nav-bar__menu a:visited, .hero-section__nav-bar .nav-bar__menu a:active {
-  text-decoration: none;
-  color: inherit;
+.hero-section__nav-bar .nav-bar__menu .menu-left, .hero-section__nav-bar .nav-bar__menu .menu-right {
+  width: 100%;
 }
 .hero-section__nav-bar .nav-bar__menu li {
   color: #fff;
   width: 100%;
   text-align: center;
   position: relative;
+  width: 100%;
 }
 .hero-section__nav-bar .nav-bar__menu li::after, .hero-section__nav-bar .nav-bar__menu li:hover::after {
   content: "";

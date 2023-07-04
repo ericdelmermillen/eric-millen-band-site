@@ -5,7 +5,6 @@
 @use "./partials/logo" as *;
 @use "./partials/nav-state" as *;
 @use "./partials/padding" as *;
-@use "./partials/spacing" as *;
 @use "./partials/typography" as *;
 
 *, *::before, *::after {
@@ -31,10 +30,11 @@ button {
   border: 2px solid blue;
   background-color: $band-site-black;
   @include section-header;
-
+  
   &__logo {
+    margin: 1rem 0;
     // border: 2px solid purple;
-    // height: 5rem;
+
     @include logo;
   }
 
@@ -45,17 +45,29 @@ button {
     align-items: center;
     flex-direction: column;
     // height: 4rem;
+
+    .nav-bar__container {
+      border: 2px solid purple;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
     
     .nav-bar__menu {
-      @include links-styles;
+      // @include links-styles;
       display: flex;
       // justify-content: space-around;
-      align-items: space-around;
-      gap: 2rem;
-      // border: 2px solid red;
+      // align-items: space-around;
+      border: 2px solid green;
+      width: 100%;
+      
+      .menu-left, .menu-right {
+        width: 100%;
+      }
 
       li {
         @include active-tab;
+        width: 100%;
 
         }
       }
@@ -63,6 +75,7 @@ button {
   }
 
   .hero-section__image {
+    // Need to figure out overlay: use bandsite-black at %50 opacity
     background: url("../assets/images/hero-bio.jpg") center center / cover;
     border: 2px solid red;
     height: calc(50vh - 2rem);

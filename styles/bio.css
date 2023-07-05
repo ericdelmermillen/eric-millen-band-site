@@ -195,11 +195,16 @@ ul {
   width: min(100%, 1280px);
 }
 
+.gallery {
+  padding: 0 1rem;
+}
+
 .gallery__image-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
+  border: 2px solid green;
 }
 @media screen and (min-width: 768px) {
   .gallery__image-container {
@@ -223,6 +228,7 @@ ul {
   margin: 0 auto;
   position: relative;
   width: min(100%, 1280px);
+  padding: 0 1rem;
 }
 .footer-section__content-container .footer__logo {
   height: 20px;
@@ -232,14 +238,13 @@ ul {
   .footer-section__content-container .footer__logo {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 1rem;
   }
 }
 
 .socials__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 2px solid green;
 }
 @media screen and (min-width: 768px) {

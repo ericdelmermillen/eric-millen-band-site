@@ -53,6 +53,7 @@
   }
 }
 
+
 // Hero Section
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
@@ -188,11 +189,17 @@
   width: min(100%, 1280px);
 }
 
+
+.gallery {
+  padding: 0 1rem;
+}
+
 .gallery__image-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
+  border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -219,6 +226,7 @@
   margin: 0 auto;
   position: relative;
   width: min(100%, 1280px);
+  padding: 0 1rem;
 
   .footer__logo {
     height: 20px;
@@ -228,7 +236,7 @@
       & {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 1rem;
       }
     }
   }
@@ -237,7 +245,7 @@
 .socials__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {

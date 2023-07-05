@@ -1,37 +1,37 @@
+@use "./variables" as *;
 
-@mixin css-reset {
-  html {
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
+// Global reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Global styles
+
+body {
+  font-family: $font-family;
+  font-weight: $default-font-weight;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover, 
+  &:visited, 
+  &:active {
+    @extend a;
   }
 }
 
-@mixin links-styles {
-  a, a:hover, a:visited, a:active {
-    text-decoration: none;
-    color: inherit;
-  }
+ul {
+  list-style: none;
 }
 
-@mixin ul-styles {
-  ul {
-    list-style: none;
-  }
-
-  a, a:hover, a:visited, a:active  {
-    @include links-styles;
-  }
-}
-
-@mixin hidden {
-  display: none;
-}
-
-@mixin visible {
-  display: block;
-}
-
-@mixin text-center {
-  text-align: center;
+.logo {
+  height: 20px;
+  width: 120px;
 }

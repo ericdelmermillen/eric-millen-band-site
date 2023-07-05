@@ -1,91 +1,91 @@
-@use "./fonts" as *;
+// @use "./fonts" as *;
 
-// Page Header
-@mixin page-header {
-  h1 {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: "AvenirNextBold", Arial, sans-serif;
+// // Page Header
+// @mixin page-header {
+//   h1 {
+//     font-size: 24px;
+//     line-height: 32px;
+//     font-family: "AvenirNextBold", Arial, sans-serif;
     
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 60px;
-      line-height: 68px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 60px;
+//       line-height: 68px;
+//     }
+//   }
+// }
 
-// Section Header
-@mixin section-header {
-  h2 {
-    font-size: 24px;
-    line-height: 32px;
-    font-family: "AvenirNextBold", Arial, sans-serif;
+// // Section Header
+// @mixin section-header {
+//   h2 {
+//     font-size: 24px;
+//     line-height: 32px;
+//     font-family: "AvenirNextBold", Arial, sans-serif;
 
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 36px;
-      line-height: 44px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 36px;
+//       line-height: 44px;
+//     }
+//   }
+// }
 
-//  Sub-Header
-@mixin sub-header {
-  h3 {
-    font-size: 14px;
-    line-height: 22px;
-    font-family: "AvenirNextDemi", Arial, sans-serif;
+// //  Sub-Header
+// @mixin sub-header {
+//   h3 {
+//     font-size: 14px;
+//     line-height: 22px;
+//     font-family: "AvenirNextDemi", Arial, sans-serif;
       
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 24px;
-      line-height: 32px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 24px;
+//       line-height: 32px;
+//     }
+//   }
+// }
 
-//  Body Copy
-@mixin body-copy {
-  p {
-    font-size: 13px;
-    line-height: 18px;
-    font-family: "AvenirNextRegular", Arial, sans-serif;
+// //  Body Copy
+// @mixin body-copy {
+//   p {
+//     font-size: 13px;
+//     line-height: 18px;
+//     font-family: "AvenirNextRegular", Arial, sans-serif;
 
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 14px;
-      line-height: 22px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 14px;
+//       line-height: 22px;
+//     }
+//   }
+// }
 
-//  Footer Copy
-@mixin footer-copy {
-  p {
-    font-size: 13px;
-    line-height: 18px;
-    font-family: "AvenirNextRegular", Arial, sans-serif;
+// //  Footer Copy
+// @mixin footer-copy {
+//   p {
+//     font-size: 13px;
+//     line-height: 18px;
+//     font-family: "AvenirNextRegular", Arial, sans-serif;
 
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 14px;
+//       line-height: 20px;
+//     }
+//   }
+// }
 
-//  Labels & Buttons Copy
-@mixin labels-buttons-copy {
-  p {
-    font-size: 10px;
-    line-height: 20px;
-    font-family: "AvenirNextBold", Arial, sans-serif;
+// //  Labels & Buttons Copy
+// @mixin labels-buttons-copy {
+//   p {
+//     font-size: 10px;
+//     line-height: 20px;
+//     font-family: "AvenirNextBold", Arial, sans-serif;
     
-  // Tablet or Desktop
-    @media (min-width: 768px) {
-      font-size: 12px;
-      line-height: 20px;
-    }
-  }
-}
+//   // Tablet or Desktop
+//     @media (min-width: 768px) {
+//       font-size: 12px;
+//       line-height: 20px;
+//     }
+//   }
+// }

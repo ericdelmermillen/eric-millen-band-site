@@ -121,8 +121,18 @@
   
 }
 
+
+
+
 .gallery__image {
   max-width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    & {
+      max-width: 30%;
+    }
+  }
+
 }
     
 
@@ -143,6 +153,20 @@
     border: 2px dotted #000;
   }
 
+}
+
+.bio-section__paragraph-container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  flex: content;
+  gap: 1rem;
+
+  @media screen and (min-width: $tablet) {
+    & {
+      flex-direction: row;
+    }
+  }
 }
 
 // // Gallery Section
@@ -170,6 +194,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
+
+  @media screen and (min-width: $tablet) {
+    & {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
 
 }
 
@@ -184,26 +216,56 @@
 }
 
 .footer-section__content-container {
-  border: 2px dotted #000;
+  border: 2px dotted #fff;
   width: 100%;
   max-width: 1280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: $white;
+  position: relative;
+
+  .footer__logo {
+    height: 20px;
+    width: 120px;
+
+    @media screen and (min-width: $tablet) {
+      & {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+
+  }
+
+
+}
+
+.socials__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid green;
 
   @media screen and (min-width: $tablet) {
     & {
       flex-direction: row;
     }
   }
+}
 
-  .footer__logo {
-    height: 20px;
-    width: 120px;
+.management__container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
+
+  @media screen and (min-width: $tablet) {
+    & {
+      flex-direction: row;
+    }
   }
-
-
 }
 
 // .gallery {

@@ -6,29 +6,7 @@
 @use "./partials/variables" as *;
 
 
-// Hero Section
-
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid red;
-
-  .hero-section__content-container {
-    width: 100%;
-    max-width: 1280px;
-    border: 2px dotted #000;
-  }
-
-
-  @media screen and (min-width: $tablet) {
-    & {
-      border: 5px solid green;
-    }
-  }
-}
-
+// Nav
 .nav-bar__container {
   border: 2px dashed #000;
   width: 100%;
@@ -43,13 +21,12 @@
 
 .nav-bar__nav {
   border: 5px solid blue;
-  width: 100%;
-  max-width: 1280px;
+  width: min(100%, 1280px);
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
     }
@@ -68,7 +45,7 @@
   justify-content: space-evenly;
   border: 2px solid green;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       justify-content: flex-start;
       gap: 2rem;
@@ -76,9 +53,20 @@
   }
 }
 
+// Hero Section
+.hero-section {
+  background: url("../assets/images/hero-bio.jpg") center center / cover;
+  border: 5px solid red;
+  width: 100%;
+
+  &__content-container {
+    margin: 0 auto;
+    width: min(100%, 1280px);
+    border: 2px dotted #000;
+  }
+}
 
 .hero-section__bg-image {
-  background: url("../assets/images/hero-bio.jpg") center center / cover;
   height: 50vh;
   width: 100%;
   border: 2px solid blue;
@@ -88,7 +76,7 @@
   position: relative;
   z-index: 0;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $desktop-width) {
     & {
       height: 100vh;
     }
@@ -109,17 +97,18 @@
   font-size: $font-size-h1-mobile;
   z-index: 2;
   
-  @media screen and (min-width: $tablet) {
+  .hero-section__overlay {
+    width: 100%;
+    
+  }
+  
+  @media screen and (min-width: $tablet-width) {
     & {
       font-size: $font-size-h1-tablet;
     }
   }
 }
 
-.hero-section__overlay {
-  width: 100%;
-  
-}
 
 
 
@@ -127,7 +116,7 @@
 .gallery__image {
   max-width: 100%;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       max-width: 30%;
     }
@@ -140,19 +129,33 @@
 
 .bio-section {
   border: 5px solid red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid red;
-
+  width: 100%;
 
   &__content-container {
-    width: 100%;
-    max-width: 1280px;
     border: 2px dotted #000;
+    margin: 0 auto;
+    width: min(100%, 1280px);
   }
+}
 
+.bio-article__content-container {
+  border: 3px solid green;
+
+  @media screen and (min-width: $tablet-width) {
+    & {
+      padding: 0 1rem;
+    }
+  }
+}
+
+.bio-section__bio-article {
+  padding: 1rem;
+}
+
+
+
+.bio-article__hero-image {
+  width: 100%;
 }
 
 .bio-section__paragraph-container {
@@ -162,7 +165,7 @@
   flex: content;
   gap: 1rem;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
     }
@@ -172,22 +175,17 @@
 // // Gallery Section
 .gallery-section {
   border: 5px solid red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .gallery-section__content-container {
-  width: 100%;
-  max-width: 1280px;
+  align-items: center;
   border: 2px dotted #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-
+  margin: 0 auto;
+  width: min(100%, 1280px);
 }
 
 .gallery__image-container {
@@ -196,7 +194,7 @@
   justify-content: center;
   gap: 1rem;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
       flex-wrap: wrap;
@@ -207,40 +205,33 @@
 
 
 .footer-section {
-  border: 5px solid red;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background: $band-site-black;
-  align-items: center;
+  border: 5px solid red;
+  width: 100%;
 }
 
 .footer-section__content-container {
   border: 2px dotted #fff;
-  width: 100%;
-  max-width: 1280px;
+  color: $white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: $white;
+  margin: 0 auto;
   position: relative;
+  width: min(100%, 1280px);
 
   .footer__logo {
     height: 20px;
     width: 120px;
 
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $tablet-width) {
       & {
         position: absolute;
         top: 0;
         right: 0;
       }
     }
-
-
   }
-
-
 }
 
 .socials__container {
@@ -249,7 +240,7 @@
   align-items: center;
   border: 2px solid green;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
     }
@@ -261,120 +252,9 @@
   flex-direction: column;
   border: 2px solid blue;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
     }
   }
 }
-
-// .gallery {
-//   border: 5px solid blue;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-
-//   .gallery__image-container {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 1rem;
-//     border: 2px solid green;
-//     gap: 1rem;
-//     width: 100%;
-    
-//     @media screen and (min-width: 768px) {
-//       .gallery__image-container {
-//         // flex-direction: row;
-//         border: 2px solid green;
-//         flex-wrap: wrap;
-
-//       }
-      
-//     }
-    
-//   }
-// }
-
-
-//     .gallery__image {
-//       max-width: 300px;
-//       border: 2px solid red;
-//     }
-
-
-// // .hero-section {
-// //   display: flex;
-// //   flex-direction: column;
-// //   border: 2px solid blue;
-// //   background-color: $band-site-black;
-  
-// //   &__logo {
-// //     margin: 1rem 0;
-// //   }
-
-// //   &__nav-bar {
-// //     border: 2px dotted #000;
-// //     display: flex;
-// //     align-items: center;
-// //     flex-direction: column;
-
-// //     .nav-bar__container {
-// //       border: 2px solid purple;
-// //       width: 100%;
-// //       display: flex;
-// //       justify-content: space-around;
-// //     }
-    
-// //     .nav-bar__menu {
-// //       display: flex;
-// //       // justify-content: space-around;
-// //       // align-items: space-around;
-// //       border: 2px solid green;
-// //       width: 100%;
-      
-// //       .menu-left, .menu-right {
-// //         width: 100%;
-// //       }
-
-// //       li {
-// //         // @include active-tab;
-// //         width: 100%;
-
-// //         }
-// //       }
-// //     }
-// //   }
-
-// //   .hero-section__image {
-// //     // Need to figure out overlay: use bandsite-black at %50 opacity
-// //     background: url("../assets/images/hero-bio.jpg") center center / cover;
-// //     border: 2px solid red;
-// //     height: calc(50vh - 2rem);
-// //     display: flex;
-// //     flex-direction: column;
-// //     justify-content: center;
-
-// //   }
-
-  
-// //   .bio-section {
-// //     display: flex;
-// //     flex-direction: column;
-// //     border: 2px solid red;
-// //     padding: 0 1rem;
-    
-// //     // .bio-section__header {
-// //       // text-align: center;
-// //     // }
-    
-// //     .bio-section__image {
-// //       max-width: 100%;
-// //     }
-// //   }
-
-// //   footer {
-// //     background: gray;
-// //   }

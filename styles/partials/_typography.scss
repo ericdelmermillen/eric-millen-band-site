@@ -1,64 +1,88 @@
-// @use "./fonts" as *;
+@use "./fonts" as *;
+@use "./variables" as *;
 
-// // Page Header
-// @mixin page-header {
-//   h1 {
-//     font-size: 24px;
-//     line-height: 32px;
-//     font-family: "AvenirNextBold", Arial, sans-serif;
+
+// // Page Header for h1: works
+@mixin page-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "AvenirNextBold", Arial, sans-serif;
     
-//   // Tablet or Desktop 
-//     @media (min-width: 768px) {
-//       font-size: 60px;
-//       line-height: 68px;
-//     }
-//   }
-// }
+  // Tablet or Desktop 
+    @media (min-width: 768px) {
+      font-size: 60px;
+      line-height: 68px;
+  }
+}
 
-// // Section Header
-// @mixin section-header {
-//   h2 {
-//     font-size: 24px;
-//     line-height: 32px;
-//     font-family: "AvenirNextBold", Arial, sans-serif;
+// // Section Header for h2: works
+@mixin section-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "AvenirNextBold", Arial, sans-serif;
+    
+  // Tablet or Desktop 
+    @media (min-width: 768px) {
+      font-size: 36px;
+      line-height: 44px;
+  }
+}
 
-//   // Tablet or Desktop
-//     @media (min-width: 768px) {
-//       font-size: 36px;
-//       line-height: 44px;
-//     }
-//   }
-// }
+// //  Sub Header for h3 works
+@mixin sub-header {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "AvenirNextDemi", Arial, sans-serif;
+  
+// Tablet or Desktop 
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
 
-// //  Sub-Header
-// @mixin sub-header {
-//   h3 {
-//     font-size: 14px;
-//     line-height: 22px;
-//     font-family: "AvenirNextDemi", Arial, sans-serif;
-      
-//   // Tablet or Desktop
-//     @media (min-width: 768px) {
-//       font-size: 24px;
-//       line-height: 32px;
-//     }
-//   }
-// }
 
-// //  Body Copy
-// @mixin body-copy {
-//   p {
-//     font-size: 13px;
-//     line-height: 18px;
-//     font-family: "AvenirNextRegular", Arial, sans-serif;
+// Quote q tags works
+@mixin quote {
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "AvenirNextDemi", Arial, sans-serif;
+  
+// Tablet or Desktop 
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
 
-//   // Tablet or Desktop
-//     @media (min-width: 768px) {
-//       font-size: 14px;
-//       line-height: 22px;
-//     }
-//   }
-// }
+// Source cite tags works
+@mixin source {
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+  font-family: "AvenirNextRegular", Arial, sans-serif;
+  
+// Tablet or Desktop 
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+
+// //  Body Copy works
+@mixin body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "AvenirNextRegular";
+  
+  //   // Tablet or Desktop
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 22px;
+
+  }
+}
 
 // //  Footer Copy
 // @mixin footer-copy {

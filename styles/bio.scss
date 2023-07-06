@@ -8,23 +8,23 @@
 
 // Nav
 .nav-bar__container {
+  align-items: center;
+  background: $band-site-black;
   border: 2px dashed #000;
-  width: 100%;
+  color: $white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  color: $white;
-  background: $band-site-black;
+  width: 100%;
 }
 
 
 .nav-bar__nav {
+  align-items: center;
   border: 5px solid blue;
-  width: min(100%, 1280px);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: min(100%, 1280px);
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -40,17 +40,50 @@
 }
 
 .nav-bar__menu {
+  border: 2px solid red;
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
-  border: 2px solid green;
+  width: 100%;
 
   @media screen and (min-width: $tablet-width) {
     & {
-      justify-content: flex-start;
       gap: 2rem;
+      justify-content: flex-start;
     }
   }
+}
+
+
+.menu-option--active, .menu-option--inactive {
+  // border: 2px solid green;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  // @media screen and (min-width: $tablet-width) {
+  //   & {
+  //     width: 2rem;
+  //   }
+  // }
+}
+
+.menu-option--active::after {
+  content: "";
+  background: white;
+  bottom: 0;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+}
+
+.menu-option--inactive:hover::after {
+  content: "";
+  background: white;
+  bottom: 0;
+  height: 2px;
+  position: absolute;
+  width: 100%;
 }
 
 
@@ -61,20 +94,20 @@
   width: 100%;
 
   &__content-container {
+    border: 2px dotted #000;
     margin: 0 auto;
     width: min(100%, 1280px);
-    border: 2px dotted #000;
   }
 }
 
 .hero-section__bg-image {
-  height: 50vh;
-  width: 100%;
-  border: 2px solid blue;
-  display: flex;
   align-items: center;
+  border: 2px solid blue;
   color: $white;
+  display: flex;
+  height: 50vh;
   position: relative;
+  width: 100%;
   z-index: 0;
 
   @media screen and (min-width: $desktop-width) {
@@ -84,34 +117,24 @@
   }
 
   .hero-section__image-overlay {
-    width: 100%;
-    height: 100%;
     background: $hero-image-overlay-color;
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
+    width: 100%;
     z-index: 1;
   }
 }
 
 .hero-section__header {
-  font-size: $font-size-h1-mobile;
+  @include page-header;
   z-index: 2;
-  
+
   .hero-section__overlay {
     width: 100%;
-    
-  }
-  
-  @media screen and (min-width: $tablet-width) {
-    & {
-      font-size: $font-size-h1-tablet;
-    }
   }
 }
-
-
-
 
 
 .gallery__image {
@@ -122,7 +145,6 @@
       max-width: 30%;
     }
   }
-
 }
     
 
@@ -153,17 +175,39 @@
   padding: 1rem;
 }
 
+.bio-article__quote {
+  display: block;
+  @include quote;
+}
+
+.bio-article__source {
+  @include source;
+}
+
+
+.bio-section__heading {
+  border: 2px solid red;
+  @include section-header;
+}
 
 
 .bio-article__hero-image {
   width: 100%;
 }
+
+.bio-section__subheader {
+  @include sub-header;
+}
  
+.bio-section__body-copy {
+  @include body-copy;
+}
+
 .bio-section__paragraph-container {
   border: 2px solid green;
   display: flex;
-  flex-direction: column;
   flex: content;
+  flex-direction: column;
   gap: 1rem;
 
   @media screen and (min-width: $tablet-width) {
@@ -189,17 +233,21 @@
   width: min(100%, 1280px);
 }
 
+.gallery__heading {
+  @include section-header;
+}
+
 
 .gallery {
   padding: 0 1rem;
 }
 
 .gallery__image-container {
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -224,9 +272,9 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  padding: 0 1rem;
   position: relative;
   width: min(100%, 1280px);
-  padding: 0 1rem;
 
   .footer__logo {
     height: 20px;
@@ -235,18 +283,17 @@
     @media screen and (min-width: $tablet-width) {
       & {
         position: absolute;
-        top: 0;
         right: 1rem;
+        top: 0;
       }
     }
   }
 }
 
 .socials__container {
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -255,10 +302,14 @@
   }
 }
 
+.socials__heading {
+  @include section-header;
+}
+
 .management__container {
+  border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
 
   @media screen and (min-width: $tablet-width) {
     & {

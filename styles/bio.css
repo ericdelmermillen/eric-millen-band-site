@@ -128,6 +128,11 @@ ul {
   width: 100%;
   z-index: 0;
 }
+@media screen and (orientation: landscape) {
+  .hero-section__bg-image {
+    height: 100vh;
+  }
+}
 @media screen and (min-width: 1280px) {
   .hero-section__bg-image {
     height: 100vh;
@@ -143,19 +148,19 @@ ul {
   z-index: 1;
 }
 
-.hero-section__header {
+.hero-section__page-header {
   font-size: 24px;
   line-height: 32px;
-  font-family: "AvenirNextBold", Arial, sans-serif;
+  font-family: "AvenirNextBold";
   z-index: 2;
 }
 @media (min-width: 768px) {
-  .hero-section__header {
+  .hero-section__page-header {
     font-size: 60px;
     line-height: 68px;
   }
 }
-.hero-section__header .hero-section__overlay {
+.hero-section__page-header .hero-section__overlay {
   width: 100%;
 }
 

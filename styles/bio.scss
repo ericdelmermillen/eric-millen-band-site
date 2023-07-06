@@ -110,9 +110,14 @@
   width: 100%;
   z-index: 0;
 
+  @media screen and (orientation: $landscape) {
+    & {
+      height: calc(100vh);
+    }
+  }
   @media screen and (min-width: $desktop-width) {
     & {
-      height: 100vh;
+      height: calc(100vh);
     }
   }
 
@@ -127,7 +132,7 @@
   }
 }
 
-.hero-section__header {
+.hero-section__page-header {
   @include page-header;
   z-index: 2;
 

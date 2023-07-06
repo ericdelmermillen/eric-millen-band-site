@@ -152,6 +152,7 @@ ul {
   font-size: 24px;
   line-height: 32px;
   font-family: "AvenirNextBold";
+  padding-left: 24px;
   z-index: 2;
 }
 @media (min-width: 768px) {
@@ -160,17 +161,13 @@ ul {
     line-height: 68px;
   }
 }
+@media (min-width: 768px) {
+  .hero-section__page-header {
+    padding-left: 48px;
+  }
+}
 .hero-section__page-header .hero-section__overlay {
   width: 100%;
-}
-
-.gallery__image {
-  max-width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .gallery__image {
-    max-width: 30%;
-  }
 }
 
 .bio-section {
@@ -201,6 +198,15 @@ ul {
   .bio-section__heading {
     font-size: 36px;
     line-height: 44px;
+  }
+}
+
+.bio-article__content-container {
+  border: 2px solid green;
+}
+@media screen and (min-width: 768px) {
+  .bio-article__content-container {
+    padding: 0 1rem;
   }
 }
 
@@ -275,7 +281,6 @@ ul {
   border: 5px solid red;
   width: 100%;
 }
-
 .gallery-section__content-container {
   align-items: center;
   border: 2px dotted #000;
@@ -286,6 +291,9 @@ ul {
   width: min(100%, 1280px);
 }
 
+.gallery {
+  padding: 0 1rem;
+}
 .gallery__heading {
   font-size: 24px;
   line-height: 32px;
@@ -297,11 +305,6 @@ ul {
     line-height: 44px;
   }
 }
-
-.gallery {
-  padding: 0 1rem;
-}
-
 .gallery__image-container {
   border: 2px solid green;
   display: flex;
@@ -315,13 +318,20 @@ ul {
     flex-wrap: wrap;
   }
 }
+.gallery .gallery__image {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .gallery .gallery__image {
+    max-width: 30%;
+  }
+}
 
 .footer-section {
   background: #323232;
   border: 5px solid red;
   width: 100%;
 }
-
 .footer-section__content-container {
   border: 2px dotted #fff;
   color: #fff;
@@ -332,17 +342,6 @@ ul {
   padding: 0 1rem;
   position: relative;
   width: min(100%, 1280px);
-}
-.footer-section__content-container .footer__logo {
-  height: 20px;
-  width: 120px;
-}
-@media screen and (min-width: 768px) {
-  .footer-section__content-container .footer__logo {
-    position: absolute;
-    right: 1rem;
-    top: 0;
-  }
 }
 
 .socials__container {
@@ -376,5 +375,17 @@ ul {
 @media screen and (min-width: 768px) {
   .management__container {
     flex-direction: row;
+  }
+}
+
+.footer__logo {
+  height: 20px;
+  width: 120px;
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    position: absolute;
+    right: 1rem;
+    top: 0;
   }
 }/*# sourceMappingURL=bio.css.map */

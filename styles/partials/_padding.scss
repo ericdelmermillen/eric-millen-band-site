@@ -9,20 +9,20 @@
   }
 }
  
-@mixin padding-after-headlines {
-  padding-right: 16px;
+// @mixin padding-after-headlines {
+//   padding-right: 16px;
   
-  // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-right: 36px;
-  }
-}
+//   // Tablet or Desktop
+//   @media (min-width: 768px) {
+//     padding-right: 36px;
+//   }
+// }
 
-@mixin padding-between-components {
-  gap: 16px;
+// @mixin padding-between-components {
+//   gap: 16px;
   
-  // Tablet or Desktop
-  @media (min-width: 768px) {
-    gap: 36px;
-  }
-}
+//   // Tablet or Desktop
+//   @media (min-width: 768px) {
+//     gap: 36px;
+//   }
+// }

@@ -3,12 +3,7 @@
 
 
 // // Page Header for h1: works
-@mixin page-header(
-  $font-family: "AvenirNextBold", 
-  $font-size: $font-size-h1-mobile,     
-  $line-height: $font-line-height-h1-mobile,
-  $font-weight: $font-weight-h1-tablet) {
-      
+@mixin page-header($font-family: "AvenirNextBold", $font-size: $font-size-h1-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: $font-weight-h1-tablet) {    
     font-size: $font-size;
     line-height: $line-height;
     font-family: $font-family;

@@ -43,7 +43,6 @@ ul {
 .nav-bar__container {
   align-items: center;
   background: #323232;
-  border: 2px dashed #000;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -53,7 +52,7 @@ ul {
 
 .nav-bar__nav {
   align-items: center;
-  border: 5px solid blue;
+  padding-top: 2.5rem;
   display: flex;
   flex-direction: column;
   width: min(100%, 1280px);
@@ -67,10 +66,18 @@ ul {
 .nav-bar__logo {
   height: 20px;
   width: 120px;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-bar__logo {
+    margin-top: 0;
+    margin-left: 48px;
+    margin-bottom: 32px;
+  }
 }
 
 .nav-bar__menu {
-  border: 2px solid red;
+  padding-left: 2rem;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -83,44 +90,57 @@ ul {
 }
 
 .menu-option--active, .menu-option--inactive {
+  text-align: center;
   display: flex;
   justify-content: center;
   position: relative;
   width: 100%;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .menu-option--active, .menu-option--inactive {
+    padding-bottom: 36px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-option--active, .menu-option--inactive {
+    width: 5rem;
+    justify-content: flex-start;
+  }
 }
 
-.menu-option--active::after {
-  content: "";
-  background: white;
-  bottom: 0;
-  height: 2px;
-  position: absolute;
-  width: 100%;
+.menu-option--active {
+  border-bottom: 3px solid #fff;
+}
+.menu-option--active a {
+  color: #fff;
+  font-family: "AvenirNextBold";
+  font-weight: bold;
 }
 
-.menu-option--inactive:hover::after {
-  content: "";
-  background: white;
-  bottom: 0;
-  height: 2px;
-  position: absolute;
-  width: 100%;
+.menu-option--inactive a {
+  color: #e1e1e1;
+}
+
+.menu-option--inactive:hover {
+  border-bottom: 3px solid #e1e1e1;
+}
+.menu-option--inactive:hover a {
+  font-family: "AvenirNextDemi";
+  font-weight: bold;
 }
 
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center/cover;
-  border: 5px solid red;
   width: 100%;
 }
 .hero-section__content-container {
-  border: 2px dotted #000;
   margin: 0 auto;
   width: min(100%, 1280px);
 }
 
 .hero-section__bg-image {
   align-items: center;
-  border: 2px solid blue;
   color: #fff;
   display: flex;
   height: 50vh;
@@ -171,11 +191,9 @@ ul {
 }
 
 .bio-section {
-  border: 5px solid red;
   width: 100%;
 }
 .bio-section__content-container {
-  border: 2px dotted #000;
   margin: 0 auto;
   width: min(100%, 1280px);
   border: 3px solid green;
@@ -187,6 +205,7 @@ ul {
 }
 .bio-section__bio-article {
   padding: 1rem;
+  border: 2px solid green;
 }
 .bio-section__heading {
   border: 2px solid red;
@@ -201,9 +220,6 @@ ul {
   }
 }
 
-.bio-article__content-container {
-  border: 2px solid green;
-}
 @media screen and (min-width: 768px) {
   .bio-article__content-container {
     padding: 0 1rem;
@@ -265,7 +281,6 @@ ul {
 }
 
 .bio-section__paragraph-container {
-  border: 2px solid green;
   display: flex;
   flex: content;
   flex-direction: column;
@@ -278,12 +293,10 @@ ul {
 }
 
 .gallery-section {
-  border: 5px solid red;
   width: 100%;
 }
 .gallery-section__content-container {
   align-items: center;
-  border: 2px dotted #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -306,7 +319,6 @@ ul {
   }
 }
 .gallery__image-container {
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -329,11 +341,9 @@ ul {
 
 .footer-section {
   background: #323232;
-  border: 5px solid red;
   width: 100%;
 }
 .footer-section__content-container {
-  border: 2px dotted #fff;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -345,7 +355,6 @@ ul {
 }
 
 .socials__container {
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
 }

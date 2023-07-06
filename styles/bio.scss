@@ -10,7 +10,7 @@
 .nav-bar__container {
   align-items: center;
   background: $band-site-black;
-  border: 2px dashed #000;
+  // border: 2px dashed #000;
   color: $white;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,8 @@
 
 .nav-bar__nav {
   align-items: center;
-  border: 5px solid blue;
+  // border: 5px solid blue; 
+  padding-top: 2.5rem;
   display: flex;
   flex-direction: column;
   width: min(100%, 1280px);
@@ -37,10 +38,23 @@
 .nav-bar__logo {
   height: 20px;
   width: 120px;
+  margin-top: 2rem;
+  
+  @media screen and (min-width: $tablet-width) {
+    & {
+      margin-top: 0;
+      margin-left: 48px;
+      margin-bottom: 32px;
+      // border: 2px solid red;
+    
+    }
+  }
+
 }
 
 .nav-bar__menu {
-  border: 2px solid red;
+  // border: 2px solid red;
+  padding-left: 2rem;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -54,39 +68,60 @@
 
 }
 .menu-option--active, .menu-option--inactive {
+  // border: 2px solid red;
+  text-align: center;
   display: flex;
   justify-content: center;
   position: relative;
   width: 100%;
+  @include padding.padding-between-components-bottom;
+
+  @media screen and (min-width: $tablet-width) {
+    & {
+      width: 5rem;
+      justify-content: flex-start;
+    }
+  }
 }
 
-.menu-option--active::after {
-  content: "";
-  background: white;
-  bottom: 0;
-  height: 2px;
-  position: absolute;
-  width: 100%;
+.menu-option--active {
+  border-bottom: 3px solid $white;
+  
+  a {
+    color: $white;
+    font-family: "AvenirNextBold";
+    font-weight: bold;
+  }
+
 }
 
-.menu-option--inactive:hover::after {
-  content: "";
-  background: white;
-  bottom: 0;
-  height: 2px;
-  position: absolute;
-  width: 100%;
+
+
+.menu-option--inactive {
+  a{
+    color: $mercury;
+  }
 }
+
+.menu-option--inactive:hover {
+  border-bottom: 3px solid $mercury;
+
+  a{
+    font-family: "AvenirNextDemi";
+    font-weight: bold;
+  }
+}
+
 
 
 // Hero Section
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
-  border: 5px solid red;
+  // border: 5px solid red;
   width: 100%;
 
   &__content-container {
-    border: 2px dotted #000;
+    // border: 2px dotted #000;
     margin: 0 auto;
     width: min(100%, 1280px);
   }
@@ -94,7 +129,7 @@
 
 .hero-section__bg-image {
   align-items: center;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   color: $white;
   display: flex;
   height: 50vh;
@@ -138,11 +173,10 @@
 
 // // Bio Section
 .bio-section {
-  border: 5px solid red;
+  // border: 5px solid red;
   width: 100%;
 
   &__content-container {
-    border: 2px dotted #000;
     margin: 0 auto;
     width: min(100%, 1280px);
     border: 3px solid green;
@@ -156,17 +190,19 @@
   
   &__bio-article {
     padding: 1rem;
+    border: 2px solid green;
   }
   
   &__heading {
     border: 2px solid red;
+    // padding-inline: 36px;
     @include section-header;
   }
 }
 
 
 .bio-article__content-container {
-  border: 2px solid green;
+  // border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -189,6 +225,12 @@
 
 .bio-article__hero-image {
   width: 100%;
+
+  // @media screen and (min-width: $tablet-width) {
+  //   & {
+  //     padding-inline: 36px;
+  //   }
+  // }
 }
 
 .bio-section__subheader {
@@ -200,7 +242,7 @@
 }
 
 .bio-section__paragraph-container {
-  border: 2px solid green;
+  // border: 2px solid green;
   display: flex;
   flex: content;
   flex-direction: column;
@@ -215,12 +257,12 @@
 
 // // Gallery Section
 .gallery-section {
-  border: 5px solid red;
+  // border: 5px solid red;
   width: 100%;
   
   &__content-container {
     align-items: center;
-    border: 2px dotted #000;
+    // border: 2px dotted #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,7 +279,7 @@
   }
   
   &__image-container {
-    border: 2px solid green;
+    // border: 2px solid green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -266,11 +308,11 @@
 // Footer Section
 .footer-section {
   background: $band-site-black;
-  border: 5px solid red;
+  // border: 5px solid red;
   width: 100%;
   
   &__content-container {
-    border: 2px dotted #fff;
+    // border: 2px dotted #fff;
     color: $white;
     display: flex;
     flex-direction: column;
@@ -284,7 +326,7 @@
 
 
 .socials__container {
-  border: 2px solid green;
+  // border: 2px solid green;
   display: flex;
   flex-direction: column;
 

@@ -22,14 +22,14 @@
 .nav-bar__nav {
   align-items: center;
   // border: 5px solid blue; 
-  padding-top: 2.5rem;
   display: flex;
   flex-direction: column;
   width: min(100%, 1280px);
-
+  
   @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
+      padding-top: 2.5rem;
     }
   }
 }
@@ -91,6 +91,8 @@
     color: $white;
     font-family: "AvenirNextBold";
     font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
   }
 
 }
@@ -100,10 +102,14 @@
 .menu-option--inactive {
   a{
     color: $mercury;
+    text-align: center;
+    margin: 0 auto;
   }
 }
 
-.menu-option--inactive:hover {
+.menu-option--inactive:hover, 
+.menu-option--inactive:active, 
+.menu-option--inactive:focus {
   border-bottom: 3px solid $mercury;
 
   a{
@@ -180,29 +186,46 @@
     margin: 0 auto;
     width: min(100%, 1280px);
     border: 3px solid green;
+    @include padding.padding-between-components-bottom;
     
     @media screen and (min-width: $tablet-width) {
       & {
-        padding: 0 1rem;
+        padding-inline: 1rem;
       }
     }
-  }
-  
-  &__bio-article {
-    padding: 1rem;
-    border: 2px solid green;
   }
   
   &__heading {
     border: 2px solid red;
     // padding-inline: 36px;
+    @include padding.padding-before-headlines;
+    @include padding.padding-between-components-top;
     @include section-header;
+
+    @media screen and (min-width: $tablet-width) {
+      & {
+        padding-left: 0;
+      }
+    }
+
+  }
+  
+  &__bio-article {
+    border: 2px solid blue;
+    padding: 0 1rem;
+
+        
+    @media screen and (min-width: $tablet-width) {
+      & {
+        padding: 0 3rem;
+      }
+    }
   }
 }
 
 
 .bio-article__content-container {
-  // border: 2px solid green;
+  // border: 2px solid green
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -211,30 +234,29 @@
   }
 }
 
+.bio-article__hero-image {
+  width: 100%;
+  @include padding.padding-between-components-top;
+  @include padding.padding-between-components-bottom;
+}
+
 .bio-article__quote {
   display: block;
   @include quote;
+  @include padding.padding-between-components-bottom;
 }
 
 .bio-article__source {
   @include source;
+  // border: 2px solid red;
 }
 
-
-
-
-.bio-article__hero-image {
-  width: 100%;
-
-  // @media screen and (min-width: $tablet-width) {
-  //   & {
-  //     padding-inline: 36px;
-  //   }
-  // }
-}
 
 .bio-section__subheader {
   @include sub-header;
+  border: 2px solid blue;
+  @include padding.padding-between-components-top;
+  @include padding.padding-between-components-bottom;
 }
  
 .bio-section__body-copy {
@@ -259,16 +281,24 @@
 .gallery-section {
   // border: 5px solid red;
   width: 100%;
+  @include padding.padding-between-components-bottom;
   
   &__content-container {
     align-items: center;
-    // border: 2px dotted #000;
+    border: 2px dotted #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     width: min(100%, 1280px);
+    background: $mercury;
   }
+}
+
+.gallery__heading {
+  border: 2px solid purple;
+  @include padding.padding-between-components-bottom;
+  @include padding.padding-between-components-top;
 }
 
 .gallery {
@@ -279,7 +309,7 @@
   }
   
   &__image-container {
-    // border: 2px solid green;
+    border: 2px solid green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -326,9 +356,12 @@
 
 
 .socials__container {
-  // border: 2px solid green;
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
+  @include padding.padding-between-components-top;
+  @include padding.padding-between-components-bottom;
+  @include padding.padding-between-components-gap;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -338,6 +371,24 @@
 }
 
 .socials__heading {
+  border: 2px solid red;
+  @include sub-header;
+}
+
+
+.social-icon__container {
+  border: 2px solid blue;
+  @include padding.padding-between-components-gap;
+  display: flex;  
+}
+
+.soical-icon {
+  border: 2px solid green;
+  @include social-icons;
+}
+
+.socials__heading {
+  @include padding.padding-between-components-bottom;
   @include section-header;
 }
 
@@ -345,12 +396,34 @@
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  @include padding.padding-between-components-gap;
 
   @media screen and (min-width: $tablet-width) {
     & {
       flex-direction: row;
     }
   }
+}
+
+.manager-name,
+.manager-role {
+  font-family: 'AvenirNextDemi';
+  // line-height: 2;
+}
+
+.manager-role {
+  @include padding.padding-between-components-bottom;
+}
+
+.manager-email {
+  @include padding.padding-between-components-top;
+}
+
+
+.management,
+.management--us-south-america-japan,
+.management--uk-eu-au {
+  border: 2px solid red;
 }
 
 .footer__logo {

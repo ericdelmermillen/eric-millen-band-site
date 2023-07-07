@@ -31,7 +31,7 @@
   }
 }
 
-// //  Sub Header for h3 works
+//  Sub Header for h3 works
 @mixin sub-header {
   font-size: 14px;
   line-height: 22px;
@@ -40,6 +40,18 @@
 // Tablet or Desktop 
   @media (min-width: 768px) {
     font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+//  Social Icons (same as h3)
+@mixin social-icons {
+  font-size: 10px;
+  line-height: 22px;
+  
+// Tablet or Desktop 
+  @media (min-width: 768px) {
+    font-size: 12px;
     line-height: 32px;
   }
 }

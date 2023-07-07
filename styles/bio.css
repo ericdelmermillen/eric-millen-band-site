@@ -52,7 +52,6 @@ ul {
 
 .nav-bar__nav {
   align-items: center;
-  padding-top: 2.5rem;
   display: flex;
   flex-direction: column;
   width: min(100%, 1280px);
@@ -60,6 +59,7 @@ ul {
 @media screen and (min-width: 768px) {
   .nav-bar__nav {
     flex-direction: row;
+    padding-top: 2.5rem;
   }
 }
 
@@ -116,16 +116,24 @@ ul {
   color: #fff;
   font-family: "AvenirNextBold";
   font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .menu-option--inactive a {
   color: #e1e1e1;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.menu-option--inactive:hover {
+.menu-option--inactive:hover,
+.menu-option--inactive:active,
+.menu-option--inactive:focus {
   border-bottom: 3px solid #e1e1e1;
 }
-.menu-option--inactive:hover a {
+.menu-option--inactive:hover a,
+.menu-option--inactive:active a,
+.menu-option--inactive:focus a {
   font-family: "AvenirNextDemi";
   font-weight: bold;
 }
@@ -197,26 +205,54 @@ ul {
   margin: 0 auto;
   width: min(100%, 1280px);
   border: 3px solid green;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .bio-section__content-container {
+    padding-bottom: 36px;
+  }
 }
 @media screen and (min-width: 768px) {
   .bio-section__content-container {
-    padding: 0 1rem;
+    padding-inline: 1rem;
   }
-}
-.bio-section__bio-article {
-  padding: 1rem;
-  border: 2px solid green;
 }
 .bio-section__heading {
   border: 2px solid red;
+  padding-left: 24px;
+  padding-top: 16px;
   font-size: 24px;
   line-height: 32px;
   font-family: "AvenirNextBold", Arial, sans-serif;
 }
 @media (min-width: 768px) {
   .bio-section__heading {
+    padding-left: 48px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-section__heading {
+    padding-top: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-section__heading {
     font-size: 36px;
     line-height: 44px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .bio-section__heading {
+    padding-left: 0;
+  }
+}
+.bio-section__bio-article {
+  border: 2px solid blue;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .bio-section__bio-article {
+    padding: 0 3rem;
   }
 }
 
@@ -226,16 +262,38 @@ ul {
   }
 }
 
+.bio-article__hero-image {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .bio-article__hero-image {
+    padding-top: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-article__hero-image {
+    padding-bottom: 36px;
+  }
+}
+
 .bio-article__quote {
   display: block;
   font-size: 20px;
   line-height: 28px;
   font-family: "AvenirNextDemi", Arial, sans-serif;
+  padding-bottom: 16px;
 }
 @media (min-width: 768px) {
   .bio-article__quote {
     font-size: 24px;
     line-height: 34px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-article__quote {
+    padding-bottom: 36px;
   }
 }
 
@@ -252,19 +310,28 @@ ul {
   }
 }
 
-.bio-article__hero-image {
-  width: 100%;
-}
-
 .bio-section__subheader {
   font-size: 14px;
   line-height: 22px;
   font-family: "AvenirNextDemi", Arial, sans-serif;
+  border: 2px solid blue;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 @media (min-width: 768px) {
   .bio-section__subheader {
     font-size: 16px;
     line-height: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-section__subheader {
+    padding-top: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .bio-section__subheader {
+    padding-bottom: 36px;
   }
 }
 
@@ -294,14 +361,38 @@ ul {
 
 .gallery-section {
   width: 100%;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .gallery-section {
+    padding-bottom: 36px;
+  }
 }
 .gallery-section__content-container {
   align-items: center;
+  border: 2px dotted #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   width: min(100%, 1280px);
+  background: #e1e1e1;
+}
+
+.gallery__heading {
+  border: 2px solid purple;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+@media (min-width: 768px) {
+  .gallery__heading {
+    padding-bottom: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .gallery__heading {
+    padding-top: 36px;
+  }
 }
 
 .gallery {
@@ -319,6 +410,7 @@ ul {
   }
 }
 .gallery__image-container {
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -355,8 +447,27 @@ ul {
 }
 
 .socials__container {
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .socials__container {
+    padding-top: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .socials__container {
+    padding-bottom: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .socials__container {
+    gap: 36px;
+  }
 }
 @media screen and (min-width: 768px) {
   .socials__container {
@@ -365,9 +476,51 @@ ul {
 }
 
 .socials__heading {
+  border: 2px solid red;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "AvenirNextDemi", Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .socials__heading {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+.social-icon__container {
+  border: 2px solid blue;
+  gap: 16px;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .social-icon__container {
+    gap: 36px;
+  }
+}
+
+.soical-icon {
+  border: 2px solid green;
+  font-size: 10px;
+  line-height: 22px;
+}
+@media (min-width: 768px) {
+  .soical-icon {
+    font-size: 12px;
+    line-height: 32px;
+  }
+}
+
+.socials__heading {
+  padding-bottom: 16px;
   font-size: 24px;
   line-height: 32px;
   font-family: "AvenirNextBold", Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .socials__heading {
+    padding-bottom: 36px;
+  }
 }
 @media (min-width: 768px) {
   .socials__heading {
@@ -380,11 +533,46 @@ ul {
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .management__container {
+    gap: 36px;
+  }
 }
 @media screen and (min-width: 768px) {
   .management__container {
     flex-direction: row;
   }
+}
+
+.manager-name,
+.manager-role {
+  font-family: "AvenirNextDemi";
+}
+
+.manager-role {
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .manager-role {
+    padding-bottom: 36px;
+  }
+}
+
+.manager-email {
+  padding-top: 16px;
+}
+@media (min-width: 768px) {
+  .manager-email {
+    padding-top: 36px;
+  }
+}
+
+.management,
+.management--us-south-america-japan,
+.management--uk-eu-au {
+  border: 2px solid red;
 }
 
 .footer__logo {

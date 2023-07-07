@@ -12,7 +12,7 @@
 }
  
 @mixin padding-after-headlines {
-  padding-right: 16px;
+  padding-right: 16px; 
   
   // Tablet or Desktop
   @media (min-width: 768px) {

@@ -17,14 +17,19 @@ body {
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-
+  text-decoration: none;      
+  
   &:hover, 
   &:visited, 
   &:active {
     @extend a;
   }
+  
+  &:focus {
+    color: inherit;
+    outline: 1px solid $white;
+  }
+
 }
 
 ul {

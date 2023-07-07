@@ -34,8 +34,12 @@ body {
 
 a, a:hover, a:visited, a:active {
   text-decoration: none;
-  color: inherit;
 }
+a:focus {
+  color: inherit;
+  outline: 1px solid #fff;
+}
+
 ul {
   list-style: none;
 }
@@ -49,15 +53,14 @@ ul {
   justify-content: center;
   width: 100%;
 }
-
-.nav-bar__nav {
+.nav-bar__container .nav-bar__nav {
   align-items: center;
   display: flex;
   flex-direction: column;
   width: min(100%, 1280px);
 }
 @media screen and (min-width: 768px) {
-  .nav-bar__nav {
+  .nav-bar__container .nav-bar__nav {
     flex-direction: row;
     padding-top: 2.5rem;
   }
@@ -71,13 +74,12 @@ ul {
 @media screen and (min-width: 768px) {
   .nav-bar__logo {
     margin-top: 0;
-    margin-left: 48px;
+    margin-inline: 48px;
     margin-bottom: 32px;
   }
 }
 
 .nav-bar__menu {
-  padding-left: 2rem;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -88,9 +90,7 @@ ul {
     justify-content: flex-start;
   }
 }
-
-.menu-option--active, .menu-option--inactive {
-  text-align: center;
+.nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
   display: flex;
   justify-content: center;
   position: relative;
@@ -98,14 +98,14 @@ ul {
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
-  .menu-option--active, .menu-option--inactive {
+  .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
     padding-bottom: 36px;
   }
 }
 @media screen and (min-width: 768px) {
-  .menu-option--active, .menu-option--inactive {
-    width: 5rem;
+  .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
     justify-content: flex-start;
+    width: 5rem;
   }
 }
 
@@ -116,14 +116,13 @@ ul {
   color: #fff;
   font-family: "AvenirNextBold";
   font-weight: bold;
+  margin-inline: auto;
   text-align: center;
-  margin: 0 auto;
 }
 
 .menu-option--inactive a {
   color: #e1e1e1;
-  text-align: center;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .menu-option--inactive:hover,
@@ -157,11 +156,6 @@ ul {
   z-index: 0;
 }
 @media screen and (orientation: landscape) {
-  .hero-section__bg-image {
-    height: 100vh;
-  }
-}
-@media screen and (min-width: 1280px) {
   .hero-section__bg-image {
     height: 100vh;
   }

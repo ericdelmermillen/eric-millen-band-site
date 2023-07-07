@@ -16,15 +16,14 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-}
-
-
-.nav-bar__nav {
-  align-items: center;
-  // border: 5px solid blue; 
-  display: flex;
-  flex-direction: column;
-  width: min(100%, 1280px);
+  
+  // Changes with &
+  .nav-bar__nav {
+    align-items: center;
+    // border: 5px solid blue; 
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 1280px);
   
   @media screen and (min-width: $tablet-width) {
     & {
@@ -33,32 +32,32 @@
     }
   }
 }
+}
 
 
 .nav-bar__logo {
   height: 20px;
   width: 120px;
+  // edm: mixin for margin-top
   margin-top: 2rem;
   
   @media screen and (min-width: $tablet-width) {
     & {
       margin-top: 0;
-      margin-left: 48px;
+      // edm: mixin for margin-inline & margin-block
+      margin-inline: 48px;
       margin-bottom: 32px;
       // border: 2px solid red;
-    
     }
   }
-
 }
 
 .nav-bar__menu {
   // border: 2px solid red;
-  padding-left: 2rem;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-
+  
   @media screen and (min-width: $tablet-width) {
     & {
       gap: 2rem;
@@ -66,20 +65,20 @@
     }
   }
 
-}
-.menu-option--active, .menu-option--inactive {
-  // border: 2px solid red;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  @include padding.padding-between-components-bottom;
-
-  @media screen and (min-width: $tablet-width) {
-    & {
-      width: 5rem;
-      justify-content: flex-start;
+  .menu-option--active, .menu-option--inactive {
+      // border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    @include padding.padding-between-components-bottom;
+    
+    @media screen and (min-width: $tablet-width) {
+      & {
+        justify-content: flex-start;
+        width: 5rem;
+        // edm: need width for tablet/desktop tabs
+      }
     }
   }
 }
@@ -91,19 +90,16 @@
     color: $white;
     font-family: "AvenirNextBold";
     font-weight: bold;
+    margin-inline: auto;
     text-align: center;
-    margin: 0 auto;
   }
-
 }
 
 
-
 .menu-option--inactive {
-  a{
+  a {
     color: $mercury;
-    text-align: center;
-    margin: 0 auto;
+    margin-inline: auto;
   }
 }
 
@@ -114,10 +110,10 @@
 
   a{
     font-family: "AvenirNextDemi";
+    // edm: font-family/font-variation mixin
     font-weight: bold;
   }
 }
-
 
 
 // Hero Section
@@ -125,6 +121,7 @@
   background: url("../assets/images/hero-bio.jpg") center center / cover;
   // border: 5px solid red;
   width: 100%;
+  // edm: do I need hard-coded dimensions for images
 
   &__content-container {
     // border: 2px dotted #000;
@@ -145,11 +142,13 @@
 
   @media screen and (orientation: $landscape) {
     & {
+      // edm: subtract final height of nav from height
       height: calc(100vh);
     }
   }
-  @media screen and (min-width: $desktop-width) {
+  @media screen and (min-width: $tablet) {
     & {
+      // edm: do I need hard-coded dimensions for images
       height: calc(100vh);
     }
   }
@@ -183,13 +182,14 @@
   width: 100%;
 
   &__content-container {
+    border: 3px solid green;
     margin: 0 auto;
     width: min(100%, 1280px);
-    border: 3px solid green;
     @include padding.padding-between-components-bottom;
     
     @media screen and (min-width: $tablet-width) {
       & {
+        // edm: need mixin for inline padding/margin
         padding-inline: 1rem;
       }
     }
@@ -207,17 +207,17 @@
         padding-left: 0;
       }
     }
-
   }
   
   &__bio-article {
     border: 2px solid blue;
+    // edm: need mixin for inline-padding
     padding: 0 1rem;
 
-        
     @media screen and (min-width: $tablet-width) {
       & {
         padding: 0 3rem;
+        // edm: need mixin for inline-padding
       }
     }
   }
@@ -229,6 +229,7 @@
 
   @media screen and (min-width: $tablet-width) {
     & {
+      // edm: need mixin for inline-padding
       padding: 0 1rem;
     }
   }
@@ -247,14 +248,14 @@
 }
 
 .bio-article__source {
-  @include source;
   // border: 2px solid red;
+  @include source;
 }
 
 
 .bio-section__subheader {
-  @include sub-header;
   border: 2px solid blue;
+  @include sub-header;
   @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
 }
@@ -302,6 +303,7 @@
 }
 
 .gallery {
+  // edm: need mixin for inline-padding
   padding: 0 1rem;
   
   &__heading {

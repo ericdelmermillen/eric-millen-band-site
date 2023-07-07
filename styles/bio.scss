@@ -1,6 +1,8 @@
 // @use "./partials/buttons" as *;
 @use "./partials/fonts" as *;
 @use "./partials/global" as *;
+@use "./partials/margin" as *;
+// @use "./partials/padding" as padding;
 @use "./partials/padding" as padding;
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
@@ -25,28 +27,26 @@
     flex-direction: column;
     width: min(100%, 1280px);
   
-  @media screen and (min-width: $tablet-width) {
-    & {
-      flex-direction: row;
-      padding-top: 2.5rem;
+    @media screen and (min-width: $tablet-width) {
+      & {
+        flex-direction: row;
+        padding-top: 2.5rem;
+      }
     }
   }
-}
 }
 
 
 .nav-bar__logo {
   height: 20px;
   width: 120px;
-  // edm: mixin for margin-top
-  margin-top: 2rem;
+  @include margin-top($default-margin: 2rem);
   
   @media screen and (min-width: $tablet-width) {
     & {
       margin-top: 0;
-      // edm: mixin for margin-inline & margin-block
-      margin-inline: 48px;
-      margin-bottom: 32px;
+      @include margin-inline($default-margin: 3rem);
+      @include margin-bottom($default-margin: 2rem);
       // border: 2px solid red;
     }
   }
@@ -60,7 +60,7 @@
   
   @media screen and (min-width: $tablet-width) {
     & {
-      gap: 2rem;
+      @include padding.padding-between-components-gap;
       justify-content: flex-start;
     }
   }
@@ -76,8 +76,7 @@
     @media screen and (min-width: $tablet-width) {
       & {
         justify-content: flex-start;
-        width: 5rem;
-        // edm: need width for tablet/desktop tabs
+        width: 6rem;
       }
     }
   }
@@ -107,11 +106,13 @@
 .menu-option--inactive:active, 
 .menu-option--inactive:focus {
   border-bottom: 3px solid $mercury;
+  font-weight: 700;
 
-  a{
-    font-family: "AvenirNextDemi";
-    // edm: font-family/font-variation mixin
-    font-weight: bold;
+  // edm: a must be inside li around content
+
+  a {
+    font-family: $font-family-demi;
+    // font-weight: 700;
   }
 }
 
@@ -121,7 +122,6 @@
   background: url("../assets/images/hero-bio.jpg") center center / cover;
   // border: 5px solid red;
   width: 100%;
-  // edm: do I need hard-coded dimensions for images
 
   &__content-container {
     // border: 2px dotted #000;
@@ -135,6 +135,7 @@
   // border: 2px solid blue;
   color: $white;
   display: flex;
+  // edm: subtract 1/2 of nav height
   height: 50vh;
   position: relative;
   width: 100%;
@@ -146,9 +147,8 @@
       height: calc(100vh);
     }
   }
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $tablet-width) {
     & {
-      // edm: do I need hard-coded dimensions for images
       height: calc(100vh);
     }
   }
@@ -182,7 +182,7 @@
   width: 100%;
 
   &__content-container {
-    border: 3px solid green;
+    // border: 3px solid green;
     margin: 0 auto;
     width: min(100%, 1280px);
     @include padding.padding-between-components-bottom;
@@ -191,12 +191,14 @@
       & {
         // edm: need mixin for inline padding/margin
         padding-inline: 1rem;
+        // @include padding-inline;
+        // 
       }
     }
   }
   
   &__heading {
-    border: 2px solid red;
+    // border: 2px solid red;
     // padding-inline: 36px;
     @include padding.padding-before-headlines;
     @include padding.padding-between-components-top;
@@ -210,7 +212,7 @@
   }
   
   &__bio-article {
-    border: 2px solid blue;
+    // border: 2px solid blue;
     // edm: need mixin for inline-padding
     padding: 0 1rem;
 
@@ -225,12 +227,13 @@
 
 
 .bio-article__content-container {
-  // border: 2px solid green
+  // border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
       // edm: need mixin for inline-padding
       padding: 0 1rem;
+      // @include padding-inline;
     }
   }
 }
@@ -242,26 +245,33 @@
 }
 
 .bio-article__quote {
+// edm: note; what is happening with the before?
   display: block;
   @include quote;
   @include padding.padding-between-components-bottom;
+  font-style: normal;
 }
 
 .bio-article__source {
   // border: 2px solid red;
-  @include source;
+  @extend .bio-article__quote
 }
 
 
 .bio-section__subheader {
-  border: 2px solid blue;
-  @include sub-header;
+  // border: 2px solid blue;
+  // @include sub-header;
+  margin-top: 2rem;
+  // edm: margin-top mixin
   @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
+  // font-size: 
 }
  
 .bio-section__body-copy {
   @include body-copy;
+  // edm: adjust line-height after mixn will accept params
+  line-height: 1.5;
 }
 
 .bio-section__paragraph-container {
@@ -281,23 +291,23 @@
 // // Gallery Section
 .gallery-section {
   // border: 5px solid red;
+  background: $alabaster;
   width: 100%;
-  @include padding.padding-between-components-bottom;
   
   &__content-container {
     align-items: center;
-    border: 2px dotted #000;
+    // border: 2px dotted #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     width: min(100%, 1280px);
-    background: $mercury;
+    @include padding.padding-between-components-bottom;
   }
 }
 
 .gallery__heading {
-  border: 2px solid purple;
+  // border: 2px solid purple;
   @include padding.padding-between-components-bottom;
   @include padding.padding-between-components-top;
 }
@@ -314,8 +324,8 @@
     border: 2px solid green;
     display: flex;
     flex-direction: column;
+    @include padding.padding-between-components-gap;
     justify-content: space-between;
-    gap: 1rem;
   
     @media screen and (min-width: $tablet-width) {
       & {
@@ -342,6 +352,7 @@
   background: $band-site-black;
   // border: 5px solid red;
   width: 100%;
+  @include padding.padding-between-components-bottom;
   
   &__content-container {
     // border: 2px dotted #fff;
@@ -358,7 +369,7 @@
 
 
 .socials__container {
-  border: 2px solid green;
+  // border: 2px solid green;
   display: flex;
   flex-direction: column;
   @include padding.padding-between-components-top;
@@ -373,19 +384,19 @@
 }
 
 .socials__heading {
-  border: 2px solid red;
+  // border: 2px solid red;
   @include sub-header;
 }
 
 
 .social-icon__container {
-  border: 2px solid blue;
+  // border: 2px solid blue;
   @include padding.padding-between-components-gap;
   display: flex;  
 }
 
 .soical-icon {
-  border: 2px solid green;
+  // border: 2px solid green;
   @include social-icons;
 }
 
@@ -395,12 +406,14 @@
 }
 
 .management__container {
-  border: 2px solid blue;
+  // border: 2px solid blue;
   display: flex;
   flex-direction: column;
   @include padding.padding-between-components-gap;
-
+  margin-bottom: 4rem;
+  
   @media screen and (min-width: $tablet-width) {
+    margin-bottom: 2rem;
     & {
       flex-direction: row;
     }
@@ -422,15 +435,18 @@
 }
 
 
-.management,
-.management--us-south-america-japan,
-.management--uk-eu-au {
-  border: 2px solid red;
-}
+// .management,
+// .management--us-south-america-japan,
+// .management--uk-eu-au {
+//   border: 2px solid red;
+// }
 
 .footer__logo {
+  // edm: need margin-top mixin
+  margin: 2rem;
   height: 20px;
   width: 120px;
+  border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {

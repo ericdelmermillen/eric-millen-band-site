@@ -29,7 +29,6 @@
 
 body {
   font-family: "AvenirNextRegular";
-  font-weight: 400;
 }
 
 a, a:hover, a:visited, a:active {
@@ -71,11 +70,26 @@ ul {
   width: 120px;
   margin-top: 2rem;
 }
+@media (min-width: 768px) {
+  .nav-bar__logo {
+    margin-top: 36px;
+  }
+}
 @media screen and (min-width: 768px) {
   .nav-bar__logo {
     margin-top: 0;
-    margin-inline: 48px;
-    margin-bottom: 32px;
+    margin-inline: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .nav-bar__logo {
+    margin-inline: 36px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .nav-bar__logo {
+    margin-bottom: 36px;
   }
 }
 
@@ -86,8 +100,13 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .nav-bar__menu {
-    gap: 2rem;
+    gap: 16px;
     justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .nav-bar__menu {
+    gap: 36px;
   }
 }
 .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
@@ -105,7 +124,7 @@ ul {
 @media screen and (min-width: 768px) {
   .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
     justify-content: flex-start;
-    width: 5rem;
+    width: 6rem;
   }
 }
 
@@ -129,12 +148,12 @@ ul {
 .menu-option--inactive:active,
 .menu-option--inactive:focus {
   border-bottom: 3px solid #e1e1e1;
+  font-weight: 700;
 }
 .menu-option--inactive:hover a,
 .menu-option--inactive:active a,
 .menu-option--inactive:focus a {
   font-family: "AvenirNextDemi";
-  font-weight: bold;
 }
 
 .hero-section {
@@ -156,6 +175,11 @@ ul {
   z-index: 0;
 }
 @media screen and (orientation: landscape) {
+  .hero-section__bg-image {
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 768px) {
   .hero-section__bg-image {
     height: 100vh;
   }
@@ -198,7 +222,6 @@ ul {
 .bio-section__content-container {
   margin: 0 auto;
   width: min(100%, 1280px);
-  border: 3px solid green;
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
@@ -212,7 +235,6 @@ ul {
   }
 }
 .bio-section__heading {
-  border: 2px solid red;
   padding-left: 24px;
   padding-top: 16px;
   font-size: 24px;
@@ -241,7 +263,6 @@ ul {
   }
 }
 .bio-section__bio-article {
-  border: 2px solid blue;
   padding: 0 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -272,51 +293,30 @@ ul {
   }
 }
 
-.bio-article__quote {
+.bio-article__quote, .bio-article__source {
   display: block;
   font-size: 20px;
   line-height: 28px;
   font-family: "AvenirNextDemi", Arial, sans-serif;
   padding-bottom: 16px;
+  font-style: normal;
 }
 @media (min-width: 768px) {
-  .bio-article__quote {
+  .bio-article__quote, .bio-article__source {
     font-size: 24px;
     line-height: 34px;
   }
 }
 @media (min-width: 768px) {
-  .bio-article__quote {
+  .bio-article__quote, .bio-article__source {
     padding-bottom: 36px;
   }
 }
 
-.bio-article__source {
-  font-size: 14px;
-  line-height: 20px;
-  font-style: normal;
-  font-family: "AvenirNextRegular", Arial, sans-serif;
-}
-@media (min-width: 768px) {
-  .bio-article__source {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-
 .bio-section__subheader {
-  font-size: 14px;
-  line-height: 22px;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
-  border: 2px solid blue;
+  margin-top: 2rem;
   padding-top: 16px;
   padding-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .bio-section__subheader {
-    font-size: 16px;
-    line-height: 32px;
-  }
 }
 @media (min-width: 768px) {
   .bio-section__subheader {
@@ -333,6 +333,7 @@ ul {
   font-size: 13px;
   line-height: 18px;
   font-family: "AvenirNextRegular";
+  line-height: 1.5;
 }
 @media (min-width: 768px) {
   .bio-section__body-copy {
@@ -354,27 +355,25 @@ ul {
 }
 
 .gallery-section {
+  background: #fafafa;
   width: 100%;
-  padding-bottom: 16px;
-}
-@media (min-width: 768px) {
-  .gallery-section {
-    padding-bottom: 36px;
-  }
 }
 .gallery-section__content-container {
   align-items: center;
-  border: 2px dotted #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   width: min(100%, 1280px);
-  background: #e1e1e1;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .gallery-section__content-container {
+    padding-bottom: 36px;
+  }
 }
 
 .gallery__heading {
-  border: 2px solid purple;
   padding-bottom: 16px;
   padding-top: 16px;
 }
@@ -407,8 +406,13 @@ ul {
   border: 2px solid green;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   justify-content: space-between;
-  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery__image-container {
+    gap: 36px;
+  }
 }
 @media screen and (min-width: 768px) {
   .gallery__image-container {
@@ -428,6 +432,12 @@ ul {
 .footer-section {
   background: #323232;
   width: 100%;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .footer-section {
+    padding-bottom: 36px;
+  }
 }
 .footer-section__content-container {
   color: #fff;
@@ -441,7 +451,6 @@ ul {
 }
 
 .socials__container {
-  border: 2px solid green;
   display: flex;
   flex-direction: column;
   padding-top: 16px;
@@ -470,7 +479,6 @@ ul {
 }
 
 .socials__heading {
-  border: 2px solid red;
   font-size: 14px;
   line-height: 22px;
   font-family: "AvenirNextDemi", Arial, sans-serif;
@@ -483,7 +491,6 @@ ul {
 }
 
 .social-icon__container {
-  border: 2px solid blue;
   gap: 16px;
   display: flex;
 }
@@ -494,7 +501,6 @@ ul {
 }
 
 .soical-icon {
-  border: 2px solid green;
   font-size: 10px;
   line-height: 22px;
 }
@@ -524,10 +530,10 @@ ul {
 }
 
 .management__container {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 4rem;
 }
 @media (min-width: 768px) {
   .management__container {
@@ -535,6 +541,9 @@ ul {
   }
 }
 @media screen and (min-width: 768px) {
+  .management__container {
+    margin-bottom: 2rem;
+  }
   .management__container {
     flex-direction: row;
   }
@@ -563,15 +572,11 @@ ul {
   }
 }
 
-.management,
-.management--us-south-america-japan,
-.management--uk-eu-au {
-  border: 2px solid red;
-}
-
 .footer__logo {
+  margin: 2rem;
   height: 20px;
   width: 120px;
+  border: 2px solid green;
 }
 @media screen and (min-width: 768px) {
   .footer__logo {

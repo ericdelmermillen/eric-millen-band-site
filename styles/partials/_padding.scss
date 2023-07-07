@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 
 // For h1
 @mixin padding-before-headlines {
@@ -20,12 +22,12 @@
 
 
 // 2 padding-between-elements given: use for horizontal? Mixin or custom variable?
-@mixin padding-between-components-gap {
-  gap: 16px;
+@mixin padding-between-components-gap($default-gap: 16px, $default-gap-tablet: 36px) {
+  gap: $default-gap;
   
   // Tablet or Desktop
   @media (min-width: 768px) {
-    gap: 36px;
+    gap: $default-gap-tablet;
   }
 }
 
@@ -46,3 +48,14 @@
     padding-bottom: 36px;
   }
 }
+
+// margin-inline (
+  @mixin padding-inline($default-padding: 16px, $tablet-desktop-padding: 36px) {
+    padding-inline: $default-padding;
+    
+    // Tablet or Desktop
+    @media (min-width: $tablet-width) {
+      padding-inline: $tablet-desktop-padding;
+    }
+  }
+  

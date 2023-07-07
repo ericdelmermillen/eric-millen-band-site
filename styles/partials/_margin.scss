@@ -1,0 +1,47 @@
+@use "./variables" as *;
+
+// margin-top
+@mixin margin-top($default-margin: 16px, $tablet-desktop-margin: 36px) {
+  margin-top: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-top: $tablet-desktop-margin;
+  }
+}
+
+
+// margin-bottom
+@mixin margin-bottom($default-margin: 16px, $tablet-desktop-margin: 36px) {
+  margin-bottom: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-bottom: $tablet-desktop-margin;
+  }
+}
+
+
+// margin-block (margin top & margin-bottom)
+@mixin margin-block($default-margin-top: 16px, $default-margin-bottom: 16px, $tablet-desktop-margin-top: 36px, $tablet-desktop-margin-bottom: 36px) {
+  margin-top: $default-margin-top;
+  margin-bottom: $default-margin-bottom;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-top: $tablet-desktop-margin-top;
+    margin-bottom: $tablet-desktop-margin-bottom;
+  }
+}
+
+
+// margin-inline (
+@mixin margin-inline($default-margin: 16px, $tablet-desktop-margin: 36px) {
+  margin-inline: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-inline: $tablet-desktop-margin;
+  }
+}
+

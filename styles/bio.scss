@@ -26,7 +26,7 @@
     // border: 5px solid blue; 
     display: flex;
     flex-direction: column;
-    width: min(100%, 1280px);
+    width: min(100%, $desktop-width);
   
     @media screen and (min-width: $tablet-width) {
       & {
@@ -39,8 +39,9 @@
 
 
 .nav-bar__logo {
-  height: 20px;
-  width: 120px;
+  // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
+  height: 1.25rem;
+  width: 7.5rem;
   @include margin.margin-top($default-margin: 2rem);
   
   @media screen and (min-width: $tablet-width) {
@@ -85,7 +86,7 @@
 }
 
 .menu-option--active {
-  border-bottom: 3px solid $white;
+  border-bottom: 0.188rem solid $white;
   font-family: $font-family-demi;
   
   a {
@@ -109,10 +110,9 @@ font-family: $font-family-regular;
 .menu-option--inactive:hover, 
 .menu-option--inactive:active, 
 .menu-option--inactive:focus {
-  border-bottom: 3px solid $mercury;
-  transition: all 0.1s linear;
+  border-bottom: 0.188rem solid $mercury;
+  transition: all 0.1s ease-out;
   font-family: $font-family-demi;
-  // edm: font-weight
 
   a {
     font-weight: 700;
@@ -129,7 +129,7 @@ font-family: $font-family-regular;
   &__content-container {
     // border: 2px dotted #000;
     margin: 0 auto;
-    width: min(100%, 1280px);
+    width: min(100%, $desktop-width);
     display: flex;
   }
 }
@@ -146,6 +146,9 @@ font-family: $font-family-regular;
   width: 100%;
   z-index: 0;
   
+  @media screen and (min-width: $tablet-width) {
+    height: calc(100vh - 6rem);
+  }
   
   .hero-section__image-overlay {
     background: $hero-image-overlay-color;
@@ -177,7 +180,7 @@ font-family: $font-family-regular;
   &__content-container {
     // border: 3px solid green;
     margin: 0 auto;
-    width: min(100%, 1280px);
+    width: min(100%, $desktop-width);
     @include padding.padding-between-components-bottom;
     
     @media screen and (min-width: $tablet-width) {
@@ -188,8 +191,7 @@ font-family: $font-family-regular;
   }
   
   &__heading {
-    // border: 2px solid red;
-    // padding-inline: 36px;
+    border: 2px solid red;
     @include padding.padding-before-headlines;
     @include padding.padding-between-components-top;
     @include section-header;
@@ -228,7 +230,7 @@ font-family: $font-family-regular;
   @include quote;
   @include padding.padding-between-components-bottom;
   font-style: normal;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.094rem;
 
 
   @media screen and (min-width: $desktop-width) {
@@ -248,7 +250,7 @@ font-family: $font-family-regular;
 .bio-section__subheader {
   @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   // font-size: 
   font-weight: bold;
 }
@@ -259,7 +261,7 @@ font-family: $font-family-regular;
 
 .bio-section__paragraph-container {
   // @include body-copy($line-height: 2rem);
-  border: 2px solid green;
+  // border: 2px solid green;
   display: flex;
   flex: content;
   flex-direction: column;
@@ -304,7 +306,7 @@ font-family: $font-family-regular;
   }
   
   &__image-container {
-    border: 2px solid green;
+    // border: 2px solid green;
     display: flex;
     flex-direction: column;
     @include padding.padding-between-components-gap;
@@ -346,7 +348,7 @@ font-family: $font-family-regular;
     margin: 0 auto;
     padding: 0 1rem;
     position: relative;
-    width: min(100%, 1280px);
+    width: min(100%, $desktop-width);
   }
 }
 
@@ -431,21 +433,19 @@ font-family: $font-family-regular;
 
 .footer__logo {
   @include margin.margin-block;
-  margin-left: -1rem;
-  // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo
-  // height: 20px;
-  // width: 120px;
-  height: 40px;
-  width: 240px;
+  // margin-left: -1rem;
+  // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
+  height: 2.5rem;
+  width: 8.75rem;
 
   // @include padding.padding-after-headlines(1rem);
   // edm: make padding accept params
-  border: 2px solid green;
+  // border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       top: 0;
       margin-left: 0rem;
       

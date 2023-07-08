@@ -407,7 +407,7 @@ font-family: $font-family-regular;
 
 .manager__name,
 .manager__role {
-  font-family: 'AvenirNextDemi';
+  font-family: $font-family-demi;
   @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
 }
 

@@ -3,7 +3,7 @@
 
 
 // // Page Header for h1: works
-@mixin page-header($font-family: "AvenirNextBold", $font-size: $font-size-h1-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: $font-weight-h1-tablet) {    
+@mixin page-header($font-family: $font-family-bold, $font-size: $font-size-h1-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: $font-weight-h1-tablet) {    
     font-size: $font-size;
     line-height: $line-height;
     font-family: $font-family;
@@ -11,8 +11,6 @@
   @media (min-width: 768px) {
     font-size: $font-size-h1-tablet;
     line-height: $font-line-height-h1-tablet;
-    // $tablet-font-size: 60px; 
-    // $tablet-line-height: 68px;
   }
 }
 
@@ -22,7 +20,7 @@
 @mixin section-header {
     font-size: 24px;
     line-height: 32px;
-    font-family: "AvenirNextBold", Arial, sans-serif;
+    font-family: $font-family-bold;
     
   // Tablet or Desktop 
     @media (min-width: 768px) {
@@ -35,7 +33,7 @@
 @mixin sub-header {
   font-size: 14px;
   line-height: 22px;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
+  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: 768px) {
@@ -61,7 +59,7 @@
 @mixin quote { 
   font-size: 20px; 
   line-height: 28px;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
+  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: 768px) {
@@ -75,7 +73,7 @@
   font-size: 14px;
   line-height: 20px;
   font-style: normal;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
+  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: 768px) {
@@ -109,34 +107,3 @@
   }
 }
 
-
-
-// //  Footer Copy
-// @mixin footer-copy {
-//   p {
-//     font-size: 13px;
-//     line-height: 18px;
-//     font-family: "AvenirNextRegular", Arial, sans-serif;
-
-//   // Tablet or Desktop
-//     @media (min-width: 768px) {
-//       font-size: 14px;
-//       line-height: 20px;
-//     }
-//   }
-// }
-
-// //  Labels & Buttons Copy
-// @mixin labels-buttons-copy {
-//   p {
-//     font-size: 10px;
-//     line-height: 20px;
-//     font-family: "AvenirNextBold", Arial, sans-serif;
-    
-//   // Tablet or Desktop
-//     @media (min-width: 768px) {
-//       font-size: 12px;
-//       line-height: 20px;
-//     }
-//   }
-// }

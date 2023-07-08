@@ -1,9 +1,9 @@
 @use "./fonts" as *;
 
 // Break Points
-$tablet-width: 768px;
+// Should these be relative? 
+$tablet-width: 678px;
 $desktop-width: 1280px;
-$landscape: landscape;
 
 
 // Font Family
@@ -13,68 +13,68 @@ $font-family-bold: "AvenirNextBold";
 
 
 // Fonts - Page- Header - Mobile:
-$font-size-h1-mobile: 24px;
-$font-line-height-h1-mobile: 32px; 
+$font-size-h1-mobile: 1.5rem;
+$font-line-height-h1-mobile: 2rem; 
 $font-weight-h1-mobile: 700;
  
 // Fonts - Page- Header - Tablet & Desktop:
-$font-size-h1-tablet: 60px;
-$font-line-height-h1-tablet: 68px;
+$font-size-h1-tablet: 3.75rem;
+$font-line-height-h1-tablet: 4.25rem;
 $font-weight-h1-tablet: 700;
 
 
 // Fonts - Section-Header - Mobile:
-$font-size-h2-mobile: 24px;
-$font-line-height-h2-mobile: 32px;
+$font-size-h2-mobile: 1.5rem;
+$font-line-height-h2-mobile: 2rem;
 $font-weight-h2-tablet: 700;
 
 // Fonts - Section-Header - Tablet:
-$font-size-h2-tablet: 36px;
-$font-line-height-h2-tablet: 44px;
+$font-size-h2-tablet: 2.25rem;
+$font-line-height-h2-tablet: 2.75rem;
 $font-weight-h2-tablet: 700;
 
 
 // Fonts - Subheader - Mobile:
-$font-size-h3-mobile: 14px;
-$font-line-height-h3-mobile: 22px;
+$font-size-h3-mobile: 0.875rem;
+$font-line-height-h3-mobile: 1.375rem;
 $font-weight-h3-tablet: 600;
 
 // Fonts - Subheader - Tablet:
-$font-size-h3-tablet: 24px;
-$font-line-height-h3-tablet: 32px;
+$font-size-h3-tablet: 1.5rem;
+$font-line-height-h3-tablet: 2rem;
 $font-weight-h3-tablet: 600;
 
 
 // Fonts - Body Copy - Mobile:
-$font-size-body-mobile: 13px;
-$font-line-height-body-mobile: 18px;
+$font-size-body-mobile: 0.813rem;
+$font-line-height-body-mobile: 1.125rem;
 $font-weight-body-tablet: 400;
 
 // Fonts - Body Copy - Tablet:
-$font-size-body-tablet: 14px;
-$font-line-height-body-tablet: 22px;
+$font-size-body-tablet: 0.875rem;
+$font-line-height-body-tablet: 1.375rem;
 $font-weight-body-tablet: 400;
 
 
 // Fonts - Footer Copy - Mobile:
-$font-size-footer-mobile: 13px;
-$font-line-height-footer-mobile: 18px;
+$font-size-footer-mobile: 0.813rem;
+$font-line-height-footer-mobile: 1.125rem;
 $font-weight-footer-tablet: 400;
 
 // Fonts - Footer Copy - Tablet:
-$font-size-footer-tablet: 14px;
-$font-line-height-footer-tablet: 20px;
+$font-size-footer-tablet: 0.875rem;
+$font-line-height-footer-tablet: 1.25rem;
 $font-weight-footer-tablet: 400;
 
 
 // Fonts - Label & Button - Mobile:
-$font-size-label-button-mobile: 10px;
-$font-line-height-label-button-mobile: 20px;
+$font-size-label-button-mobile: 0.625rem;
+$font-line-height-label-button-mobile: 1.25rem;
 $font-weight-label-button-tablet: 700;
 
 // Fonts - Label & Button - Tablet:
-$font-size-label-button-tablet: 12px;
-$font-line-height-label-button-tablet: 20px;
+$font-size-label-button-tablet: 0.75rem;
+$font-line-height-label-button-tablet: 1.25rem;
 $font-weight-label-button-tablet: 700;
 
 
@@ -120,29 +120,29 @@ $hero-image-overlay-color: rgba(50, 50, 50, 0.5);
 
 
 @mixin padding-before-headlines {
-  padding-left: 24px;
+  padding-left: 1.5rem;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-left: 48px;
+  @media (min-width: $tablet-width) {
+    padding-left: 3rem;
   }
 }
 
 @mixin padding-after-headlines {
-  padding-right: 16px;
+  padding-right: 1rem;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-right: 36px;
+  @media (min-width: $tablet-width) {
+    padding-right: 2.25rem;
   }
 }
 
 @mixin padding-between-components {
-  gap: 16px;
+  gap: 1rem;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    gap: 36px;
+  @media (min-width: $tablet-width) {
+    gap: 2.25rem;
   }
 }
 

@@ -64,7 +64,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   flex-direction: column;
   width: min(100%, 1280px);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .nav-bar__container .nav-bar__nav {
     flex-direction: row;
     padding-top: 2.5rem;
@@ -76,24 +76,24 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: 7.5rem;
   margin-top: 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .nav-bar__logo {
     margin-top: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .nav-bar__logo {
     margin-top: 0;
     margin-inline: 3rem;
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-inline: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-bottom: 2.25rem;
   }
@@ -104,13 +104,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   justify-content: space-evenly;
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .nav-bar__menu {
     gap: 1rem;
     justify-content: flex-start;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 678px) and (min-width: 678px) {
   .nav-bar__menu {
     gap: 2.25rem;
   }
@@ -124,12 +124,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: 50vw;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
     padding-bottom: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
     width: 100%;
   }
@@ -186,7 +186,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: 100%;
   z-index: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .hero-section__bg-image {
     height: calc(100vh - 6rem);
   }
@@ -202,18 +202,18 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .hero-section__page-header {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "AvenirNextBold";
   padding-left: 1.5rem;
 }
 @media (min-width: 768px) {
   .hero-section__page-header {
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .hero-section__page-header {
     padding-left: 3rem;
   }
@@ -230,17 +230,17 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: min(100%, 1280px);
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__content-container {
     padding-bottom: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .bio-section__content-container {
     padding-inline: 1rem;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 678px) and (min-width: 678px) {
   .bio-section__content-container {
     padding-inline: 2.25rem;
   }
@@ -251,14 +251,14 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-top: 1rem;
   font-size: 24px;
   line-height: 32px;
-  font-family: "AvenirNextBold", Arial, sans-serif;
+  font-family: "AvenirNextBold";
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__heading {
     padding-left: 3rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__heading {
     padding-top: 2.25rem;
   }
@@ -269,7 +269,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     line-height: 44px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .bio-section__heading {
     padding-left: 0;
   }
@@ -277,18 +277,18 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .bio-section__bio-article {
   padding-inline: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__bio-article {
     padding-inline: 2.25rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .bio-article__content-container {
     padding-inline: 1rem;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 768px) {
+@media screen and (min-width: 678px) and (min-width: 678px) {
   .bio-article__content-container {
     padding-inline: 2.25rem;
   }
@@ -299,12 +299,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-article__hero-image {
     padding-top: 2.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-article__hero-image {
     padding-bottom: 2.25rem;
   }
@@ -314,7 +314,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   display: block;
   font-size: 20px;
   line-height: 28px;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
+  font-family: "AvenirNextDemi";
   padding-bottom: 1rem;
   font-style: normal;
   letter-spacing: 0.094rem;
@@ -325,7 +325,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     line-height: 34px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-article__quote, .bio-article__source {
     padding-bottom: 2.25rem;
   }
@@ -341,12 +341,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   font-weight: bold;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__subheader {
     padding-top: 2.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__subheader {
     padding-bottom: 2.25rem;
   }
@@ -370,12 +370,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   flex-direction: column;
   gap: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .bio-section__paragraph-container {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .bio-section__paragraph-container {
     flex-direction: row;
   }
@@ -394,7 +394,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: min(100%, 1280px);
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .gallery-section__content-container {
     padding-bottom: 2.25rem;
   }
@@ -404,12 +404,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .gallery__heading {
     padding-bottom: 2.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .gallery__heading {
     padding-top: 2.25rem;
   }
@@ -418,7 +418,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .gallery {
   padding-inline: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .gallery {
     padding-inline: 2.25rem;
   }
@@ -426,7 +426,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .gallery__heading {
   font-size: 24px;
   line-height: 32px;
-  font-family: "AvenirNextBold", Arial, sans-serif;
+  font-family: "AvenirNextBold";
 }
 @media (min-width: 768px) {
   .gallery__heading {
@@ -440,12 +440,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   gap: 1rem;
   justify-content: space-between;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .gallery__image-container {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .gallery__image-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -454,7 +454,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .gallery .gallery__image {
   max-width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .gallery .gallery__image {
     max-width: 30%;
   }
@@ -465,7 +465,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: 100%;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .footer-section {
     padding-bottom: 2.25rem;
   }
@@ -488,22 +488,22 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   gap: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .socials__container {
     padding-top: 2.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .socials__container {
     padding-bottom: 2.25rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .socials__container {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .socials__container {
     flex-direction: row;
   }
@@ -512,7 +512,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .socials__heading {
   font-size: 14px;
   line-height: 22px;
-  font-family: "AvenirNextDemi", Arial, sans-serif;
+  font-family: "AvenirNextDemi";
 }
 @media (min-width: 768px) {
   .socials__heading {
@@ -525,7 +525,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   gap: 1rem;
   display: flex;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .social-icon__container {
     gap: 2.25rem;
   }
@@ -546,9 +546,9 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   font-size: 24px;
   line-height: 32px;
-  font-family: "AvenirNextBold", Arial, sans-serif;
+  font-family: "AvenirNextBold";
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .socials__heading {
     padding-bottom: 2.25rem;
   }
@@ -566,12 +566,12 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   gap: 1rem;
   margin-bottom: 4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .management__container {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .management__container {
     margin-bottom: 2rem;
   }
@@ -598,7 +598,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .manager__role {
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .manager__role {
     padding-bottom: 2.25rem;
   }
@@ -607,7 +607,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .manager__email {
   padding-top: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .manager__email {
     padding-top: 2.25rem;
   }
@@ -631,13 +631,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   height: 2.5rem;
   width: 8.75rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 678px) {
   .footer__logo {
     margin-top: 2.25rem;
     margin-bottom: 2.25rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 678px) {
   .footer__logo {
     position: absolute;
     right: 2rem;

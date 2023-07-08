@@ -10,7 +10,6 @@
 }
 
 // Global styles 
-
 body {
   font-family: $font-family-regular;
   // font-weight: $default-font-weight;
@@ -23,16 +22,20 @@ a {
   &:visited, 
   &:active {
     @extend a;
+    color: inherit;
   }
   
   &:focus {
     color: inherit;
     outline: 1px solid $white;
   }
-
 }
 
 ul {
   list-style: none;
+
+  a {
+    text-decoration: none;      
+  }
 }
  

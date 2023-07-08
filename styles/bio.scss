@@ -69,14 +69,15 @@
       // border: 2px solid red;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
-    width: 100%;
+    text-align: center;
+    width: 50vw;
     @include padding.padding-between-components-bottom;
     
     @media screen and (min-width: $tablet-width) {
       & {
-        justify-content: flex-start;
-        width: 6rem;
+        width: 100%;
       }
     }
   }

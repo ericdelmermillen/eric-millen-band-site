@@ -34,6 +34,9 @@ body {
 a, a:hover, a:visited, a:active {
   text-decoration: none;
 }
+a:hover, a:visited, a:active {
+  color: inherit;
+}
 a:focus {
   color: inherit;
   outline: 1px solid #fff;
@@ -41,6 +44,9 @@ a:focus {
 
 ul {
   list-style: none;
+}
+ul a, ul a:hover, ul a:visited, ul a:active {
+  text-decoration: none;
 }
 
 .nav-bar__container {
@@ -112,8 +118,10 @@ ul {
 .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
-  width: 100%;
+  text-align: center;
+  width: 50vw;
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
@@ -123,8 +131,7 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
-    justify-content: flex-start;
-    width: 6rem;
+    width: 100%;
   }
 }
 

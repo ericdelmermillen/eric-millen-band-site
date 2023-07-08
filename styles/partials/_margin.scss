@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 // margin-top
-@mixin margin-top($default-margin: 16px, $tablet-desktop-margin: 36px) {
+@mixin margin-top($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
   margin-top: $default-margin;
   
   // Tablet or Desktop
@@ -12,7 +12,7 @@
  
 
 // margin-bottom
-@mixin margin-bottom($default-margin: 16px, $tablet-desktop-margin: 36px) {
+@mixin margin-bottom($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
   margin-bottom: $default-margin;
   
   // Tablet or Desktop
@@ -23,7 +23,7 @@
 
 
 // margin-block (margin top & margin-bottom)
-@mixin margin-block($default-margin-top: 16px, $default-margin-bottom: 16px, $tablet-desktop-margin-top: 36px, $tablet-desktop-margin-bottom: 36px) {
+@mixin margin-block($default-margin-top: 1rem, $default-margin-bottom: 1rem, $tablet-desktop-margin-top: 2.25rem, $tablet-desktop-margin-bottom: 2.25rem) {
   margin-top: $default-margin-top;
   margin-bottom: $default-margin-bottom;
   
@@ -36,7 +36,7 @@
 
 
 // margin-inline (
-@mixin margin-inline($default-margin: 16px, $tablet-desktop-margin: 36px) {
+@mixin margin-inline($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
   margin-inline: $default-margin;
   
   // Tablet or Desktop

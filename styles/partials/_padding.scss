@@ -2,60 +2,60 @@
 
 
 // For h1
-@mixin padding-before-headlines {
-  padding-left: 24px;
-  
+@mixin padding-before-headlines($default-padding-left: 1.5rem, $default-tablet-padding-left: 3rem) {
+  padding-left: $default-padding-left;
+
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-left: 48px;
+  @media (min-width: $tablet-width) {
+    padding-left: $default-tablet-padding-left;
   }
 }
- 
-@mixin padding-after-headlines {
-  padding-right: 16px; 
+
+@mixin padding-after-headlines($default-padding-right: 1rem, $default-tablet-padding-right: 2.25rem) {
+  padding-right: $default-padding-right;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-right: 36px;
+  @media (min-width: $tablet-width) {
+    padding-right: $default-tablet-padding-right;
   }
 }
 
 
-// 2 padding-between-elements given: use for horizontal? Mixin or custom variable?
-@mixin padding-between-components-gap($default-gap: 16px, $default-gap-tablet: 36px) {
+// Gap Mixin (padding between eelements in style guide)
+@mixin padding-between-components-gap($default-gap: 1rem, $default-gap-tablet: 2.25rem) {
   gap: $default-gap;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
+  @media (min-width: $tablet-width) {
     gap: $default-gap-tablet;
   }
 }
 
-@mixin padding-between-components-top {
-  padding-top: 16px;
+@mixin padding-between-components-top($default-padding-top: 1rem, $default-tablet-padding-top: 2.25rem) {
+  padding-top: $default-padding-top;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-top: 36px;
+  @media (min-width: $tablet-width) {
+    padding-top: $default-tablet-padding-top;
   }
 }
 
-@mixin padding-between-components-bottom {
-  padding-bottom: 16px;
+@mixin padding-between-components-bottom($default-padding-bottom: 1rem, $default-tablet-padding-bottom: 2.25rem) {
+  padding-bottom: $default-padding-bottom;
   
   // Tablet or Desktop
-  @media (min-width: 768px) {
-    padding-bottom: 36px;
+  @media (min-width: $tablet-width) {
+    padding-bottom: $default-tablet-padding-bottom;
   }
 }
 
 // margin-inline (
-  @mixin padding-inline($default-padding: 16px, $tablet-desktop-padding: 36px) {
+  @mixin padding-inline($default-padding: 1rem, $default-tablet-padding: 2.25rem) {
     padding-inline: $default-padding;
     
     // Tablet or Desktop
     @media (min-width: $tablet-width) {
-      padding-inline: $tablet-desktop-padding;
+      padding-inline: $default-tablet-padding;
     }
   }
   

@@ -86,18 +86,30 @@
 
 
 // //  Body Copy works
-@mixin body-copy {
-  font-size: 13px;
-  line-height: 18px;
-  font-family: "AvenirNextRegular";
-  
-  //   // Tablet or Desktop
-  @media (min-width: 768px) {
-    font-size: 14px;
-    line-height: 22px;
+// @mixin body-copy($font-size: 13px, $line-height: 18px, $font-family: "AvenirNextRegular", $tablet-font-size: 14px, $tablet-line-height: 22px) {
+//   font-size: $font-size;
+//   line-height: $line-height;
+//   font-family: $font-family;
 
+//   @media (min-width: 768px) {
+//     font-size: $tablet-font-size;
+//     line-height: $tablet-line-height;
+//   }
+// }
+
+
+@mixin body-copy($font-size: 13px, $line-height: 18px, $font-family: "AvenirNextRegular", $tablet-font-size: 14px, $tablet-line-height: 22px) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+
+  @media (min-width: 768px) {
+    font-size: $tablet-font-size;
+    line-height: $tablet-line-height;
   }
 }
+
+
 
 // //  Footer Copy
 // @mixin footer-copy {

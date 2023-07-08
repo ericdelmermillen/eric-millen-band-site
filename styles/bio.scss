@@ -86,10 +86,10 @@
 
 .menu-option--active {
   border-bottom: 3px solid $white;
+  font-family: $font-family-demi;
   
   a {
     color: $white;
-    font-family: "AvenirNextBold";
     font-weight: bold;
     margin-inline: auto;
     text-align: center;
@@ -110,6 +110,8 @@ font-family: $font-family-regular;
 .menu-option--inactive:active, 
 .menu-option--inactive:focus {
   border-bottom: 3px solid $mercury;
+  transition: all 0.1s linear;
+  font-family: $font-family-demi;
   // edm: font-weight
 
   a {
@@ -124,17 +126,11 @@ font-family: $font-family-regular;
   // border: 5px solid red;
   width: 100%;
 
-  @media screen and (min-width: $tablet-width) {
-    & {
-      height: calc(100vh - 6rem);
-    }
-  }
-
-
   &__content-container {
     // border: 2px dotted #000;
     margin: 0 auto;
     width: min(100%, 1280px);
+    display: flex;
   }
 }
 
@@ -143,12 +139,14 @@ font-family: $font-family-regular;
   // border: 2px solid blue;
   color: $white;
   display: flex;
+  // align-items: center;
+  // justify-content: center;
   height: calc(50vh - 3rem);
   position: relative;
   width: 100%;
   z-index: 0;
-
-
+  
+  
   .hero-section__image-overlay {
     background: $hero-image-overlay-color;
     height: 100%;
@@ -164,7 +162,6 @@ font-family: $font-family-regular;
   @include page-header;
   @include padding.padding-before-headlines;
   // padding-left: 2rem;
-  z-index: 2;
 
   .hero-section__overlay {
     width: 100%;
@@ -257,12 +254,11 @@ font-family: $font-family-regular;
 }
  
 .bio-section__body-copy {
-  @include body-copy;
-  // edm: adjust line-height after mixn will accept params
-  line-height: 1.5;
+  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
 }
 
 .bio-section__paragraph-container {
+  // @include body-copy($line-height: 2rem);
   border: 2px solid green;
   display: flex;
   flex: content;
@@ -407,18 +403,23 @@ font-family: $font-family-regular;
   }
 }
 
-.manager-name,
-.manager-role {
+.manager__name,
+.manager__role {
   font-family: 'AvenirNextDemi';
-  // line-height: 2;
+  @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
 }
 
-.manager-role {
+.manager__role {
   @include padding.padding-between-components-bottom;
 }
 
-.manager-email {
+.manager__email {
   @include padding.padding-between-components-top;
+}
+
+.manager__address {
+  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
+  // border: 2px solid red;
 }
 
 
@@ -429,9 +430,16 @@ font-family: $font-family-regular;
 // }
 
 .footer__logo {
-  @include margin.margin-top;
-  height: 20px;
-  width: 120px;
+  @include margin.margin-block;
+  margin-left: -1rem;
+  // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo
+  // height: 20px;
+  // width: 120px;
+  height: 40px;
+  width: 240px;
+
+  // @include padding.padding-after-headlines(1rem);
+  // edm: make padding accept params
   border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
@@ -439,6 +447,8 @@ font-family: $font-family-regular;
       position: absolute;
       right: 1rem;
       top: 0;
+      margin-left: 0rem;
+      
     }
   }
 }

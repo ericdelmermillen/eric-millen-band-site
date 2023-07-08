@@ -137,10 +137,10 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .menu-option--active {
   border-bottom: 3px solid #fff;
+  font-family: "AvenirNextDemi";
 }
 .menu-option--active a {
   color: #fff;
-  font-family: "AvenirNextBold";
   font-weight: bold;
   margin-inline: auto;
   text-align: center;
@@ -158,6 +158,8 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .menu-option--inactive:active,
 .menu-option--inactive:focus {
   border-bottom: 3px solid #e1e1e1;
+  transition: all 0.1s linear;
+  font-family: "AvenirNextDemi";
 }
 .menu-option--inactive:hover a,
 .menu-option--inactive:active a,
@@ -169,14 +171,10 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   background: url("../assets/images/hero-bio.jpg") center center/cover;
   width: 100%;
 }
-@media screen and (min-width: 768px) {
-  .hero-section {
-    height: calc(100vh - 6rem);
-  }
-}
 .hero-section__content-container {
   margin: 0 auto;
   width: min(100%, 1280px);
+  display: flex;
 }
 
 .hero-section__bg-image {
@@ -203,7 +201,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   line-height: 32px;
   font-family: "AvenirNextBold";
   padding-left: 24px;
-  z-index: 2;
 }
 @media (min-width: 768px) {
   .hero-section__page-header {
@@ -352,14 +349,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .bio-section__body-copy {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 1.75;
   font-family: "AvenirNextRegular";
-  line-height: 1.5;
 }
 @media (min-width: 768px) {
   .bio-section__body-copy {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.75;
   }
 }
 
@@ -581,38 +577,63 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   }
 }
 
-.manager-name,
-.manager-role {
+.manager__name,
+.manager__role {
   font-family: "AvenirNextDemi";
+  font-size: 13px;
+  line-height: 1.75;
+  font-family: "AvenirNextBold";
+}
+@media (min-width: 768px) {
+  .manager__name,
+  .manager__role {
+    font-size: 14px;
+    line-height: 1.75;
+  }
 }
 
-.manager-role {
+.manager__role {
   padding-bottom: 16px;
 }
 @media (min-width: 768px) {
-  .manager-role {
+  .manager__role {
     padding-bottom: 36px;
   }
 }
 
-.manager-email {
+.manager__email {
   padding-top: 16px;
 }
 @media (min-width: 768px) {
-  .manager-email {
+  .manager__email {
     padding-top: 36px;
+  }
+}
+
+.manager__address {
+  font-size: 13px;
+  line-height: 1.75;
+  font-family: "AvenirNextRegular";
+}
+@media (min-width: 768px) {
+  .manager__address {
+    font-size: 14px;
+    line-height: 1.75;
   }
 }
 
 .footer__logo {
   margin-top: 16px;
-  height: 20px;
-  width: 120px;
+  margin-bottom: 16px;
+  margin-left: -1rem;
+  height: 40px;
+  width: 240px;
   border: 2px solid green;
 }
 @media (min-width: 768px) {
   .footer__logo {
     margin-top: 36px;
+    margin-bottom: 36px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -620,5 +641,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     position: absolute;
     right: 1rem;
     top: 0;
+    margin-left: 0rem;
   }
 }/*# sourceMappingURL=bio.css.map */

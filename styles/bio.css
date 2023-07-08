@@ -456,7 +456,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 @media screen and (min-width: 678px) {
   .gallery .gallery__image {
-    max-width: 30%;
+    max-width: 29%;
   }
 }
 

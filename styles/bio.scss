@@ -1,7 +1,7 @@
 // @use "./partials/buttons" as *;
 @use "./partials/fonts" as *;
 @use "./partials/global" as *;
-@use "./partials/margin" as *;
+@use "./partials/margin" as margin;
 // @use "./partials/padding" as padding;
 @use "./partials/padding" as padding;
 @use "./partials/typography" as *;
@@ -18,6 +18,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  // height: 6rem;
   
   // Changes with &
   .nav-bar__nav {
@@ -40,13 +41,13 @@
 .nav-bar__logo {
   height: 20px;
   width: 120px;
-  @include margin-top($default-margin: 2rem);
+  @include margin.margin-top($default-margin: 2rem);
   
   @media screen and (min-width: $tablet-width) {
     & {
       margin-top: 0;
-      @include margin-inline($default-margin: 3rem);
-      @include margin-bottom($default-margin: 2rem);
+      @include margin.margin-inline($default-margin: 3rem);
+      @include margin.margin-bottom($default-margin: 2rem);
       // border: 2px solid red;
     }
   }
@@ -97,6 +98,8 @@
 
 
 .menu-option--inactive {
+font-family: $font-family-regular;
+
   a {
     color: $mercury;
     margin-inline: auto;
@@ -107,13 +110,10 @@
 .menu-option--inactive:active, 
 .menu-option--inactive:focus {
   border-bottom: 3px solid $mercury;
-  font-weight: 700;
-
-  // edm: a must be inside li around content
+  // edm: font-weight
 
   a {
-    font-family: $font-family-demi;
-    // font-weight: 700;
+    font-weight: 700;
   }
 }
 
@@ -123,6 +123,13 @@
   background: url("../assets/images/hero-bio.jpg") center center / cover;
   // border: 5px solid red;
   width: 100%;
+
+  @media screen and (min-width: $tablet-width) {
+    & {
+      height: calc(100vh - 6rem);
+    }
+  }
+
 
   &__content-container {
     // border: 2px dotted #000;
@@ -136,23 +143,11 @@
   // border: 2px solid blue;
   color: $white;
   display: flex;
-  // edm: subtract 1/2 of nav height
-  height: 50vh;
+  height: calc(50vh - 3rem);
   position: relative;
   width: 100%;
   z-index: 0;
 
-  @media screen and (orientation: $landscape) {
-    & {
-      // edm: subtract final height of nav from height
-      height: calc(100vh);
-    }
-  }
-  @media screen and (min-width: $tablet-width) {
-    & {
-      height: calc(100vh);
-    }
-  }
 
   .hero-section__image-overlay {
     background: $hero-image-overlay-color;
@@ -190,10 +185,7 @@
     
     @media screen and (min-width: $tablet-width) {
       & {
-        // edm: need mixin for inline padding/margin
-        padding-inline: 1rem;
-        // @include padding-inline;
-        // 
+        @include padding.padding-inline;
       }
     }
   }
@@ -214,27 +206,16 @@
   
   &__bio-article {
     // border: 2px solid blue;
-    // edm: need mixin for inline-padding
-    padding: 0 1rem;
-
-    @media screen and (min-width: $tablet-width) {
-      & {
-        padding: 0 3rem;
-        // edm: need mixin for inline-padding
-      }
-    }
+    @include padding.padding-inline;
   }
 }
-
 
 .bio-article__content-container {
   // border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
     & {
-      // edm: need mixin for inline-padding
-      padding: 0 1rem;
-      // @include padding-inline;
+      @include padding.padding-inline;
     }
   }
 }
@@ -246,11 +227,19 @@
 }
 
 .bio-article__quote {
-// edm: note; what is happening with the before?
   display: block;
   @include quote;
   @include padding.padding-between-components-bottom;
   font-style: normal;
+  letter-spacing: 1.5px;
+
+
+  @media screen and (min-width: $desktop-width) {
+    & {
+      max-width: 75%;
+    }
+  }
+  
 }
 
 .bio-article__source {
@@ -260,13 +249,11 @@
 
 
 .bio-section__subheader {
-  // border: 2px solid blue;
-  // @include sub-header;
-  margin-top: 2rem;
-  // edm: margin-top mixin
   @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
+  border: 2px solid blue;
   // font-size: 
+  font-weight: bold;
 }
  
 .bio-section__body-copy {
@@ -276,11 +263,11 @@
 }
 
 .bio-section__paragraph-container {
-  // border: 2px solid green;
+  border: 2px solid green;
   display: flex;
   flex: content;
   flex-direction: column;
-  gap: 1rem;
+  @include padding.padding-between-components-gap;
 
   @media screen and (min-width: $tablet-width) {
     & {
@@ -314,8 +301,7 @@
 }
 
 .gallery {
-  // edm: need mixin for inline-padding
-  padding: 0 1rem;
+  @include padding.padding-inline;
   
   &__heading {
     @include section-header;
@@ -443,8 +429,7 @@
 // }
 
 .footer__logo {
-  // edm: need margin-top mixin
-  margin: 2rem;
+  @include margin.margin-top;
   height: 20px;
   width: 120px;
   border: 2px solid green;

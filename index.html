@@ -14,7 +14,7 @@
     <nav class="nav-bar__nav">
 
       <a href="./index.html">
-        <img class="nav-bar__logo" src="./assets/logos/Logo-bandsite.svg" alt="">
+        <img class="nav-bar__logo" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo menu option leading to home page">
       </a>
   
       <ul class="nav-bar__menu">
@@ -35,16 +35,13 @@
 
 <!-- Hero Section begins -->
 
-  <section class="hero-section">
-    <div class="hero-section__image-overlay"></div>
-
+  <section id="hero-image" class="hero-section" aria-describedby="hero-section__image-description">
+    <!-- hero-section contains image -->
+    <span id="hero-section__image-description" class="hero-section__image-description">close up picture of a bee on a flower</span>
     <div class="hero-section__content-container">
-      <div class="hero-section__bg-image">
-        <header>
-          <h1 class="hero-section__page-header">The Bees Knees</h1>
-        </header>
-      </div>
+        <h1 class="hero-section__page-header">The Bees Knees</h1>
     </div>
+    <div class="hero-section__image-overlay"></div>
     
   </section>
 
@@ -63,7 +60,7 @@
         
         <div class="bio-article__content-container">
           <div class="">
-            <img class="bio-article__hero-image" src="./assets/images/band.jpg" alt="">
+            <img class="bio-article__hero-image" src="./assets/images/band.jpg" alt="the bees knees performing on stage">
             
             <blockquote>
               <q class="bio-article__quote">We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’</q>
@@ -95,23 +92,23 @@
           <h2 class="gallery__heading">Photo Gallery</h2>
           <div class="gallery__image-container">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-1.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-1.jpg" alt="picture of the stage from the crowd's point of view">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-2.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-2.jpg" alt="image of a young lady in the crowd enjoying the music">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-3.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-3.jpg" alt="image of hands raised in a crowd during a show">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-4.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-4.jpg" alt="image of a woman in the audience from the rear">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-5.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-5.jpg" alt="image of pyrotechnics on stagge during a show">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-6.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-6.jpg" alt="image of the lead singer singing on stage">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-7.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-7.jpg" alt="image of the stage from a distance with colorful lights">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-8.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-8.jpg" alt="close up image of a hand using a turntable">
           
-            <img class="gallery__image" src="./assets/images/Photo-gallery-9.jpg" alt="">
+            <img class="gallery__image" src="./assets/images/Photo-gallery-9.jpg" alt="image of a crowd with confetti falling on them">
           
           </div> <!-- end of gallery__image-container -->
         </div>
@@ -135,9 +132,15 @@
       <div class="socials__container">
           <h3 class="socials__heading">Get in Touch</h3>
         <div class="social-icon__container">
-          <img class="social-icon" src="./assets/icons/Icon-instagram.svg" height="50" alt="">
-          <img class="social-icon" src="./assets/icons/Icon-facebook.svg" height="50" alt="">
-          <img class="social-icon" src="./assets/icons/Icon-twitter.svg" height="50" alt="">
+          <a href="https://www.instagram.com/">
+            <img class="social-icon" src="./assets/icons/Icon-instagram.svg" height="50" alt="instagram icon">
+          </a>
+          <a href="https://www.facebook.com/">
+            <img class="social-icon" src="./assets/icons/Icon-facebook.svg" height="50" alt="facebook icon">
+          </a>
+          <a href="https://twitter.com/">
+            <img class="social-icon" src="./assets/icons/Icon-twitter.svg" height="50" alt="twitter icon">
+          </a>
         </div>
       </div>
       
@@ -168,7 +171,9 @@
         </div>
       </div> <!-- end of management__container -->
       
-      <img class="footer__logo" src="./assets/logos/Logo-bandsite.svg" alt="">
+      <a href="./index.html">
+        <img class="footer__logo" src="./assets/logos/Logo-bandsite.svg" alt="the bandsite logo in the footer of the page">
+      </a>
       
       <p>Copyright The Bees Knees &copy; <span id="year"></span> All Rights Reserved</p>
         

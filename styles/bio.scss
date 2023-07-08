@@ -123,55 +123,47 @@ font-family: $font-family-regular;
 // Hero Section
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
-  // border: 5px solid red;
+  border: 5px solid red;
   width: 100%;
+  color: $white;position: relative;
 
-  &__content-container {
-    // border: 2px dotted #000;
-    margin: 0 auto;
-    width: min(100%, $desktop-width);
-    display: flex;
-  }
-}
-
-.hero-section__bg-image {
-  align-items: center;
-  // border: 2px solid blue;
-  color: $white;
-  display: flex;
-  // align-items: center;
-  // justify-content: center;
-  height: calc(50vh - 3rem);
-  position: relative;
-  width: 100%;
-  z-index: 0;
-  
-  @media screen and (min-width: $tablet-width) {
-    height: calc(100vh - 6rem);
+  &__image-description {
+    display: none;
   }
   
-  .hero-section__image-overlay {
+  &__image-overlay {
     background: $hero-image-overlay-color;
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 1;
+  }
+
+  &__content-container {
+    display: flex;
+    width: 100%;
+    border: 5px dotted #000;
+    margin: 0 auto;
+    width: min(100%, $desktop-width);
+    display: flex;
+    height: calc(50vh - 3rem);
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    
+    @media screen and (min-width: $tablet-width) {
+      height: calc(100vh - 6rem);
+    }
   }
 }
 
 .hero-section__page-header {
   @include page-header;
   @include padding.padding-before-headlines;
-  // padding-left: 2rem;
-
-  .hero-section__overlay {
-    width: 100%;
-  }
 }
+  
     
-
 // // Bio Section
 .bio-section {
   // border: 5px solid red;

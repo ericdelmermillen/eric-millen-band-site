@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="the bees knees, pop, rock, california, band">
+  <meta name="description" content="Homepage for the official site of the Bees Knees band.">
   <link rel="stylesheet" href="./styles/bio.css">
   <title>Band Site | Biography</title>
 </head>
@@ -10,59 +12,47 @@
 
 <!-- Navbar begins -->
   <div class="nav-bar__container">
-
     <nav class="nav-bar__nav">
-
       <a href="./index.html">
         <img class="nav-bar__logo" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo menu option leading to home page">
       </a>
-  
-      <ul class="nav-bar__menu">
 
+      <ul class="nav-bar__menu">
         <li>
           <a class="menu-option--active" href="#">Biography</a>
-        </li>
-              
+        </li>    
         <li>
           <a class="menu-option--inactive" href="#">Shows</a>
         </li>
-   
-      </ul> <!-- end of nav-bar__menu -->
-    </nav> <!-- end of nav-bar -->
-  </div> <!-- end of nav-bar__container -->
+      </ul>
+
+    </nav>
+  </div>
 <!--  end of Navbar -->
 
-
 <!-- Hero Section begins -->
-
   <section id="hero-image" class="hero-section" aria-describedby="hero-section__image-description">
-    <!-- hero-section contains image -->
     <span id="hero-section__image-description" class="hero-section__image-description">close up picture of a bee on a flower</span>
     <div class="hero-section__content-container">
-        <h1 class="hero-section__page-header">The Bees Knees</h1>
+      <h1 class="hero-section__page-header">The Bees Knees</h1>
     </div>
     <div class="hero-section__image-overlay"></div>
-    
   </section>
-
 <!-- end of Hero Section -->
 
-
 <!-- Bio Section -->
-  
   <section class="bio-section">
-
     <div class="bio-section__content-container">
 
       <h2 class="bio-section__heading">About the Musicians</h2>
+
       <article class="bio-section__bio-article">
         
-        
         <div class="bio-article__content-container">
-          <div class="">
+          <div class="bio-article">
             <img class="bio-article__hero-image" src="./assets/images/band.jpg" alt="the bees knees performing on stage">
             
-            <blockquote>
+            <blockquote class="bio-article__block-quote">
               <q class="bio-article__quote">We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’</q>
               <cite class="bio-article__source">- Bryan Teddy, lead vocalist of The Bees Knees</cite>
             </blockquote>
@@ -75,17 +65,13 @@
             </div>
           </div>
         </div>
-      </article> <!-- end of bio-section__bio-article -->
-    
-    </div> <!-- end of bio-section__content-container -->
-
-    </section>
+      </article> 
+    </div>
+  </section>
 <!-- End of Bio Section -->
-    
     
 <!-- Gallery Section begins -->
     <section class="gallery-section">
-
       <div class="gallery-section__content-container">
         
         <div class="gallery">
@@ -110,27 +96,19 @@
           
             <img class="gallery__image" src="./assets/images/Photo-gallery-9.jpg" alt="image of a crowd with confetti falling on them">
           
-          </div> <!-- end of gallery__image-container -->
+          </div>
         </div>
-        
-      </div> <!-- end of gallery-section__content-container -->
-
+      </div>
     </section>
 <!-- end of Gallery Section -->    
-
-
-
 
 <!-- Footer Section begins -->
   <footer class="footer-section">
 
-    <!--  -->
-
     <div class="footer-section__content-container">
-
       
       <div class="socials__container">
-          <h3 class="socials__heading">Get in Touch</h3>
+        <h3 class="socials__heading">Get in Touch</h3>
         <div class="social-icon__container">
           <a href="https://www.instagram.com/">
             <img class="social-icon" src="./assets/icons/Icon-instagram.svg" height="50" alt="instagram icon">
@@ -145,13 +123,16 @@
       </div>
       
       <div class="management__container">
-
         <div class="management">
           <p class="manager__name">Cam Adams</p>
           <p class="manager__role">The Bees Knees Management</p>
           <p class="manager__address" >503 Broadway Penthouse,</p>
           <p class="manager__address" >New York, NY 10012, USA</p>
-          <p class="manager__email">info@thebeesknees.com</p>
+          <p class="manager__email">
+            <a href="mailto:info@thebeesknees.com">
+              <span class="manager__email--word-break">info@<span class="manager__email--no-wrap">thebeesknees.com</span></span>
+            </a>
+          </p>
         </div>
         
         <div class="management--us-south-america-japan">
@@ -159,7 +140,11 @@
           <p class="manager__role">Limitless Artist Group</p>
           <p class="manager__address" >Booking Agent for</p>
           <p class="manager__address" >US / South America / Japan</p>
-          <p class="manager__email">pearl.gregg@limitlessag.com</p>
+          <p class="manager__email">
+            <a href="mailto:pearl.gregg@limitlessag.com">
+              <span class="manager__email--word-break">pearl.gregg<span class="manager__email--no-wrap">@limitlessag.com</span></span>
+            </a>
+          </p>
         </div>
         
         <div class="management--uk-eu-au">
@@ -167,28 +152,27 @@
           <p class="manager__role">ARCH Entertainment</p>
           <p class="manager__address" >Booking Agent for</p>
           <p class="manager__address" >UK / EU / AU</p>
-          <p class="manager__email">cwhyte@.archentertainment.com</p>
+          <p class="manager__email">
+            <a href="mailto:cwhyte@archentertainment.com">
+              <span class="manager__email--word-break">cwhyte@<span class="manager__email--no-wrap">archentertainment.com</span></span>
+            </a>
+          </p>
         </div>
-      </div> <!-- end of management__container -->
+      </div>
       
       <a href="./index.html">
         <img class="footer__logo" src="./assets/logos/Logo-bandsite.svg" alt="the bandsite logo in the footer of the page">
       </a>
       
       <p>Copyright The Bees Knees &copy; <span id="year"></span> All Rights Reserved</p>
-        
-    </div> <!-- end of footer-section__content-container -->
+    </div>
   </footer>
 <!-- end of Footer Section -->
-
-
 
   <script>
     const year = document.getElementById("year");
     let currentYear = new Date().getFullYear();
     year.textContent = currentYear;
-
-
   </script>
 
 </body>

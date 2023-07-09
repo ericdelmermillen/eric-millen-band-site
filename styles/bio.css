@@ -52,11 +52,9 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .nav-bar__container {
   align-items: center;
   background: #323232;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
 }
 .nav-bar__container .nav-bar__nav {
   align-items: center;
@@ -115,29 +113,52 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     gap: 2.25rem;
   }
 }
-.nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
+.nav-bar__menu .menu-option--active {
+  color: #fff;
+}
+.nav-bar__menu .menu-option--inactive {
+  color: #e1e1e1;
+}
+
+.menu-option--active, .menu-option--inactive {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   text-align: center;
-  width: 50vw;
-  padding-bottom: 1rem;
-}
-@media (min-width: 678px) {
-  .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
-    padding-bottom: 2.25rem;
-  }
+  width: 48.5vw;
 }
 @media screen and (min-width: 678px) {
-  .nav-bar__menu .menu-option--active, .nav-bar__menu .menu-option--inactive {
+  .menu-option--active, .menu-option--inactive {
+    width: 100%;
+  }
+}
+
+.menu-option--active,
+.menu-option--inactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  flex-grow: 1;
+}
+@media screen and (min-width: 678px) {
+  .menu-option--active,
+  .menu-option--inactive {
     width: 100%;
   }
 }
 
 .menu-option--active {
+  padding-bottom: 1rem;
   border-bottom: 0.188rem solid #fff;
   font-family: "AvenirNextDemi";
+}
+@media (min-width: 678px) {
+  .menu-option--active {
+    padding-bottom: 2.25rem;
+  }
 }
 .menu-option--active a {
   color: #fff;
@@ -147,7 +168,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .menu-option--inactive {
+  padding-bottom: 1rem;
   font-family: "AvenirNextRegular";
+}
+@media (min-width: 678px) {
+  .menu-option--inactive {
+    padding-bottom: 2.25rem;
+  }
 }
 .menu-option--inactive a {
   color: #e1e1e1;
@@ -169,7 +196,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center/cover;
-  border: 5px solid red;
   width: 100%;
   color: #fff;
   position: relative;
@@ -188,7 +214,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .hero-section__content-container {
   display: flex;
   width: 100%;
-  border: 5px dotted #000;
   margin: 0 auto;
   width: min(100%, 1280px);
   display: flex;
@@ -245,7 +270,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   }
 }
 .bio-section__heading {
-  border: 2px solid red;
   padding-left: 1.5rem;
   padding-top: 1rem;
   font-size: 24px;
@@ -456,6 +480,11 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 @media screen and (min-width: 678px) {
   .gallery .gallery__image {
     max-width: 29%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  .gallery .gallery__image:hover {
+    filter: grayscale(0%);
   }
 }
 
@@ -585,6 +614,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   font-size: 13px;
   line-height: 1.75;
   font-family: "AvenirNextBold";
+  white-space: nowrap;
 }
 @media (min-width: 768px) {
   .manager__name,
@@ -611,6 +641,15 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     padding-top: 2.25rem;
   }
 }
+.manager__email .manager__email--word-break {
+  overflow-wrap: break-word;
+}
+.manager__email a {
+  color: inherit;
+}
+.manager__email .manager__email--no-wrap {
+  white-space: nowrap;
+}
 
 .manager__address {
   font-size: 13px;
@@ -621,6 +660,19 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   .manager__address {
     font-size: 14px;
     line-height: 1.75;
+  }
+}
+
+.management,
+.management--us-south-america-japan,
+.management--uk-eu-au {
+  max-width: 100%;
+}
+@media screen and (min-width: 678px) {
+  .management,
+  .management--us-south-america-japan,
+  .management--uk-eu-au {
+    max-width: 29%;
   }
 }
 

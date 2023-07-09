@@ -1,8 +1,6 @@
-// @use "./partials/buttons" as *;
 @use "./partials/fonts" as *;
 @use "./partials/global" as *;
 @use "./partials/margin" as margin;
-// @use "./partials/padding" as padding;
 @use "./partials/padding" as padding;
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
@@ -12,22 +10,17 @@
 .nav-bar__container {
   align-items: center;
   background: $band-site-black;
-  // border: 2px dashed #000;
-  color: $white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  // height: 6rem;
   
   // Changes with &
   .nav-bar__nav {
     align-items: center;
-    // border: 5px solid blue; 
     display: flex;
     flex-direction: column;
     width: min(100%, $desktop-width);
-  
+    
     @media screen and (min-width: $tablet-width) {
       & {
         flex-direction: row;
@@ -49,13 +42,11 @@
       margin-top: 0;
       @include margin.margin-inline($default-margin: 3rem);
       @include margin.margin-bottom($default-margin: 2rem);
-      // border: 2px solid red;
     }
   }
 }
 
 .nav-bar__menu {
-  // border: 2px solid red;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -66,28 +57,54 @@
       justify-content: flex-start;
     }
   }
+  
+  .menu-option--active {
+    color: $white;
+  }
+  
+  .menu-option--inactive {
+    color: $mercury;
+  }
+  
+}
 
-  .menu-option--active, .menu-option--inactive {
-      // border: 2px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    width: 50vw;
-    @include padding.padding-between-components-bottom;
-    
-    @media screen and (min-width: $tablet-width) {
-      & {
-        width: 100%;
-      }
-    }
+.menu-option--active, .menu-option--inactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 48.5vw;
+  
+  @media screen and (min-width: $tablet-width) {
+    // & {
+      width: 100%;
+    // }
   }
 }
 
+.menu-option--active,
+.menu-option--inactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  flex-grow: 1;
+
+  @media screen and (min-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+
+
+
 .menu-option--active {
+  @include padding.padding-between-components-bottom;
   border-bottom: 0.188rem solid $white;
   font-family: $font-family-demi;
+
   
   a {
     color: $white;
@@ -99,7 +116,8 @@
 
 
 .menu-option--inactive {
-font-family: $font-family-regular;
+  @include padding.padding-between-components-bottom;
+  font-family: $font-family-regular;
 
   a {
     color: $mercury;
@@ -123,9 +141,9 @@ font-family: $font-family-regular;
 // Hero Section
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
-  border: 5px solid red;
   width: 100%;
-  color: $white;position: relative;
+  color: $white;
+  position: relative;
 
   &__image-description {
     display: none;
@@ -143,7 +161,7 @@ font-family: $font-family-regular;
   &__content-container {
     display: flex;
     width: 100%;
-    border: 5px dotted #000;
+    // border: 5px dotted #000;
     margin: 0 auto;
     width: min(100%, $desktop-width);
     display: flex;
@@ -166,7 +184,6 @@ font-family: $font-family-regular;
     
 // // Bio Section
 .bio-section {
-  // border: 5px solid red;
   width: 100%;
 
   &__content-container {
@@ -183,7 +200,6 @@ font-family: $font-family-regular;
   }
   
   &__heading {
-    border: 2px solid red;
     @include padding.padding-before-headlines;
     @include padding.padding-between-components-top;
     @include section-header;
@@ -234,7 +250,6 @@ font-family: $font-family-regular;
 }
 
 .bio-article__source {
-  // border: 2px solid red;
   @extend .bio-article__quote
 }
 
@@ -242,7 +257,6 @@ font-family: $font-family-regular;
 .bio-section__subheader {
   @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
-  // border: 2px solid blue;
   // font-size: 
   font-weight: bold;
 }
@@ -268,7 +282,6 @@ font-family: $font-family-regular;
 
 // // Gallery Section
 .gallery-section {
-  // border: 5px solid red;
   background: $alabaster;
   width: 100%;
   
@@ -318,6 +331,15 @@ font-family: $font-family-regular;
     @media screen and (min-width: $tablet-width) {
       & {
         max-width: 29%;
+          filter: grayscale(100%);
+          transition: filter 0.3s ease;
+          
+          &:hover {
+            filter: grayscale(0%);
+
+          }
+        
+
       }
     }
   }
@@ -327,7 +349,6 @@ font-family: $font-family-regular;
 // Footer Section
 .footer-section {
   background: $band-site-black;
-  // border: 5px solid red;
   width: 100%;
   @include padding.padding-between-components-bottom;
   
@@ -361,13 +382,11 @@ font-family: $font-family-regular;
 }
 
 .socials__heading {
-  // border: 2px solid red;
   @include sub-header;
 }
 
 
 .social-icon__container {
-  // border: 2px solid blue;
   @include padding.padding-between-components-gap;
   display: flex;  
 }
@@ -386,6 +405,7 @@ font-family: $font-family-regular;
   // border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  // flex-wrap: wrap;
   @include padding.padding-between-components-gap;
   margin-bottom: 4rem;
   
@@ -393,6 +413,8 @@ font-family: $font-family-regular;
     margin-bottom: 2rem;
     & {
       flex-direction: row;
+      // flex-wrap: wrap;
+
     }
   }
 }
@@ -401,6 +423,7 @@ font-family: $font-family-regular;
 .manager__role {
   font-family: $font-family-demi;
   @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
+  white-space: nowrap;
 }
 
 .manager__role {
@@ -409,19 +432,35 @@ font-family: $font-family-regular;
 
 .manager__email {
   @include padding.padding-between-components-top;
+  
+  .manager__email--word-break {
+    overflow-wrap: break-word;
+  }
+  
+    & a {
+      color: inherit;
+    }
+
+  .manager__email--no-wrap {
+    white-space: nowrap;
+  }
 }
 
 .manager__address {
   @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
-  // border: 2px solid red;
 }
 
 
-// .management,
-// .management--us-south-america-japan,
-// .management--uk-eu-au {
-//   border: 2px solid red;
-// }
+.management,
+.management--us-south-america-japan,
+.management--uk-eu-au {
+  max-width: 100%;
+  
+  
+  @media screen and (min-width: $tablet-width) {
+      max-width: 29%;
+  }
+}
 
 .footer__logo {
   @include margin.margin-block;

@@ -114,11 +114,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     gap: 2.25rem;
   }
 }
-.nav-bar__menu--active-option {
+.nav-bar__menu--active-option,
+.nav-bar__menu .menu-option--active {
   color: #fff;
   font-family: "AvenirNextDemi";
 }
-.nav-bar__menu--inactive-option {
+.nav-bar__menu--inactive-option,
+.nav-bar__menu .menu-option--inactive {
   color: #e1e1e1;
   font-family: "AvenirNextRegular";
 }

@@ -51,12 +51,14 @@
       justify-content: flex-start;
   }
   
-  &--active-option {
+  &--active-option,
+  .menu-option--active {
     color: $white;
     font-family: $font-family-demi;
   }
   
-  &--inactive-option {
+  &--inactive-option,
+  .menu-option--inactive {
     color: $mercury;
     font-family: $font-family-regular;
   }

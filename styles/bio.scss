@@ -5,7 +5,6 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-
 // Nav
 .nav-bar__container {
   align-items: center;
@@ -13,36 +12,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.nav-bar__nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, $desktop-width);
   
-  // Changes with &
-  .nav-bar__nav {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: min(100%, $desktop-width);
-    
-    @media screen and (min-width: $tablet-width) {
-      & {
-        flex-direction: row;
-        padding-top: 2.5rem;
-      }
+  @media screen and (min-width: $tablet-width) {
+    & {
+      flex-direction: row;
+      padding-top: 2.5rem;
     }
   }
 }
 
-
 .nav-bar__logo {
   // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
+  @include margin.margin-top($default-margin: 2rem);
   height: 1.25rem;
   width: 7.5rem;
-  @include margin.margin-top($default-margin: 2rem);
   
   @media screen and (min-width: $tablet-width) {
-    & {
-      margin-top: 0;
-      @include margin.margin-inline($default-margin: 3rem);
-      @include margin.margin-bottom($default-margin: 2rem);
-    }
+    @include margin.margin-inline($default-margin: 3rem);
+    @include margin.margin-bottom($default-margin: 2rem);
+    margin-top: 0;
   }
 }
 
@@ -52,88 +47,46 @@
   width: 100%;
   
   @media screen and (min-width: $tablet-width) {
-    & {
-      @include padding.padding-between-components-gap;
+    @include padding.padding-between-components-gap;
       justify-content: flex-start;
-    }
   }
   
-  .menu-option--active {
+  &--active-option {
     color: $white;
+    font-family: $font-family-demi;
   }
   
-  .menu-option--inactive {
+  &--inactive-option {
     color: $mercury;
-  }
-  
-}
-
-.menu-option--active, .menu-option--inactive {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  text-align: center;
-  width: 48.5vw;
-  
-  @media screen and (min-width: $tablet-width) {
-    // & {
-      width: 100%;
-    // }
+    font-family: $font-family-regular;
   }
 }
 
-.menu-option--active,
-.menu-option--inactive {
-  display: flex;
-  justify-content: center;
+.nav-bar__menu--active-option,
+.nav-bar__menu--inactive-option {
+  @include padding.padding-between-components-bottom;
   align-items: center;
-  position: relative;
-  text-align: center;
+  display: flex;
   flex-grow: 1;
+  justify-content: center;
+  text-align: center;
 
   @media screen and (min-width: $tablet-width) {
-    width: 100%;
+    flex-grow: 0;
   }
 }
 
+.nav-bar__menu--active-option {
+  border-bottom: 3px solid $white;
+}
 
-
-
-.menu-option--active {
-  @include padding.padding-between-components-bottom;
-  border-bottom: 0.188rem solid $white;
-  font-family: $font-family-demi;
-
+.nav-bar__menu--inactive-option {
+  border-bottom: 3px solid $mercury-opacity-zero;
   
-  a {
-    color: $white;
-    font-weight: bold;
-    margin-inline: auto;
-    text-align: center;
-  }
-}
-
-
-.menu-option--inactive {
-  @include padding.padding-between-components-bottom;
-  font-family: $font-family-regular;
-
-  a {
-    color: $mercury;
-    margin-inline: auto;
-  }
-}
-
-.menu-option--inactive:hover, 
-.menu-option--inactive:active, 
-.menu-option--inactive:focus {
-  border-bottom: 0.188rem solid $mercury;
-  transition: all 0.1s ease-out;
-  font-family: $font-family-demi;
-
-  a {
-    font-weight: 700;
+  &:hover {
+    border-bottom: 3px solid $mercury;
+    font-family: $font-family-demi;
+    transition: all 0.5s ease;
   }
 }
 
@@ -141,9 +94,9 @@
 // Hero Section
 .hero-section {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
-  width: 100%;
   color: $white;
   position: relative;
+  width: 100%;
 
   &__image-description {
     display: none;
@@ -159,16 +112,13 @@
   }
 
   &__content-container {
-    display: flex;
-    width: 100%;
-    // border: 5px dotted #000;
-    margin: 0 auto;
-    width: min(100%, $desktop-width);
+    align-items: center;
     display: flex;
     height: calc(50vh - 3rem);
+    margin: 0 auto;
     position: relative;
+    width: min(100%, $desktop-width);
     z-index: 2;
-    align-items: center;
     
     @media screen and (min-width: $tablet-width) {
       height: calc(100vh - 6rem);
@@ -177,8 +127,8 @@
 }
 
 .hero-section__page-header {
-  @include page-header;
   @include padding.padding-before-headlines;
+  @include page-header;
 }
   
     
@@ -187,15 +137,12 @@
   width: 100%;
 
   &__content-container {
-    // border: 3px solid green;
+    @include padding.padding-between-components-bottom;
     margin: 0 auto;
     width: min(100%, $desktop-width);
-    @include padding.padding-between-components-bottom;
     
     @media screen and (min-width: $tablet-width) {
-      & {
         @include padding.padding-inline;
-      }
     }
   }
   
@@ -205,59 +152,47 @@
     @include section-header;
 
     @media screen and (min-width: $tablet-width) {
-      & {
-        padding-left: 0;
-      }
+      padding-left: 0;
     }
   }
   
   &__bio-article {
-    // border: 2px solid blue;
     @include padding.padding-inline;
   }
 }
 
 .bio-article__content-container {
-  // border: 2px solid green;
 
   @media screen and (min-width: $tablet-width) {
-    & {
       @include padding.padding-inline;
-    }
   }
 }
 
 .bio-article__hero-image {
-  width: 100%;
-  @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
+  @include padding.padding-between-components-top;
+  width: 100%;
 }
 
 .bio-article__quote {
-  display: block;
-  @include quote;
   @include padding.padding-between-components-bottom;
+  @include quote;
+  display: block;
   font-style: normal;
   letter-spacing: 0.094rem;
 
-
   @media screen and (min-width: $desktop-width) {
-    & {
       max-width: 75%;
-    }
   }
-  
 }
 
 .bio-article__source {
-  @extend .bio-article__quote
+  @extend .bio-article__quote;
 }
 
-
 .bio-section__subheader {
-  @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
-  // font-size: 
+  @include padding.padding-between-components-top;
   font-weight: bold;
 }
  
@@ -266,17 +201,12 @@
 }
 
 .bio-section__paragraph-container {
-  // @include body-copy($line-height: 2rem);
-  // border: 2px solid green;
-  display: flex;
-  flex: content;
-  flex-direction: column;
   @include padding.padding-between-components-gap;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: $tablet-width) {
-    & {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
 }
 
@@ -286,19 +216,17 @@
   width: 100%;
   
   &__content-container {
+    @include padding.padding-between-components-bottom;
     align-items: center;
-    // border: 2px dotted #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
     width: min(100%, 1280px);
-    @include padding.padding-between-components-bottom;
   }
 }
 
 .gallery__heading {
-  // border: 2px solid purple;
   @include padding.padding-between-components-bottom;
   @include padding.padding-between-components-top;
 }
@@ -311,36 +239,28 @@
   }
   
   &__image-container {
-    // border: 2px solid green;
+    @include padding.padding-between-components-gap;
     display: flex;
     flex-direction: column;
-    @include padding.padding-between-components-gap;
     justify-content: space-between;
   
     @media screen and (min-width: $tablet-width) {
-      & {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
+      flex-direction: row;
+      flex-wrap: wrap;
     }
   }
-  
-  .gallery__image {
-    max-width: 100%;
-  
-    @media screen and (min-width: $tablet-width) {
-      & {
-        max-width: 29%;
-          filter: grayscale(100%);
-          transition: filter 0.3s ease;
-          
-          &:hover {
-            filter: grayscale(0%);
+}
 
-          }
-        
+.gallery__image {
+  max-width: 100%;
 
-      }
+  @media screen and (min-width: $tablet-width) {
+    filter: grayscale(100%);
+    max-width: 29%;
+    transition: filter 0.3s ease;
+  
+    &:hover {
+      filter: grayscale(0%);
     }
   }
 }
@@ -368,16 +288,14 @@
 
 .socials__container {
   // border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-  @include padding.padding-between-components-top;
   @include padding.padding-between-components-bottom;
   @include padding.padding-between-components-gap;
+  @include padding.padding-between-components-top;
+  flex-direction: column;
+  display: flex;
 
   @media screen and (min-width: $tablet-width) {
-    & {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
 }
 
@@ -385,14 +303,12 @@
   @include sub-header;
 }
 
-
 .social-icon__container {
   @include padding.padding-between-components-gap;
   display: flex;  
 }
 
 .soical-icon {
-  // border: 2px solid green;
   @include social-icons;
 }
 
@@ -402,27 +318,21 @@
 }
 
 .management__container {
-  // border: 2px solid blue;
+  @include padding.padding-between-components-gap;
   display: flex;
   flex-direction: column;
-  // flex-wrap: wrap;
-  @include padding.padding-between-components-gap;
   margin-bottom: 4rem;
   
   @media screen and (min-width: $tablet-width) {
     margin-bottom: 2rem;
-    & {
-      flex-direction: row;
-      // flex-wrap: wrap;
-
-    }
+    flex-direction: row;
   }
 }
 
 .manager__name,
 .manager__role {
-  font-family: $font-family-demi;
   @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
+  font-family: $font-family-demi;
   white-space: nowrap;
 }
 
@@ -456,7 +366,6 @@
 .management--uk-eu-au {
   max-width: 100%;
   
-  
   @media screen and (min-width: $tablet-width) {
       max-width: 29%;
   }
@@ -464,22 +373,14 @@
 
 .footer__logo {
   @include margin.margin-block;
-  // margin-left: -1rem;
   // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
   height: 2.5rem;
   width: 8.75rem;
 
-  // @include padding.padding-after-headlines(1rem);
-  // edm: make padding accept params
-  // border: 2px solid green;
-
   @media screen and (min-width: $tablet-width) {
-    & {
+      margin-left: 0rem;
       position: absolute;
       right: 2rem;
       top: 0;
-      margin-left: 0rem;
-      
-    }
   }
 }

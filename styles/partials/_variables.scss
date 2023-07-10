@@ -1,7 +1,6 @@
 @use "./fonts" as *;
 
-// Break Points
-// Should these be relative? 
+// Break Points: should these be relative? 
 $tablet-width: 678px;
 $desktop-width: 1280px;
 
@@ -78,19 +77,6 @@ $font-line-height-label-button-tablet: 1.25rem;
 $font-weight-label-button-tablet: 700;
 
 
-
-// Use of Variables: values defined once which can be used in many places; update definition to change the value being used everywhere it is in the css/scss
-
-
-// Animation Timings:
-
-
-// Border Radiuses:
-
-
-// Box Shadows:
-
-
 // Colors - Primary:
 $band-site-black: #323232;
 $silver: #afafaf;
@@ -130,24 +116,4 @@ $hero-image-overlay-color: rgba(50, 50, 50, 0.5);
     gap: 2.25rem;
   }
 }
-
-
-
-
-
-
-// Spacings - Padding - Tablet:
-
-// Spacings - Padding - Desktop:
-
-
-// Spacings - Margins - Mobile:
-
-// Spacings - Margins - Tablet:
-
-// Spacings - Margins - Desktop:
-
-
-
-
 

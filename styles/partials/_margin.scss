@@ -10,7 +10,6 @@
   }
 }
  
-
 // margin-bottom
 @mixin margin-bottom($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
   margin-bottom: $default-margin;
@@ -20,7 +19,6 @@
     margin-bottom: $tablet-desktop-margin;
   }
 }
-
 
 // margin-block (margin top & margin-bottom)
 @mixin margin-block($default-margin-top: 1rem, $default-margin-bottom: 1rem, $tablet-desktop-margin-top: 2.25rem, $tablet-desktop-margin-bottom: 2.25rem) {
@@ -33,7 +31,6 @@
     margin-bottom: $tablet-desktop-margin-bottom;
   }
 }
-
 
 // margin-inline (
 @mixin margin-inline($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {

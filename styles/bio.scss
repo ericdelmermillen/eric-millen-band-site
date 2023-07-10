@@ -79,19 +79,18 @@
 }
 
 .nav-bar__menu--active-option {
-  border-bottom: 3px solid $white;
+  border-bottom: 0.188rem solid $white;
 }
 
 .nav-bar__menu--inactive-option {
-  border-bottom: 3px solid $mercury-opacity-zero;
+  border-bottom: 0.188rem solid $mercury-opacity-zero;
   
   &:hover {
-    border-bottom: 3px solid $mercury;
+    border-bottom: 0.188rem solid $mercury;
     font-family: $font-family-demi;
     transition: all 0.5s ease;
   }
 }
-
 
 // Hero Section
 .hero-section {
@@ -132,7 +131,6 @@
   @include padding.padding-before-headlines;
   @include page-header;
 }
-  
     
 // // Bio Section
 .bio-section {
@@ -186,20 +184,18 @@
   @media screen and (min-width: $desktop-width) {
       max-width: 75%;
   }
+  
+  &__source {
+    @extend .bio-article__quote;
+    border: 2px solid red;
+  }
 }
 
-.bio-article__source {
-  @extend .bio-article__quote;
-}
 
 .bio-section__subheader {
   @include padding.padding-between-components-bottom;
   @include padding.padding-between-components-top;
   font-weight: bold;
-}
- 
-.bio-section__body-copy {
-  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
 }
 
 .bio-section__paragraph-container {
@@ -210,6 +206,10 @@
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
   }
+}
+
+.bio-section__body-copy {
+  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
 }
 
 // // Gallery Section
@@ -224,7 +224,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    width: min(100%, 1280px);
+    width: min(100%, $desktop-width);
   }
 }
 
@@ -267,7 +267,6 @@
   }
 }
 
-
 // Footer Section
 .footer-section {
   background: $band-site-black;
@@ -275,7 +274,6 @@
   @include padding.padding-between-components-bottom;
   
   &__content-container {
-    // border: 2px dotted #fff;
     color: $white;
     display: flex;
     flex-direction: column;
@@ -289,12 +287,11 @@
 
 
 .socials__container {
-  // border: 2px solid green;
   @include padding.padding-between-components-bottom;
   @include padding.padding-between-components-gap;
   @include padding.padding-between-components-top;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
@@ -310,7 +307,7 @@
   display: flex;  
 }
 
-.soical-icon {
+.social-icon {
   @include social-icons;
 }
 
@@ -348,7 +345,7 @@
   .manager__email--word-break {
     overflow-wrap: break-word;
   }
-  
+
     & a {
       color: inherit;
     }
@@ -361,7 +358,6 @@
 .manager__address {
   @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
 }
-
 
 .management,
 .management--us-south-america-japan,

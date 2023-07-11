@@ -122,9 +122,6 @@ $font-family-bold: "AvenirNextBold";
   }
 }
 
-
-
-
 // Global reset
 *,
 *::before,
@@ -149,10 +146,10 @@ a {
     color: inherit;
   }
   
-  &:focus {
-    color: inherit;
-    outline: 0.063rem solid $white;
-  }
+  // &:focus {
+  //   color: inherit;
+  //   outline: 0.063rem solid $white;
+  // }
 }
 
 ul {
@@ -162,8 +159,6 @@ ul {
     text-decoration: none;      
   }
 }
-
-
 
 // Margins:
 
@@ -297,6 +292,211 @@ ul {
   // Tablet or Desktop
   @media (min-width: $tablet-width) {
     gap: 2.25rem;
+  }
+}
+
+// Nav
+.nav-bar__container {
+  align-items: center;
+  background: $band-site-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-bar__nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, $desktop-width);
+  
+  @media screen and (min-width: $tablet-width) {
+    & {
+      flex-direction: row;
+      padding-top: 2.5rem;
+    }
+  }
+}
+
+.nav-bar__logo {
+  // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
+  @include margin-top($default-margin: 2rem);
+  height: 1.25rem;
+  width: 7.5rem;
+  
+  @media screen and (min-width: $tablet-width) {
+    @include margin-inline($default-margin: 3rem);
+    @include margin-bottom($default-margin: 2rem);
+    margin-top: 0;
+  }
+}
+
+.nav-bar__menu {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  
+  @media screen and (min-width: $tablet-width) {
+    @include padding-between-components-gap;
+      justify-content: flex-start;
+  }
+  
+  &--active-option,
+  .menu-option--active {
+    color: $white;
+    font-family: $font-family-demi;
+  }
+  
+  &--inactive-option,
+  .menu-option--inactive {
+    color: $mercury;
+    font-family: $font-family-regular;
+  }
+}
+
+.nav-bar__menu--active-option,
+.nav-bar__menu--inactive-option {
+  @include padding-between-components-bottom;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+
+  @media screen and (min-width: $tablet-width) {
+    flex-grow: 0;
+  }
+}
+
+.nav-bar__menu--active-option {
+  border-bottom: 0.188rem solid $white;
+}
+
+.nav-bar__menu--inactive-option {
+  border-bottom: 0.188rem solid $mercury-opacity-zero;
+  
+  &:hover {
+    border-bottom: 0.188rem solid $mercury;
+    font-family: $font-family-demi;
+    transition: all 0.5s ease;
+  }
+}
+
+
+
+// Footer Section
+.footer-section {
+  background: $band-site-black;
+  width: 100%;
+  @include padding-between-components-bottom;
+  
+  &__content-container {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    width: min(100%, $desktop-width);
+  }
+}
+
+
+.socials__container {
+  @include padding-between-components-bottom;
+  @include padding-between-components-gap;
+  @include padding-between-components-top;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.socials__heading {
+  @include sub-header;
+}
+
+.social-icon__container {
+  @include padding-between-components-gap;
+  display: flex;  
+}
+
+.social-icon {
+  @include social-icons;
+}
+
+.socials__heading {
+  @include padding-between-components-bottom;
+  @include section-header;
+}
+
+.management__container {
+  @include padding-between-components-gap;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+  
+  @media screen and (min-width: $tablet-width) {
+    margin-bottom: 2rem;
+    flex-direction: row;
+  }
+}
+
+.manager__name,
+.manager__role {
+  @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
+  font-family: $font-family-demi;
+  white-space: nowrap;
+}
+
+.manager__role {
+  @include padding-between-components-bottom;
+}
+
+.manager__email {
+  @include padding-between-components-top;
+  
+  .manager__email--word-break {
+    overflow-wrap: break-word;
+  }
+
+    & a {
+      color: inherit;
+    }
+
+  .manager__email--no-wrap {
+    white-space: nowrap;
+  }
+}
+
+.manager__address {
+  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
+}
+
+.management,
+.management--us-south-america-japan,
+.management--uk-eu-au {
+  max-width: 100%;
+  
+  @media screen and (min-width: $tablet-width) {
+      max-width: 29%;
+  }
+}
+
+.footer__logo {
+  @include margin-block;
+  // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
+  height: 2.5rem;
+  width: 8.75rem;
+
+  @media screen and (min-width: $tablet-width) {
+      margin-left: 0rem;
+      position: absolute;
+      right: 2rem;
+      top: 0;
   }
 }
 

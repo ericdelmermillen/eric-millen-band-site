@@ -364,10 +364,28 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .hero-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background: url("../assets/images/hero-shows.jpg") center center/cover;
   color: #fff;
   position: relative;
   width: 100%;
+  border: 2px solid red;
+}
+@media (min-width: 678px) {
+  .hero-section {
+    padding-top: 2.25rem;
+  }
+}
+@media (min-width: 678px) {
+  .hero-section {
+    padding-bottom: 2.25rem;
+  }
+}
+@media screen and (min-width: 678px) {
+  .hero-section {
+    height: calc(100vh - 6rem);
+  }
 }
 .hero-section__image-description {
   display: none;
@@ -381,6 +399,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   width: 100%;
 }
 .hero-section__content-container {
+  border: 2px solid green;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -391,11 +410,36 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   position: relative;
   width: min(100%, 1280px);
   z-index: 2;
+  height: 100%;
 }
 @media (min-width: 678px) {
   .hero-section__content-container {
     gap: 2.25rem;
   }
+}
+@media screen and (min-width: 678px) {
+  .hero-section__content-container {
+    border: 2px solid orange;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-section__content-container {
+    border: 2px solid blue;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.hero-section__content-container .hero-section__sub-header {
+  padding-bottom: 1rem;
+}
+@media (min-width: 678px) {
+  .hero-section__content-container .hero-section__sub-header {
+    padding-bottom: 2.25rem;
+  }
+}
+
+.hero-section__text-container {
+  border: 3px dotted #000;
 }
 
 .hero-section__page-header,
@@ -413,6 +457,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "AvenirNextBold";
+  max-width: 60%;
 }
 @media (min-width: 678px) {
   .hero-section__page-header {
@@ -420,12 +465,47 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     line-height: 4.25rem;
   }
 }
+@media screen and (min-width: 678px) {
+  .hero-section__page-header {
+    max-width: min(90%, 40rem);
+  }
+}
+
+.hero-section__sub-header {
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+  font-family: "AvenirNextDemi";
+}
+@media (min-width: 678px) {
+  .hero-section__sub-header {
+    font-size: 2.5rem;
+    line-height: 2rem;
+  }
+}
 
 .hero-section__song {
   padding-inline: 1.5rem;
+  padding-top: 2.5rem;
+  width: 100%;
+  height: 150px;
 }
 @media (min-width: 678px) {
   .hero-section__song {
     padding-inline: 2.25rem;
+  }
+}
+@media (min-width: 678px) {
+  .hero-section__song {
+    padding-top: 2.25rem;
+  }
+}
+@media screen and (min-width: 678px) {
+  .hero-section__song {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero-section__song {
+    max-width: 40rem;
   }
 }/*# sourceMappingURL=shows.css.map */

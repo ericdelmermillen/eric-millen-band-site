@@ -4,10 +4,17 @@
 
 // Hero Section
 .hero-section {
+  @include padding-between-components-top;
+  @include padding-between-components-bottom;
   background: url("../assets/images/hero-shows.jpg") center center / cover;
   color: $white;
   position: relative;
   width: 100%;
+  border: 2px solid red;
+
+  @media screen and (min-width: $tablet-width) {
+    height: calc(100vh - 6rem);
+  }
 
   &__image-description {
     display: none;
@@ -23,6 +30,7 @@
   }
 
   &__content-container {
+    border: 2px solid green;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -33,7 +41,26 @@
     position: relative;
     width: min(100%, $desktop-width);
     z-index: 2;
+    height: 100%;
+
+    @media screen and (min-width: $tablet-width) {
+      border: 2px solid orange;
+    }
+    
+    @media screen and (min-width: $desktop-width) {
+      border: 2px solid blue;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .hero-section__sub-header {
+      @include padding-between-components-bottom;
+    }
   }
+}
+
+.hero-section__text-container {
+  border: 3px dotted #000;
 }
 
 .hero-section__page-header,
@@ -41,12 +68,31 @@
   @include padding-before-headlines;
 }
 
+
 .hero-section__page-header {
   @include page-header;
+  max-width: 60%;
+
+  @media screen and (min-width: $tablet-width) {
+    max-width: min(90%, 40rem);
+  }
+
+}
+.hero-section__sub-header {
+  @include sub-header($default-font-size: 1.25rem, $default-tablet-font-size: 2.5rem);
 }
 
 .hero-section__song {
   @include padding-inline(1.5rem);
-  // width: 100%;
-  // width: 90%;
+  @include padding-between-components-top(2.5rem);
+  width: 100%; 
+  height: 150px;
+  
+  @media screen and (min-width: $tablet-width) {
+    width: 50%;
+  }
+  
+  @media screen and (min-width: $desktop-width) {
+    max-width: 40rem;
+  }
 }

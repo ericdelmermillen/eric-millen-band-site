@@ -1,5 +1,6 @@
 @use "./variables" as *;
 
+
 // Global reset
 *,
 *::before,
@@ -37,3 +38,141 @@ ul {
     text-decoration: none;      
   }
 }
+
+
+
+// Margins:
+
+// margin-top
+@mixin margin-top($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
+  margin-top: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-top: $tablet-desktop-margin;
+  }
+}
+ 
+// margin-bottom
+@mixin margin-bottom($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
+  margin-bottom: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-bottom: $tablet-desktop-margin;
+  }
+}
+
+// margin-block (margin top & margin-bottom)
+@mixin margin-block($default-margin-top: 1rem, $default-margin-bottom: 1rem, $tablet-desktop-margin-top: 2.25rem, $tablet-desktop-margin-bottom: 2.25rem) {
+  margin-top: $default-margin-top;
+  margin-bottom: $default-margin-bottom;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-top: $tablet-desktop-margin-top;
+    margin-bottom: $tablet-desktop-margin-bottom;
+  }
+}
+
+// margin-inline (
+@mixin margin-inline($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
+  margin-inline: $default-margin;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    margin-inline: $tablet-desktop-margin;
+  }
+}
+
+// Paddings:
+
+
+// For h1
+@mixin padding-before-headlines($default-padding-left: 1.5rem, $default-tablet-padding-left: 3rem) {
+  padding-left: $default-padding-left;
+
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-left: $default-tablet-padding-left;
+  }
+}
+
+@mixin padding-after-headlines($default-padding-right: 1rem, $default-tablet-padding-right: 2.25rem) {
+  padding-right: $default-padding-right;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-right: $default-tablet-padding-right;
+  }
+}
+
+
+// Gap Mixin (padding between eelements in style guide)
+@mixin padding-between-components-gap($default-gap: 1rem, $default-gap-tablet: 2.25rem) {
+  gap: $default-gap;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    gap: $default-gap-tablet;
+  }
+}
+
+@mixin padding-between-components-top($default-padding-top: 1rem, $default-tablet-padding-top: 2.25rem) {
+  padding-top: $default-padding-top;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-top: $default-tablet-padding-top;
+  }
+}
+
+@mixin padding-between-components-bottom($default-padding-bottom: 1rem, $default-tablet-padding-bottom: 2.25rem) {
+  padding-bottom: $default-padding-bottom;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-bottom: $default-tablet-padding-bottom;
+  }
+}
+
+// margin-inline (
+  @mixin padding-inline($default-padding: 1rem, $default-tablet-padding: 2.25rem) {
+    padding-inline: $default-padding;
+    
+    // Tablet or Desktop
+    @media (min-width: $tablet-width) {
+      padding-inline: $default-tablet-padding;
+    }
+  }
+  
+
+
+// Spacings - Padding - Mobile:
+@mixin padding-before-headlines {
+  padding-left: 1.5rem;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-left: 3rem;
+  }
+}
+
+@mixin padding-after-headlines {
+  padding-right: 1rem;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    padding-right: 2.25rem;
+  }
+}
+
+@mixin padding-between-components {
+  gap: 1rem;
+  
+  // Tablet or Desktop
+  @media (min-width: $tablet-width) {
+    gap: 2.25rem;
+  }
+}
+

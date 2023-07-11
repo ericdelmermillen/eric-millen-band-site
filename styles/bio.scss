@@ -1,7 +1,4 @@
-@use "./partials/fonts" as *;
 @use "./partials/global" as *;
-@use "./partials/margin" as margin;
-@use "./partials/padding" as padding;
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
@@ -30,13 +27,13 @@
 
 .nav-bar__logo {
   // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
-  @include margin.margin-top($default-margin: 2rem);
+  @include margin-top($default-margin: 2rem);
   height: 1.25rem;
   width: 7.5rem;
   
   @media screen and (min-width: $tablet-width) {
-    @include margin.margin-inline($default-margin: 3rem);
-    @include margin.margin-bottom($default-margin: 2rem);
+    @include margin-inline($default-margin: 3rem);
+    @include margin-bottom($default-margin: 2rem);
     margin-top: 0;
   }
 }
@@ -47,7 +44,7 @@
   width: 100%;
   
   @media screen and (min-width: $tablet-width) {
-    @include padding.padding-between-components-gap;
+    @include padding-between-components-gap;
       justify-content: flex-start;
   }
   
@@ -66,7 +63,7 @@
 
 .nav-bar__menu--active-option,
 .nav-bar__menu--inactive-option {
-  @include padding.padding-between-components-bottom;
+  @include padding-between-components-bottom;
   align-items: center;
   display: flex;
   flex-grow: 1;
@@ -128,7 +125,7 @@
 }
 
 .hero-section__page-header {
-  @include padding.padding-before-headlines;
+  @include padding-before-headlines;
   @include page-header;
 }
     
@@ -137,18 +134,18 @@
   width: 100%;
 
   &__content-container {
-    @include padding.padding-between-components-bottom;
+    @include padding-between-components-bottom;
     margin: 0 auto;
     width: min(100%, $desktop-width);
     
     @media screen and (min-width: $tablet-width) {
-        @include padding.padding-inline;
+        @include padding-inline;
     }
   }
   
   &__heading {
-    @include padding.padding-before-headlines;
-    @include padding.padding-between-components-top;
+    @include padding-before-headlines;
+    @include padding-between-components-top;
     @include section-header;
 
     @media screen and (min-width: $tablet-width) {
@@ -157,25 +154,25 @@
   }
   
   &__bio-article {
-    @include padding.padding-inline;
+    @include padding-inline;
   }
 }
 
 .bio-article__content-container {
 
   @media screen and (min-width: $tablet-width) {
-      @include padding.padding-inline;
+      @include padding-inline;
   }
 }
 
 .bio-article__hero-image {
-  @include padding.padding-between-components-bottom;
-  @include padding.padding-between-components-top;
+  @include padding-between-components-bottom;
+  @include padding-between-components-top;
   width: 100%;
 }
 
 .bio-article__quote {
-  @include padding.padding-between-components-bottom;
+  @include padding-between-components-bottom;
   @include quote;
   display: block;
   font-style: normal;
@@ -192,13 +189,13 @@
 
 
 .bio-section__subheader {
-  @include padding.padding-between-components-bottom;
-  @include padding.padding-between-components-top;
+  @include padding-between-components-bottom;
+  @include padding-between-components-top;
   font-weight: bold;
 }
 
 .bio-section__paragraph-container {
-  @include padding.padding-between-components-gap;
+  @include padding-between-components-gap;
   display: flex;
   flex-direction: column;
 
@@ -217,7 +214,7 @@
   width: 100%;
   
   &__content-container {
-    @include padding.padding-between-components-bottom;
+    @include padding-between-components-bottom;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -228,19 +225,19 @@
 }
 
 .gallery__heading {
-  @include padding.padding-between-components-bottom;
-  @include padding.padding-between-components-top;
+  @include padding-between-components-bottom;
+  @include padding-between-components-top;
 }
 
 .gallery {
-  @include padding.padding-inline;
+  @include padding-inline;
   
   &__heading {
     @include section-header;
   }
   
   &__image-container {
-    @include padding.padding-between-components-gap;
+    @include padding-between-components-gap;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -270,7 +267,7 @@
 .footer-section {
   background: $band-site-black;
   width: 100%;
-  @include padding.padding-between-components-bottom;
+  @include padding-between-components-bottom;
   
   &__content-container {
     color: $white;
@@ -286,9 +283,9 @@
 
 
 .socials__container {
-  @include padding.padding-between-components-bottom;
-  @include padding.padding-between-components-gap;
-  @include padding.padding-between-components-top;
+  @include padding-between-components-bottom;
+  @include padding-between-components-gap;
+  @include padding-between-components-top;
   display: flex;
   flex-direction: column;
 
@@ -302,7 +299,7 @@
 }
 
 .social-icon__container {
-  @include padding.padding-between-components-gap;
+  @include padding-between-components-gap;
   display: flex;  
 }
 
@@ -311,12 +308,12 @@
 }
 
 .socials__heading {
-  @include padding.padding-between-components-bottom;
+  @include padding-between-components-bottom;
   @include section-header;
 }
 
 .management__container {
-  @include padding.padding-between-components-gap;
+  @include padding-between-components-gap;
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;
@@ -335,11 +332,11 @@
 }
 
 .manager__role {
-  @include padding.padding-between-components-bottom;
+  @include padding-between-components-bottom;
 }
 
 .manager__email {
-  @include padding.padding-between-components-top;
+  @include padding-between-components-top;
   
   .manager__email--word-break {
     overflow-wrap: break-word;
@@ -369,7 +366,7 @@
 }
 
 .footer__logo {
-  @include margin.margin-block;
+  @include margin-block;
   // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
   height: 2.5rem;
   width: 8.75rem;

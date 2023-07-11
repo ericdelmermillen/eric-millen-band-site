@@ -1,4 +1,3 @@
-@use "./fonts" as *;
 
 // Break Points: should these be relative? 
 $tablet-width: 678px;
@@ -88,32 +87,3 @@ $mercury: #e1e1e1;
 $mercury-opacity-zero: rgba(225, 225, 225, 0);
 $alabaster: #fafafa;
 $hero-image-overlay-color: rgba(50, 50, 50, 0.5);
-
-// Spacings - Padding - Mobile:
-@mixin padding-before-headlines {
-  padding-left: 1.5rem;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-left: 3rem;
-  }
-}
-
-@mixin padding-after-headlines {
-  padding-right: 1rem;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-right: 2.25rem;
-  }
-}
-
-@mixin padding-between-components {
-  gap: 1rem;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    gap: 2.25rem;
-  }
-}
-

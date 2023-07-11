@@ -1,8 +1,9 @@
 @use "./variables" as *;
 
 // Font-face rules:
+
 @font-face {
-  font-family: 'AvenirNextRegular';
+  font-family: 'AvenirNext';
   src: url('/assets/fonts/AvenirNextLTPro-Regular.woff') format('woff'), 
   url('/assets/fonts/AvenirNextLTPro-Regular.woff2') format("woff2");
   font-weight: 400;
@@ -12,7 +13,7 @@
 
 // Demi
 @font-face {
-  font-family: 'AvenirNextDemi';
+  font-family: 'AvenirNext';
   src: url('/assets/fonts/AvenirNextLTPro-Demi.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro-Demi.woff2') format('woff');
   font-weight: 600;
   font-style: normal;
@@ -21,24 +22,17 @@
 
 // Bold
 @font-face {
-  font-family: 'AvenirNextBold'; 
+  font-family: 'AvenirNext'; 
   src: url('/assets/fonts/AvenirNextLTPro-Bold.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-// Font Family
-$font-family-regular: "AvenirNextRegular";
-$font-family-demi: "AvenirNextDemi";
-$font-family-bold: "AvenirNextBold";
-
-
 // // Page Header for h1: 
-@mixin page-header($font-family: $font-family-bold, $font-size: $font-size-h1-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: $font-weight-h1-tablet) {    
+@mixin page-header($font-size: $font-size-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: 700){    
     font-size: $font-size;
     line-height: $line-height;
-    font-family: $font-family;
   
   @media (min-width: $tablet-width) {
     font-size: $font-size-h1-tablet;
@@ -47,27 +41,27 @@ $font-family-bold: "AvenirNextBold";
 }
 
 // // Section Header for h2: 
-@mixin section-header {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-family: $font-family-bold;
+@mixin section-header($font-size-mobile: 1.5rem, $line-height-mobile: 2rem, $font-weight-mobile: 700, $font-size-tablet: 2.25rem, $font-weight-tablet: 700, $line-height-tablet: 2.75rem) {
+    font-size: $font-size-mobile;
+    line-height: $line-height-mobile;
+    font-weight: $font-weight-mobile;
     
   // Tablet or Desktop 
     @media (min-width: $tablet-width) {
-      font-size: 2.25rem;
-      line-height: 2.75rem;
+      font-size: $font-size-tablet;
+      line-height: $line-height-tablet;
+      font-weight: $font-weight-tablet;
   }
 }
 
 //  Sub Header for h3 
-@mixin sub-header($default-font-size: 0.875rem, $default-tablet-font-size: 1rem) {
-  font-size: $default-font-size;
+@mixin sub-header($font-size-mobile: 0.875rem, $font-size-tablet: 1rem) {
+  font-size: $font-size-mobile;
   line-height: 1.375rem;
-  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: $tablet-width) {
-    font-size: $default-tablet-font-size;
+    font-size: $font-size-tablet;
     line-height: 2rem;
   }
 }
@@ -88,7 +82,6 @@ $font-family-bold: "AvenirNextBold";
 @mixin quote { 
   font-size: 1.25rem; 
   line-height: 1.75rem;
-  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: $tablet-width) {
@@ -102,7 +95,6 @@ $font-family-bold: "AvenirNextBold";
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-style: normal;
-  font-family: $font-family-demi;
   
 // Tablet or Desktop 
   @media (min-width: $tablet-width) {
@@ -111,14 +103,13 @@ $font-family-bold: "AvenirNextBold";
   }
 }
 
-@mixin body-copy($font-size: 0.813rem, $line-height: 1.125rem, $font-family: $font-family-regular, $tablet-font-size: 0.875rem, $tablet-line-height: 1.375rem) {
-  font-size: $font-size;
-  line-height: $line-height;
-  font-family: $font-family;
+@mixin body-copy($font-size-mobile: 0.813rem, $line-height-mobile: 1.125rem, $font-size-tablet: 0.875rem, $tablet-line-height: 1.375rem) {
+  font-size: $font-size-mobile;
+  line-height: $line-height-mobile;
 
   @media (min-width: $tablet-width) {
-    font-size: $tablet-font-size;
-    line-height: $tablet-line-height;
+    font-size: $font-size-tablet;
+    line-height: $line-height-tablet;
   }
 }
 
@@ -133,7 +124,7 @@ $font-family-bold: "AvenirNextBold";
 
 // Global styles 
 body {
-  font-family: $font-family-regular;
+  font-family: "AvenirNext";
 }
 
 a {
@@ -142,14 +133,8 @@ a {
   &:hover, 
   &:visited, 
   &:active {
-    @extend a;
     color: inherit;
   }
-  
-  // &:focus {
-  //   color: inherit;
-  //   outline: 0.063rem solid $white;
-  // }
 }
 
 ul {
@@ -344,13 +329,11 @@ ul {
   &--active-option,
   .menu-option--active {
     color: $white;
-    font-family: $font-family-demi;
   }
   
   &--inactive-option,
   .menu-option--inactive {
     color: $mercury;
-    font-family: $font-family-regular;
   }
 }
 
@@ -377,7 +360,6 @@ ul {
   
   &:hover {
     border-bottom: 0.188rem solid $mercury;
-    font-family: $font-family-demi;
     transition: all 0.5s ease;
   }
 }
@@ -447,8 +429,7 @@ ul {
 
 .manager__name,
 .manager__role {
-  @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
-  font-family: $font-family-demi;
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
   white-space: nowrap;
 }
 
@@ -500,3 +481,27 @@ ul {
   }
 }
 
+@mixin divider {
+  border-bottom: 1px solid $mercury;
+}
+
+
+@mixin btn($font-size-mobile: 10px, $line-height-mobile: 20px, $font-weight-mobile: 700) {
+
+  font-size: $font-size-mobile;
+  line-height: $line-height-mobile;
+  font-weight: $font-weight-mobile;
+  height: 40px;
+  background: $band-site-black;
+  color: $white;
+  border-radius: 4px;
+
+  @media screen and (min-width: $tablet-width) {
+    width: 150px;
+    padding: 0 32px;
+  }
+  
+  &:hover {
+    background: $band-site-dark-black;
+  }
+}

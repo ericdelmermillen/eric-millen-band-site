@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "AvenirNextRegular";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "AvenirNextDemi";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "AvenirNextBold";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: "AvenirNextRegular";
+  font-family: "AvenirNext";
 }
 
 a, a:hover, a:visited, a:active {
@@ -242,7 +242,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
+  font-weight: 700;
 }
 @media (min-width: 678px) {
   .socials__heading {
@@ -253,6 +253,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   .socials__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 
@@ -399,7 +400,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-left: 1.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
 }
 @media (min-width: 678px) {
   .hero-section__page-header {
@@ -441,7 +441,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-top: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
+  font-weight: 700;
 }
 @media (min-width: 678px) {
   .bio-section__heading {
@@ -457,6 +457,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   .bio-section__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 678px) {
@@ -614,12 +615,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .gallery__heading {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
+  font-weight: 700;
 }
 @media (min-width: 678px) {
   .gallery__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 .gallery__image-container {
@@ -740,7 +742,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
+  font-weight: 700;
 }
 @media (min-width: 678px) {
   .socials__heading {
@@ -751,6 +753,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   .socials__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 

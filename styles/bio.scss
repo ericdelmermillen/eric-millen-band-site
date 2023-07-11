@@ -239,7 +239,6 @@
 .manager__name,
 .manager__role {
   @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
-  font-family: $font-family-demi;
   white-space: nowrap;
 }
 

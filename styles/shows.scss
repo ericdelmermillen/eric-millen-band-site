@@ -118,15 +118,24 @@
 }
 
 .show {
-  border: 2px solid green;
+  @include divider;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
   
   @media screen and (min-width: $tablet-width) {
-    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   @media screen and (min-width: $desktop-width) {
     max-width: 40rem;
   }
-  
-  
+
+  .btn--buy-tickets {
+    border: 2px solid red;
+    text-align: center;
+    @include btn;
+    padding: 1rem 0; 
+  }
 }

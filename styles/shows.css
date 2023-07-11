@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "AvenirNextRegular";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "AvenirNextDemi";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "AvenirNextBold";
+  font-family: "AvenirNext";
   src: url("/assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("/assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: "AvenirNextRegular";
+  font-family: "AvenirNext";
 }
 
 a, a:hover, a:visited, a:active {
@@ -242,7 +242,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   padding-bottom: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: "AvenirNextBold";
+  font-weight: 700;
 }
 @media (min-width: 678px) {
   .socials__heading {
@@ -253,6 +253,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   .socials__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    font-weight: 700;
   }
 }
 
@@ -448,7 +449,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .hero-section__page-header {
   font-size: 1.5rem;
   line-height: 2;
-  font-family: "AvenirNextBold";
   border: 2px solid red;
   max-width: 60%;
 }
@@ -526,15 +526,40 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .show {
-  border: 2px solid green;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 678px) {
   .show {
-    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 @media screen and (min-width: 1280px) {
   .show {
     max-width: 40rem;
   }
+}
+.show .btn--buy-tickets {
+  border: 2px solid red;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  height: 40px;
+  background: #323232;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 678px) {
+  .show .btn--buy-tickets {
+    width: 150px;
+    padding: 0 32px;
+  }
+}
+.show .btn--buy-tickets:hover {
+  background: #000;
 }/*# sourceMappingURL=shows.css.map */

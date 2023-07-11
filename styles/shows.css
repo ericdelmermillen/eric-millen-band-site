@@ -364,8 +364,8 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .hero-section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background: url("../assets/images/hero-shows.jpg") center center/cover;
   color: #fff;
   position: relative;
@@ -429,14 +429,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     align-items: center;
   }
 }
-.hero-section__content-container .hero-section__sub-header {
-  padding-bottom: 1rem;
-}
-@media (min-width: 678px) {
-  .hero-section__content-container .hero-section__sub-header {
-    padding-bottom: 2.25rem;
-  }
-}
 
 .hero-section__text-container {
   border: 3px dotted #000;
@@ -455,8 +447,9 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .hero-section__page-header {
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 2;
   font-family: "AvenirNextBold";
+  border: 2px solid red;
   max-width: 60%;
 }
 @media (min-width: 678px) {
@@ -472,9 +465,16 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .hero-section__sub-header {
+  padding-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.375rem;
   font-family: "AvenirNextDemi";
+  border: 2px solid blue;
+}
+@media (min-width: 678px) {
+  .hero-section__sub-header {
+    padding-bottom: 2.25rem;
+  }
 }
 @media (min-width: 678px) {
   .hero-section__sub-header {
@@ -506,6 +506,35 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 @media screen and (min-width: 1280px) {
   .hero-section__song {
+    max-width: 40rem;
+  }
+}
+
+.shows-section {
+  border: 2px solid red;
+  width: 100;
+}
+.shows-section__content-container {
+  border: 2px solid green;
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+@media screen and (min-width: 1280px) {
+  .shows-section__content-container {
+    display: flex;
+  }
+}
+
+.show {
+  border: 2px solid green;
+}
+@media screen and (min-width: 678px) {
+  .show {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .show {
     max-width: 40rem;
   }
 }/*# sourceMappingURL=shows.css.map */

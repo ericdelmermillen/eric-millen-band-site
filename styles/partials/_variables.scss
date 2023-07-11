@@ -3,18 +3,11 @@
 $tablet-width: 678px;
 $desktop-width: 1280px;
 
-
-// Font Family
-$font-family-regular: "AvenirNextRegular";
-$font-family-demi: "AvenirNextDemi";
-$font-family-bold: "AvenirNextBold";
-
-
 // Fonts - Page- Header - Mobile:
 $font-size-h1-mobile: 1.5rem;
 $font-line-height-h1-mobile: 2rem; 
 $font-weight-h1-mobile: 700;
- 
+
 // Fonts - Page- Header - Tablet & Desktop:
 $font-size-h1-tablet: 3.75rem;
 $font-line-height-h1-tablet: 4.25rem;
@@ -25,6 +18,7 @@ $font-weight-h1-tablet: 700;
 $font-size-h2-mobile: 1.5rem;
 $font-line-height-h2-mobile: 2rem;
 $font-weight-h2-tablet: 700;
+
 
 // Fonts - Section-Header - Tablet:
 $font-size-h2-tablet: 2.25rem;
@@ -87,3 +81,4 @@ $mercury: #e1e1e1;
 $mercury-opacity-zero: rgba(225, 225, 225, 0);
 $alabaster: #fafafa;
 $hero-image-overlay-color: rgba(50, 50, 50, 0.5);
+

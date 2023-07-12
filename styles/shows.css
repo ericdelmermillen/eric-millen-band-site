@@ -31,18 +31,20 @@ body {
   font-family: "AvenirNext";
 }
 
-a, a:hover, a:visited, a:active {
+a,
+a:hover,
+a:visited,
+a:active {
   text-decoration: none;
-}
-a:hover, a:visited, a:active {
   color: inherit;
 }
 
 ul {
   list-style: none;
 }
-ul a, ul a:hover, ul a:visited, ul a:active {
+ul a {
   text-decoration: none;
+  color: inherit;
 }
 
 .nav-bar__container {
@@ -67,9 +69,13 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .nav-bar__logo {
-  margin-top: 2rem;
   height: 1.25rem;
   width: 7.5rem;
+}
+@media (max-width: 677px) {
+  .nav-bar__logo {
+    margin-top: 2rem;
+  }
 }
 @media (min-width: 678px) {
   .nav-bar__logo {
@@ -78,19 +84,29 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 @media screen and (min-width: 678px) {
   .nav-bar__logo {
-    margin-inline: 3rem;
-    margin-bottom: 2rem;
     margin-top: 0;
   }
 }
-@media screen and (min-width: 678px) and (min-width: 678px) {
+@media screen and (min-width: 678px) and (max-width: 677px) {
   .nav-bar__logo {
-    margin-inline: 2.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 @media screen and (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
-    margin-bottom: 2.25rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+@media screen and (min-width: 678px) and (max-width: 677px) {
+  .nav-bar__logo {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 678px) and (min-width: 678px) {
+  .nav-bar__logo {
+    margin-bottom: 2rem;
   }
 }
 
@@ -113,12 +129,11 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 .nav-bar__menu--active-option,
 .nav-bar__menu .menu-option--active {
   color: #fff;
-  font-family: "AvenirNextDemi";
+  font-weight: 600;
 }
 .nav-bar__menu--inactive-option,
 .nav-bar__menu .menu-option--inactive {
   color: #e1e1e1;
-  font-family: "AvenirNextRegular";
 }
 
 .nav-bar__menu--active-option,
@@ -152,7 +167,7 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 .nav-bar__menu--inactive-option:hover {
   border-bottom: 0.188rem solid #e1e1e1;
-  font-family: "AvenirNextDemi";
+  font-weight: 600;
   transition: all 0.5s ease;
 }
 
@@ -205,15 +220,18 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   }
 }
 
-.socials__heading {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: "AvenirNextDemi";
+@media (max-width: 677px) {
+  .socials__heading {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  }
 }
 @media (min-width: 678px) {
   .socials__heading {
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
   }
 }
 
@@ -227,9 +245,11 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   }
 }
 
-.social-icon {
-  font-size: 0.625rem;
-  line-height: 1.375rem;
+@media (max-width: 677px) {
+  .social-icon {
+    font-size: 0.625rem;
+    line-height: 1.375rem;
+  }
 }
 @media (min-width: 678px) {
   .social-icon {
@@ -240,20 +260,24 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .socials__heading {
   padding-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
 }
 @media (min-width: 678px) {
   .socials__heading {
     padding-bottom: 2.25rem;
   }
 }
+@media (max-width: 677px) {
+  .socials__heading {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+}
 @media (min-width: 678px) {
   .socials__heading {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-size: 36px;
     font-weight: 700;
+    line-height: 44px;
   }
 }
 
@@ -277,16 +301,22 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .manager__name,
 .manager__role {
-  font-size: 0.813rem;
-  line-height: 1.75;
-  font-family: "AvenirNextBold";
-  font-family: "AvenirNextDemi";
   white-space: nowrap;
+  font-weight: 700;
+}
+@media (max-width: 677px) {
+  .manager__name,
+  .manager__role {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
 }
 @media (min-width: 678px) {
   .manager__name,
   .manager__role {
-    font-size: 0.875rem;
+    font-size: 14px;
+    font-weight: 400;
     line-height: 1.75;
   }
 }
@@ -318,14 +348,17 @@ ul a, ul a:hover, ul a:visited, ul a:active {
   white-space: nowrap;
 }
 
-.manager__address {
-  font-size: 0.813rem;
-  line-height: 1.75;
-  font-family: "AvenirNextRegular";
+@media (max-width: 677px) {
+  .manager__address {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.75;
+  }
 }
 @media (min-width: 678px) {
   .manager__address {
-    font-size: 0.875rem;
+    font-size: 14px;
+    font-weight: 400;
     line-height: 1.75;
   }
 }
@@ -344,15 +377,19 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .footer__logo {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   height: 2.5rem;
   width: 8.75rem;
 }
+@media (max-width: 677px) {
+  .footer__logo {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+}
 @media (min-width: 678px) {
   .footer__logo {
-    margin-top: 2.25rem;
     margin-bottom: 2.25rem;
+    margin-top: 2.25rem;
   }
 }
 @media screen and (min-width: 678px) {
@@ -447,15 +484,21 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 }
 
 .hero-section__page-header {
-  font-size: 1.5rem;
-  line-height: 2;
   border: 2px solid red;
   max-width: 60%;
 }
+@media (max-width: 677px) {
+  .hero-section__page-header {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 2;
+  }
+}
 @media (min-width: 678px) {
   .hero-section__page-header {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 68px;
   }
 }
 @media screen and (min-width: 678px) {
@@ -466,9 +509,6 @@ ul a, ul a:hover, ul a:visited, ul a:active {
 
 .hero-section__sub-header {
   padding-bottom: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.375rem;
-  font-family: "AvenirNextDemi";
   border: 2px solid blue;
 }
 @media (min-width: 678px) {
@@ -476,10 +516,18 @@ ul a, ul a:hover, ul a:visited, ul a:active {
     padding-bottom: 2.25rem;
   }
 }
+@media (max-width: 677px) {
+  .hero-section__sub-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 22px;
+  }
+}
 @media (min-width: 678px) {
   .hero-section__sub-header {
     font-size: 2.5rem;
-    line-height: 2rem;
+    font-weight: 600;
+    line-height: 32px;
   }
 }
 

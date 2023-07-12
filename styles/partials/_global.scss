@@ -29,89 +29,8 @@
   font-display: swap;
 }
 
-// // Page Header for h1: 
-@mixin page-header($font-size: $font-size-mobile, $line-height: $font-line-height-h1-mobile, $font-weight: 700){    
-    font-size: $font-size;
-    line-height: $line-height;
-  
-  @media (min-width: $tablet-width) {
-    font-size: $font-size-h1-tablet;
-    line-height: $font-line-height-h1-tablet;
-  }
-}
 
-// // Section Header for h2: 
-@mixin section-header($font-size-mobile: 1.5rem, $line-height-mobile: 2rem, $font-weight-mobile: 700, $font-size-tablet: 2.25rem, $font-weight-tablet: 700, $line-height-tablet: 2.75rem) {
-    font-size: $font-size-mobile;
-    line-height: $line-height-mobile;
-    font-weight: $font-weight-mobile;
-    
-  // Tablet or Desktop 
-    @media (min-width: $tablet-width) {
-      font-size: $font-size-tablet;
-      line-height: $line-height-tablet;
-      font-weight: $font-weight-tablet;
-  }
-}
-
-//  Sub Header for h3 
-@mixin sub-header($font-size-mobile: 0.875rem, $font-size-tablet: 1rem) {
-  font-size: $font-size-mobile;
-  line-height: 1.375rem;
-  
-// Tablet or Desktop 
-  @media (min-width: $tablet-width) {
-    font-size: $font-size-tablet;
-    line-height: 2rem;
-  }
-}
-
-//  Social Icons (same as h3)
-@mixin social-icons {
-  font-size: 0.625rem;
-  line-height: 1.375rem;
-  
-// Tablet or Desktop 
-  @media (min-width: $tablet-width) {
-    font-size: 0.75rem;
-    line-height: 2rem;
-  }
-}
-
-// Quote q tags 
-@mixin quote { 
-  font-size: 1.25rem; 
-  line-height: 1.75rem;
-  
-// Tablet or Desktop 
-  @media (min-width: $tablet-width) {
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-  }
-}
-
-// Source cite tags `
-@mixin source {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-style: normal;
-  
-// Tablet or Desktop 
-  @media (min-width: $tablet-width) {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-}
-
-@mixin body-copy($font-size-mobile: 0.813rem, $line-height-mobile: 1.125rem, $font-size-tablet: 0.875rem, $tablet-line-height: 1.375rem) {
-  font-size: $font-size-mobile;
-  line-height: $line-height-mobile;
-
-  @media (min-width: $tablet-width) {
-    font-size: $font-size-tablet;
-    line-height: $line-height-tablet;
-  }
-}
+// Global styles:
 
 // Global reset
 *,
@@ -122,70 +41,247 @@
   box-sizing: border-box;
 }
 
-// Global styles 
 body {
   font-family: "AvenirNext";
 }
 
-a {
-  text-decoration: none;      
-  
-  &:hover, 
-  &:visited, 
-  &:active {
-    color: inherit;
-  }
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
+
 
 ul {
   list-style: none;
 
   a {
-    text-decoration: none;      
+    text-decoration: none;
+    color: inherit;      
   }
 }
+
+
+// Mixins:
+
+// Page Header for h1: 
+@mixin page-header (
+  $font-size-mobile: 24px,
+  $font-weight-mobile: 700,
+  $line-height-mobile: 32px,
+  $font-size-tablet: 60px,
+  $font-weight-tablet: 700,
+  $line-height-tablet: 68px
+) {
+  
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    font-weight: $font-weight-mobile;
+    line-height: $line-height-mobile;
+  }
+  
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    font-weight: $font-weight-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+// // Section Header for h2: 
+@mixin section-header (
+  $font-size-mobile: 24px,
+  $font-weight-mobile: 700,
+  $line-height-mobile: 32px,
+  $font-size-tablet: 36px,
+  $font-weight-tablet: 700,
+  $line-height-tablet: 44px
+) {
+
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    font-weight: $font-weight-mobile;
+    line-height: $line-height-mobile;
+  }
+  
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    font-weight: $font-weight-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+// // Subheader for h3: 
+@mixin sub-header (
+  $font-size-mobile: 14px,
+  $font-weight-mobile: 600,
+  $line-height-mobile: 22px,
+  $font-size-tablet: 24px,
+  $font-weight-tablet: 600,
+  $line-height-tablet: 32px
+) {
+
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    font-weight: $font-weight-mobile;
+    line-height: $line-height-mobile;
+  }
+  
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    font-weight: $font-weight-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+//  Social Icons (same as h3):
+@mixin social-icons(
+  $font-size-mobile: 0.625rem,
+  $line-height-mobile: 1.375rem,
+  $font-size-tablet: 0.75rem,
+  $line-height-tablet: 2rem
+) {
+
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    line-height: $line-height-mobile;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+
+// Quote (q tags): 
+@mixin quote (
+  $font-size-mobile: 1.25rem,
+  $line-height-mobile: 1.75rem,
+  $font-size-tablet: 1.5rem,
+  $line-height-tablet: 2.125rem
+) {
+
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    line-height: $line-height-mobile;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+// Source (cite tags): 
+@mixin source(
+  $font-size-mobile: 0.875rem,
+  $font-style-mobile: normal,
+  $line-height-mobile: 1.25rem,
+  $font-size-tablet: 1rem,
+  $font-style-tablet: normal,
+  $line-height-tablet: 1.5rem,
+) {
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    font-style: $font-style-mobile;
+    line-height: $line-height-mobile;
+  }
+  
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    font-style: $font-style-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+// Body copy/ p tags
+@mixin body-copy(
+  $font-size-mobile: 13px,
+  $font-weight-mobile: 400,
+  $line-height-mobile: 18px, 
+  $font-size-tablet: 14px,
+  $font-weight-tablet: 400,
+  $line-height-tablet: 22px
+) {
+
+  @media (max-width: $mobile-width) {
+    font-size: $font-size-mobile;
+    font-weight: $font-weight-mobile;
+    line-height: $line-height-mobile;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: $font-size-tablet;
+    font-weight: $font-weight-tablet;
+    line-height: $line-height-tablet;
+  }
+}
+
+// *** need Buttons and Labels
 
 // Margins:
 
 // margin-top
-@mixin margin-top($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
-  margin-top: $default-margin;
-  
-  // Tablet or Desktop
+@mixin margin-top($margin-top-mobile: 1rem, $margin-top-tablet: 2.25rem) {
+
+  @media (max-width: $mobile-width) {
+    margin-top: $margin-top-mobile;
+  }
+
   @media (min-width: $tablet-width) {
-    margin-top: $tablet-desktop-margin;
+    margin-top: $margin-top-tablet;
   }
 }
  
 // margin-bottom
-@mixin margin-bottom($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
-  margin-bottom: $default-margin;
-  
-  // Tablet or Desktop
+@mixin margin-bottom($margin-bottom-mobile: 1rem, $margin-bottom-tablet: 2.25rem) {
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: $margin-bottom-mobile;
+  }
+
   @media (min-width: $tablet-width) {
-    margin-bottom: $tablet-desktop-margin;
+    margin-bottom: $margin-bottom-tablet;
   }
 }
+ 
 
 // margin-block (margin top & margin-bottom)
-@mixin margin-block($default-margin-top: 1rem, $default-margin-bottom: 1rem, $tablet-desktop-margin-top: 2.25rem, $tablet-desktop-margin-bottom: 2.25rem) {
-  margin-top: $default-margin-top;
-  margin-bottom: $default-margin-bottom;
-  
-  // Tablet or Desktop
+@mixin margin-block(
+  $margin-bottom-mobile: 1rem,
+  $margin-top-mobile: 1rem,
+  $margin-bottom-tablet: 2.25rem,
+  $margin-top-tablet: 2.25rem
+) {
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: $margin-bottom-mobile;
+    margin-top: $margin-top-mobile;
+  }
+
   @media (min-width: $tablet-width) {
-    margin-top: $tablet-desktop-margin-top;
-    margin-bottom: $tablet-desktop-margin-bottom;
+    margin-bottom: $margin-bottom-tablet;
+    margin-top: $margin-top-tablet;
   }
 }
 
-// margin-inline (
-@mixin margin-inline($default-margin: 1rem, $tablet-desktop-margin: 2.25rem) {
-  margin-inline: $default-margin;
-  
-  // Tablet or Desktop
+@mixin margin-inline(
+  $margin-left-mobile: 1rem,
+  $margin-right-mobile: 1rem,
+  $margin-left-tablet: 2.25rem,
+  $margin-right-tablet: 2.25rem
+) {
+
+  @media (max-width: $mobile-width) {
+    margin-left: $margin-left-mobile;
+    margin-right: $margin-right-mobile;
+  }
+
   @media (min-width: $tablet-width) {
-    margin-inline: $tablet-desktop-margin;
+    margin-left: $margin-left-tablet;
+    margin-right: $margin-right-tablet;
   }
 }
 
@@ -296,22 +392,21 @@ ul {
   width: min(100%, $desktop-width);
   
   @media screen and (min-width: $tablet-width) {
-    & {
       flex-direction: row;
       padding-top: 2.5rem;
-    }
   }
 }
 
 .nav-bar__logo {
   // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
-  @include margin-top($default-margin: 2rem);
+  @include margin-top($margin-top-mobile: 2rem);
   height: 1.25rem;
   width: 7.5rem;
   
   @media screen and (min-width: $tablet-width) {
-    @include margin-inline($default-margin: 3rem);
-    @include margin-bottom($default-margin: 2rem);
+    @include margin-inline($margin-left-tablet: 3rem, $margin-right-tablet: 3rem);
+
+    @include margin-bottom($margin-bottom-tablet: 2rem);
     margin-top: 0;
   }
 }
@@ -329,6 +424,7 @@ ul {
   &--active-option,
   .menu-option--active {
     color: $white;
+    font-weight: 600;
   }
   
   &--inactive-option,
@@ -360,6 +456,7 @@ ul {
   
   &:hover {
     border-bottom: 0.188rem solid $mercury;
+    font-weight: 600;
     transition: all 0.5s ease;
   }
 }
@@ -429,8 +526,10 @@ ul {
 
 .manager__name,
 .manager__role {
+  // border: 2px solid red;
   @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
   white-space: nowrap;
+  font-weight: 700;
 }
 
 .manager__role {
@@ -454,7 +553,7 @@ ul {
 }
 
 .manager__address {
-  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
 }
 
 .management,

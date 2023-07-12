@@ -58,7 +58,7 @@
   &__heading {
     @include padding-before-headlines;
     @include padding-between-components-top;
-    @include section-header;
+    @include section-header($font-weight-tablet: 600);
 
     @media screen and (min-width: $tablet-width) {
       padding-left: 0;
@@ -88,22 +88,23 @@
   @include quote;
   display: block;
   font-style: normal;
+  font-weight: 600;
   letter-spacing: 0.094rem;
 
   @media screen and (min-width: $desktop-width) {
-      max-width: 75%;
+    max-width: 75%;
   }
-  
-  &__source {
-    @extend .bio-article__quote;
-  }
+}
+
+.bio-article__source {
+  @extend .bio-article__quote;
 }
 
 
 .bio-section__subheader {
   @include padding-between-components-bottom;
   @include padding-between-components-top;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .bio-section__paragraph-container {
@@ -117,7 +118,7 @@
 }
 
 .bio-section__body-copy {
-  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
 }
 
 // // Gallery Section
@@ -238,7 +239,7 @@
 
 .manager__name,
 .manager__role {
-  @include body-copy($line-height: 1.75, $font-family: $font-family-bold, $tablet-line-height: 1.75);
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75, $font-weight-mobile: 600, $font-weight-tablet: 600);
   white-space: nowrap;
 }
 
@@ -263,7 +264,7 @@
 }
 
 .manager__address {
-  @include body-copy($line-height: 1.75, $tablet-line-height: 1.75);
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
 }
 
 .management,

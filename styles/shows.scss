@@ -3,9 +3,9 @@
 
 
 // Hero Section
-.hero-section {
+.hero {
   @include padding-between-components-top($default-padding-top: 2rem);
-  @include padding-between-components-bottom($default-padding-bottom: 2rem);
+  @include padding-between-components-bottom($padding-bottom-mobile: 2rem);
   background: url("../assets/images/hero-shows.jpg") center center / cover;
   color: $white;
   position: relative;
@@ -56,16 +56,16 @@
   }
 }
 
-.hero-section__text-container {
+.hero__text-container {
   border: 3px dotted #000;
 }
 
-.hero-section__page-header,
-.hero-section__sub-header {
+.hero__page-header,
+.hero__sub-header {
   @include padding-before-headlines;
 }
 
-.hero-section__page-header {
+.hero__page-header {
   @include page-header($line-height-mobile: 2);
   border: 2px solid red;
   max-width: 60%;
@@ -75,13 +75,13 @@
   }
 }
 
-.hero-section__sub-header {
+.hero__sub-header {
   @include padding-between-components-bottom;
   @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
   border: 2px solid blue;
 }
 
-.hero-section__song {
+.hero__song {
   @include padding-inline(1.5rem);
   @include padding-between-components-top(2.5rem);
   width: 100%; 
@@ -100,42 +100,83 @@
 
 .shows-section {
   border: 2px solid red;
-  width: 100;
+  width: 100%;
+  @include padding-inline;
+  @include padding-block;
 
   &__content-container {
     border: 2px solid green;
     width: min(100%, $desktop-width);
     margin: 0 auto;
     
-      @media screen and (min-width: $tablet-width) {
-      }
-      
-      @media screen and (min-width: $desktop-width) {
-        display: flex;
-
-      }
+    @media screen and (min-width: $tablet-width) {
+    }
+    
+    @media screen and (min-width: $desktop-width) {
+      display: flex;
+      border: 3px dotted #000;
+      // justify-content: space-between;
+    }
   }
 }
 
 .show {
   @include divider;
+  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  @include padding-between-components-gap;
   
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
     justify-content: space-between;
+    // align-items: center;
   }
   
   @media screen and (min-width: $desktop-width) {
-    max-width: 40rem;
+    // max-width: 40rem;
+    background: red;;
   }
 
-  .btn--buy-tickets {
-    border: 2px solid red;
-    text-align: center;
-    @include btn;
-    padding: 1rem 0; 
-  }
+}
+
+.btn--buy-tickets {
+  border: 2px solid red;
+  text-align: center;
+  // @include btn;
+  padding: 1rem 0; 
+  display: block;
+}
+
+.shows-section__heading {
+  @include padding-block;
+  @include page-header(
+    $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
+    );
+  background: red;
+  padding-left: 1rem;
+}
+
+.show__details,
+.show__cta {
+  @include padding-block;
+  padding-left: 1rem;
+  border: 2px solid green;
+  width: 100%;
+}
+
+
+.show__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.details__heading {
+  @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
 }

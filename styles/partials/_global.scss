@@ -308,13 +308,13 @@ ul {
 }
 
 
-// Gap Mixin (padding between eelements in style guide)
-@mixin padding-between-components-gap($default-gap: 1rem, $default-gap-tablet: 2.25rem) {
-  gap: $default-gap;
+// Gap Mixin (padding between elements in style guide)
+@mixin padding-between-components-gap($gap-mobile: 1rem, $gap-tablet: 2.25rem) {
+  gap: $gap-mobile;
   
   // Tablet or Desktop
   @media (min-width: $tablet-width) {
-    gap: $default-gap-tablet;
+    gap: $gap-tablet;
   }
 }
 
@@ -327,16 +327,18 @@ ul {
   }
 }
 
-@mixin padding-between-components-bottom($default-padding-bottom: 1rem, $default-tablet-padding-bottom: 2.25rem) {
-  padding-bottom: $default-padding-bottom;
+@mixin padding-between-components-bottom(
+  $padding-bottom-mobile: 1rem, $padding-bottom-tablet: 2.25rem
+) {
+  padding-bottom: $padding-bottom-mobile;
   
   // Tablet or Desktop
   @media (min-width: $tablet-width) {
-    padding-bottom: $default-tablet-padding-bottom;
+    padding-bottom: $padding-bottom-tablet;
   }
 }
 
-// margin-inline (
+// padding-inline (
   @mixin padding-inline($default-padding: 1rem, $default-tablet-padding: 2.25rem) {
     padding-inline: $default-padding;
     
@@ -345,6 +347,25 @@ ul {
       padding-inline: $default-tablet-padding;
     }
   }
+
+  // Padding block
+  @mixin padding-block(
+  $padding-bottom-mobile: 1rem,
+  $padding-top-mobile: 1rem,
+  $padding-bottom-tablet: 2.25rem,
+  $padding-top-tablet: 2.25rem
+) {
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: $padding-bottom-mobile;
+    padding-top: $padding-top-mobile;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: $padding-bottom-tablet;
+    padding-top: $padding-top-tablet;
+  }
+}
   
 
 
@@ -526,10 +547,8 @@ ul {
 
 .manager__name,
 .manager__role {
-  // border: 2px solid red;
-  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
+  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75, $font-weight-mobile: 600, $font-weight-tablet: 600);
   white-space: nowrap;
-  font-weight: 700;
 }
 
 .manager__role {
@@ -579,7 +598,6 @@ ul {
       top: 0;
   }
 }
-
 @mixin divider {
   border-bottom: 1px solid $mercury;
 }

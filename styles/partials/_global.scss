@@ -521,16 +521,18 @@ ul {
 
 .social-icon__container {
   @include padding-between-components-gap;
+  @include padding-between-components-bottom;
+  margin-top: 0.5rem;
   display: flex;  
 }
 
 .social-icon {
-  @include social-icons;
+  height: 100%;
 }
 
 .socials__heading {
   @include padding-between-components-bottom;
-  @include section-header;
+  @include section-header($font-weight-mobile: 600, $font-weight-tablet: 600);
 }
 
 .management__container {

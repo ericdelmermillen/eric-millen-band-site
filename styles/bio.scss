@@ -195,14 +195,20 @@
   display: flex;
 }
 
-
+.comment__form {
+  border: 2px solid red;
+  width: 100%;
+}
 
 
 
 .comment-input__container {
-  border: 2px solid green;
+  border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  // width: 20rem;
+  width: 100%;
+  // flex-grow: 1;
 }
 
 
@@ -225,6 +231,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+
 
 
 

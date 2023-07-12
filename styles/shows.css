@@ -440,7 +440,6 @@ ul a {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   height: calc(50vh - 3rem);
   justify-content: center;
   margin: 0 auto;
@@ -448,11 +447,6 @@ ul a {
   width: min(100%, 1280px);
   z-index: 2;
   height: 100%;
-}
-@media (min-width: 678px) {
-  .hero__content-container {
-    gap: 2.25rem;
-  }
 }
 @media screen and (min-width: 678px) {
   .hero__content-container {
@@ -557,37 +551,90 @@ ul a {
   }
 }
 
-.shows-section {
+.shows {
   border: 2px solid red;
   width: 100%;
   padding-inline: 1rem;
 }
 @media (min-width: 678px) {
-  .shows-section {
+  .shows {
     padding-inline: 2.25rem;
   }
 }
 @media (max-width: 677px) {
-  .shows-section {
+  .shows {
     padding-bottom: 1rem;
     padding-top: 1rem;
   }
 }
 @media (min-width: 678px) {
-  .shows-section {
+  .shows {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
   }
 }
-.shows-section__content-container {
+
+.shows__content-container {
   border: 2px solid green;
   width: min(100%, 1280px);
   margin: 0 auto;
 }
 @media screen and (min-width: 1280px) {
-  .shows-section__content-container {
+  .shows__content-container {
     display: flex;
+    background: green;
     border: 3px dotted #000;
+  }
+}
+
+.shows-container {
+  border: 5px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (min-width: 1280px) and (max-width: 677px) {
+  .shows-container {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1280px) and (min-width: 678px) {
+  .shows-container {
+    margin-left: 2.25rem;
+    margin-right: 0;
+  }
+}
+
+.shows__heading {
+  padding-left: 1rem;
+  width: 20%;
+}
+@media (max-width: 677px) {
+  .shows__heading {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 678px) {
+  .shows__heading {
+    padding-bottom: 2.25rem;
+    padding-top: 2.25rem;
+  }
+}
+@media (max-width: 677px) {
+  .shows__heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+@media (min-width: 678px) {
+  .shows__heading {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 68px;
   }
 }
 
@@ -596,92 +643,72 @@ ul a {
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  gap: 1rem;
-}
-@media (min-width: 678px) {
-  .show {
-    gap: 2.25rem;
-  }
 }
 @media screen and (min-width: 678px) {
   .show {
     flex-direction: row;
-    justify-content: space-between;
   }
 }
-@media screen and (min-width: 1280px) {
-  .show {
-    background: red;
-  }
-}
-
-.btn--buy-tickets {
-  border: 2px solid red;
-  text-align: center;
-  padding: 1rem 0;
-  display: block;
-}
-
-.shows-section__heading {
-  background: red;
-  padding-left: 1rem;
-}
-@media (max-width: 677px) {
-  .shows-section__heading {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-}
-@media (min-width: 678px) {
-  .shows-section__heading {
-    padding-bottom: 2.25rem;
-    padding-top: 2.25rem;
-  }
-}
-@media (max-width: 677px) {
-  .shows-section__heading {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 32px;
-  }
-}
-@media (min-width: 678px) {
-  .shows-section__heading {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 68px;
-  }
-}
-
-.show__details,
-.show__cta {
+.show__details {
   padding-left: 1rem;
   border: 2px solid green;
   width: 100%;
 }
 @media (max-width: 677px) {
-  .show__details,
-  .show__cta {
+  .show__details {
     padding-bottom: 1rem;
     padding-top: 1rem;
   }
 }
 @media (min-width: 678px) {
-  .show__details,
-  .show__cta {
+  .show__details {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
   }
 }
 
 .show__cta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
-
+@media screen and (min-width: 678px) {
+  .show__cta {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+  }
+}
+.btn--buy-tickets {
+  border: 2px solid red;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  height: 40px;
+  background: #323232;
+  color: #fff;
+  border-radius: 4px;
+  padding: 1rem 0;
+  display: block;
+}
+@media screen and (min-width: 678px) {
+  .btn--buy-tickets {
+    width: 150px;
+    padding: 0 32px;
+  }
+}
+.btn--buy-tickets:hover {
+  background: #000;
+}
+@media screen and (min-width: 678px) {
+  .btn--buy-tickets {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (max-width: 677px) {
   .details__heading {
     padding-bottom: 1rem;

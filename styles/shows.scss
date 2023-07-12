@@ -34,7 +34,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    @include padding-between-components-gap;
+    // @include padding-between-components-gap;
     height: calc(50vh - 3rem);
     justify-content: center;
     margin: 0 auto;
@@ -98,68 +98,84 @@
 
 // Shows Section
 
-.shows-section {
+.shows {
   border: 2px solid red;
   width: 100%;
   @include padding-inline;
   @include padding-block;
 
-  &__content-container {
-    border: 2px solid green;
-    width: min(100%, $desktop-width);
-    margin: 0 auto;
+}
+
+.shows__content-container {
+  border: 2px solid green;
+  width: min(100%, $desktop-width);
+  margin: 0 auto;
+  // justify-content: center;
+  
+  @media screen and (min-width: $tablet-width) {
+  }
+  
+  @media screen and (min-width: $desktop-width) {
+    display: flex;
+    background: green;
     
-    @media screen and (min-width: $tablet-width) {
-    }
-    
-    @media screen and (min-width: $desktop-width) {
-      display: flex;
-      border: 3px dotted #000;
-      // justify-content: space-between;
-    }
+    border: 3px dotted #000;
+    // justify-content: space-between;
   }
 }
+
+.shows-container {
+  border: 5px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+    
+  @media screen and (min-width: $tablet-width) {
+  }
+  
+  @media screen and (min-width: $desktop-width) {
+    @include margin-inline(
+      $margin-right-mobile: 0, $margin-right-tablet: 0
+    )
+
+  }
+
+}
+
+.shows__heading {
+  @include padding-block;
+  @include page-header(
+    $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
+    );
+  padding-left: 1rem;
+  width: 20%;
+}
+
 
 .show {
   @include divider;
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  @include padding-between-components-gap;
+  // margin-bottom: 1rem;
+  // @include padding-between-components-gap;
   
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     // align-items: center;
+    // width: 100%;
   }
   
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
-    background: red;;
   }
 
 }
 
-.btn--buy-tickets {
-  border: 2px solid red;
-  text-align: center;
-  // @include btn;
-  padding: 1rem 0; 
-  display: block;
-}
-
-.shows-section__heading {
-  @include padding-block;
-  @include page-header(
-    $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
-    );
-  background: red;
-  padding-left: 1rem;
-}
-
-.show__details,
-.show__cta {
+.show__details {
   @include padding-block;
   padding-left: 1rem;
   border: 2px solid green;
@@ -168,15 +184,49 @@
 
 
 .show__cta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  
+  @media screen and (min-width: $tablet-width) {
+    flex-direction: row;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    // justify-content: space-between;
+    // align-items: center;
+    // width: 100%;
+  }
+  
+  @media screen and (min-width: $desktop-width) {
+    // max-width: 40rem;
+  }
+
 }
 
 
+.btn--buy-tickets {
+  border: 2px solid red;
+  text-align: center;
+  @include btn;
+  padding: 1rem 0; 
+  display: block;
+    
+  @media screen and (min-width: $tablet-width) {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media screen and (min-width: $desktop-width) {
+    // max-width: 40rem;
+  }
+
+}
 
 
 .details__heading {
   @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
 }
+

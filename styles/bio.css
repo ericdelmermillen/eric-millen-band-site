@@ -718,4 +718,34 @@ ul a {
 .comments__container {
   width: min(100%, 1280px);
   margin: 0 auto;
+}
+
+.comment--new {
+  border: 2px dotted #000;
+  display: flex;
+}
+
+.comment-input__container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  border: 2px solid green;
+  display: flex;
+}
+
+.comment__avatar {
+  border: 2px solid red;
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.comment__header {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

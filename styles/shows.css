@@ -564,7 +564,7 @@ ul a {
 @media (max-width: 677px) {
   .shows {
     padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-top: 0rem;
   }
 }
 @media (min-width: 678px) {

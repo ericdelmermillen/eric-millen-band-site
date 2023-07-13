@@ -733,7 +733,6 @@ ul a {
 }
 
 .comment-input__container {
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -753,7 +752,6 @@ ul a {
 }
 
 .comment__header {
-  border: 2px solid blue;
   display: flex;
   justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

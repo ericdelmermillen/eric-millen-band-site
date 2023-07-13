@@ -29,13 +29,7 @@ let comments = [
 function updateComments() {
     commentsArticle.innerHTML = "";
     
-    const commentsArr = createComment(comments).forEach(comment => commentsArticle.appendChild(comment))
-}
-
-
-function logForm(e) {
-    e.preventDefault();
-    console.log(`name: ${nameInput.value}, comment: ${commentInput.value}`)
+    const commentsArr = createComment(comments).forEach(comment => commentsArticle.appendChild(comment));
 }
 
 function createNewComment(e) {

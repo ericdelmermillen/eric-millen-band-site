@@ -683,10 +683,10 @@ ul a {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
-  height: 40px;
   background: #323232;
   color: #fff;
   border-radius: 4px;
+  color: #fff;
   padding: 1rem 0;
   display: block;
 }
@@ -698,6 +698,7 @@ ul a {
 }
 .btn--buy-tickets:hover {
   background: #000;
+  color: #fff;
 }
 @media screen and (min-width: 678px) {
   .btn--buy-tickets {

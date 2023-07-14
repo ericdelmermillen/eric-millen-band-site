@@ -610,7 +610,7 @@ ul {
   font-size: $font-size-mobile;
   line-height: $line-height-mobile;
   font-weight: $font-weight-mobile;
-  height: 40px;
+  // height: 40px;
   background: $band-site-black;
   color: $white;
   border-radius: 4px;
@@ -622,5 +622,6 @@ ul {
   
   &:hover {
     background: $band-site-dark-black;
+    color: $white;
   }
 }

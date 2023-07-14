@@ -130,7 +130,6 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-
     
   @media screen and (min-width: $tablet-width) {
   }
@@ -161,6 +160,10 @@
   flex-direction: column;
   // margin-bottom: 1rem;
   // @include padding-between-components-gap;
+
+  &:first-child {
+    display: none;
+  }
   
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
@@ -171,6 +174,9 @@
   
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
+    &:first-child {
+      display:flex;
+    }
   }
 
 }
@@ -223,11 +229,31 @@
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
   }
-
+  
 }
 
 
 .details__heading {
   @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
+
+  
+
 }
 
+.show:not(:first-child) {
+  @media screen and (min-width: $desktop-width) {
+    // max-width: 40rem;
+    
+    
+    .show__details {
+      
+      .details__heading {
+        display: none;
+        
+        
+      }
+      
+    }
+    
+  }
+}

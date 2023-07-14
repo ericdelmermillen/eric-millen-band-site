@@ -642,11 +642,20 @@ ul a {
   display: flex;
   flex-direction: column;
 }
+.show:first-child {
+  display: none;
+}
 @media screen and (min-width: 678px) {
   .show {
     flex-direction: row;
   }
 }
+@media screen and (min-width: 1280px) {
+  .show:first-child {
+    display: flex;
+  }
+}
+
 .show__details {
   padding-left: 1rem;
   border: 2px solid green;
@@ -718,5 +727,11 @@ ul a {
   .details__heading {
     padding-bottom: 2.25rem;
     padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .show:not(:first-child) .show__details .details__heading {
+    display: none;
   }
 }/*# sourceMappingURL=shows.css.map */

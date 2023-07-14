@@ -1,9 +1,3 @@
-const nameInput = document.querySelector('#name');
-const commentInput = document.querySelector('#comment');
-const commentForm = document.getElementById("commentForm");
-const commentBtn = document.getElementById("commentBtn");
-const commentsArticle = document.querySelector(".comments__article")
-
 
 let comments = [
     {
@@ -27,32 +21,37 @@ let comments = [
 ]
 
 function updateComments() {
+    const commentsArticle = document.querySelector(".comments__article")
+
     commentsArticle.innerHTML = "";
     
-    const commentsArr = createComment(comments).forEach(comment => commentsArticle.appendChild(comment));
+    createComment(comments).forEach(comment => commentsArticle.appendChild(comment));
 }
 
 function createNewComment(e) {
+    
+
     let newComment = {
         avatar__image: "",
-        comment__heading: nameInput.value,
+        comment__heading: e.target.name.value,
         time_stamp: new Date().toLocaleDateString(
             "en-US", {
             year: "numeric",
             month: "2-digit",
             day: "2-digit"}
         ),
-        comment__body: commentInput.value
+        comment__body: e.target.comment.value
     }
     comments.unshift(newComment)
 }
 
 
 // clear form
-function clearForm(e) {
-    e.preventDefault();
-    nameInput.value = "";
-    commentInput.value = "";
+function clearForm() {
+    // nameInput.value = "";
+    // e.target.name.value = "";
+    document.querySelector('#name').value = "";
+    document.querySelector('#comment').value = "";
 }
 
 
@@ -101,30 +100,22 @@ function createComment (commentsObj) {
 
         commentText.appendChild(commentBody)
 
-        return comment
+        return comment;
     })
 
     return commentsArr;
 }
     
-    
-// console.log(comment.outerHTML)
-
-const createdComments = [...createComment(comments)]
-
-console.log(createdComments)
-
-
-
 
 // Call updateComments on page load after dom centents loaded
 window.addEventListener("DOMContentLoaded", updateComments);
 
 commentForm.addEventListener("submit", (e) => {
     e.preventDefault()
+    console.log(e.target.name.value)
     createNewComment(e)
     updateComments();
-    clearForm(e);
+    clearForm();
 });
 
 

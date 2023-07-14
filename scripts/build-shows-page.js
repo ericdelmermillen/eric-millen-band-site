@@ -1,3 +1,4 @@
+let showsContainer = document.querySelector(".shows-container");
 
 let showsArray = [
   {
@@ -123,3 +124,21 @@ function createShowElemArray() {
         });
     return showsArr;
 }
+
+
+showsContainer.addEventListener("click", (e) => {
+
+    let showsHTMLCollection = showsContainer.children;
+
+    let clickedChild = e.target.closest(".shows-container > * ")
+    
+    if(clickedChild === showsContainer.firstElementChild) {
+        console.log("dont show");
+    } else if (clickedChild.classList.contains("highlighted")) {
+        clickedChild.classList.toggle("highlighted")
+    } else {
+        for(let i = 0; i < showsHTMLCollection.length; i++) {
+            showsHTMLCollection[i].classList.remove("highlighted");
+        } clickedChild.classList.add("highlighted")
+    }
+})

@@ -127,6 +127,8 @@ function createCommentElemArray(commentsObj) {
     return commentsArr;
 }
 
+
+
 // Year for the copyright in the footer
 const year = document.getElementById("year");
     let currentYear = new Date().getFullYear();

@@ -143,6 +143,10 @@
 
 }
 
+.highlighted {
+  background: orange;
+}
+
 .shows__heading {
   @include padding-block;
   @include page-header(
@@ -158,8 +162,8 @@
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  // margin-bottom: 1rem;
-  // @include padding-between-components-gap;
+  padding-top: 0;
+  padding-bottom: 0;
 
   &:first-child {
     display: none;
@@ -236,7 +240,6 @@
 .details__heading {
   @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
 
-  
 
 }
 
@@ -244,16 +247,12 @@
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
     
-    
     .show__details {
       
       .details__heading {
         display: none;
         
-        
       }
-      
     }
-    
   }
 }

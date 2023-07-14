@@ -605,6 +605,10 @@ ul a {
   }
 }
 
+.highlighted {
+  background: orange;
+}
+
 .shows__heading {
   padding-left: 1rem;
   width: 20%;
@@ -641,6 +645,8 @@ ul a {
   border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .show:first-child {
   display: none;

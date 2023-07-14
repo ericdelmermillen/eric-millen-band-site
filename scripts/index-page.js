@@ -1,5 +1,13 @@
+// let commentForm = document.getElementById("commentForm")
 
-let comments = [
+// Pageload: should call function that appends comments array onto container
+
+    // nameInput.value = "";
+    // e.target.name.value = "";
+    // e.target.comment.value = "";
+
+// Comments Array
+let commentsArray = [
     {
         avatar__image: "",
         comment__heading: "Connor Walton",
@@ -18,47 +26,60 @@ let comments = [
         time_stamp: "12/20/2020",
         comment__body: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
     }
-]
+];
 
-function updateComments() {
-    const commentsArticle = document.querySelector(".comments__article")
+// Load Comments on page load after dom centents loaded
+window.addEventListener("DOMContentLoaded", loadComments);
 
-    commentsArticle.innerHTML = "";
-    
-    createComment(comments).forEach(comment => commentsArticle.appendChild(comment));
+// Load Comments: called on page load and after createNewComment
+function loadComments() {
+    createCommentElemArray(commentsArray).forEach(comment => document.querySelector(".comments__article").appendChild(comment));
 }
 
-function createNewComment(e) {
-    
+// Event Listener on Comment Button
+commentForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    createNewComment(e)
+    updateComments();
+});
 
-    let newComment = {
-        avatar__image: "",
-        comment__heading: e.target.name.value,
-        time_stamp: new Date().toLocaleDateString(
-            "en-US", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit"}
+// Creates new comment in commentArray
+function createNewComment(e) {
+    let newComment = 
+        {
+            avatar__image: "",
+            comment__heading: e.target.name.value,
+            time_stamp: new Date().toLocaleDateString(
+                "en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit"
+                }
         ),
         comment__body: e.target.comment.value
     }
-    comments.unshift(newComment)
+    commentsArray.unshift(newComment)
 }
 
+// called after creating new comment
+function updateComments() {
+    const commentsArticle = document.querySelector(".comments__article")
 
-// clear form
-function clearForm() {
-    // nameInput.value = "";
-    // e.target.name.value = "";
+    // clear inputs
     document.querySelector('#name').value = "";
     document.querySelector('#comment').value = "";
+    
+    // clear commentsArticle
+
+    commentsArticle.innerHTML = "";
+    
+    createCommentElemArray(commentsArray).forEach(comment => commentsArticle.appendChild(comment));
 }
 
-
-// creating a comment
-function createComment (commentsObj) {
+// creating the comment array
+function createCommentElemArray(commentsObj) {
     
-    let commentsArr = commentsObj.map((com) => {
+    let commentsArr = commentsObj.map((commentElem) => {
 
         const comment = document.createElement("div");
         comment.setAttribute("class", "comment");
@@ -70,7 +91,7 @@ function createComment (commentsObj) {
         
         const commentAvatar = document.createElement("img");
         commentAvatar.setAttribute("class", "comment__avatar");
-        commentAvatar.setAttribute("src", com.avatar__image);
+        commentAvatar.setAttribute("src", commentElem.avatar__image);
         
         commentAvatar__container.appendChild(commentAvatar);
         
@@ -84,19 +105,19 @@ function createComment (commentsObj) {
         
         const comment__heading = document.createElement("h3");
         comment__heading.setAttribute("class", "comment__heading");
-        comment__heading.innerText = com.comment__heading;
+        comment__heading.innerText = commentElem.comment__heading;
         
         commentHeader.appendChild(comment__heading);
         
         const commentTimeStamp = document.createElement("p");
         commentTimeStamp.setAttribute("class", "comment__time-stamp");
-        commentTimeStamp.innerText = com.time_stamp;
+        commentTimeStamp.innerText = commentElem.time_stamp;
         
         commentHeader.append(commentTimeStamp)
         
         const commentBody = document.createElement("p");
         commentBody.setAttribute("class", "comment__body");
-        commentBody.innerText = com.comment__body;
+        commentBody.innerText = commentElem.comment__body;
 
         commentText.appendChild(commentBody)
 
@@ -105,20 +126,8 @@ function createComment (commentsObj) {
 
     return commentsArr;
 }
-    
 
-// Call updateComments on page load after dom centents loaded
-window.addEventListener("DOMContentLoaded", updateComments);
-
-commentForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    console.log(e.target.name.value)
-    createNewComment(e)
-    updateComments();
-    clearForm();
-});
-
-
+// Year for the copyright in the footer
 const year = document.getElementById("year");
     let currentYear = new Date().getFullYear();
     year.textContent = currentYear;

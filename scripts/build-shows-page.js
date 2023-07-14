@@ -33,7 +33,6 @@ let shows = [
   }
 ]
 
-
 function createShows(showsObj) {
     let showsArr = showsObj.map((sh) => {
         

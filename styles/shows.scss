@@ -1,7 +1,6 @@
 @use "./partials/global" as *;
 @use "./partials/variables" as *;
 
-
 // Hero Section
 .hero {
   @include padding-between-components-top($default-padding-top: 2rem);
@@ -10,7 +9,7 @@
   color: $white;
   position: relative;
   width: 100%;
-  border: 2px solid red;
+  // border: 2px solid red;
 
   @media screen and (min-width: $tablet-width) {
     height: calc(100vh - 6rem);
@@ -30,7 +29,7 @@
   }
 
   &__content-container {
-    border: 2px solid green;
+    // border: 2px solid green;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -43,12 +42,12 @@
     z-index: 2;
     height: 100%;
 
-    @media screen and (min-width: $tablet-width) {
-      border: 2px solid orange;
-    }
+    // @media screen and (min-width: $tablet-width) {
+    //   border: 2px solid orange;
+    // }
     
     @media screen and (min-width: $desktop-width) {
-      border: 2px solid blue;
+      // border: 2px solid blue;
       flex-direction: row;
       align-items: center;
     }
@@ -56,9 +55,9 @@
   }
 }
 
-.hero__text-container {
-  border: 3px dotted #000;
-}
+// .hero__text-container {
+//   border: 3px dotted #000;
+// }
 
 .hero__page-header,
 .hero__sub-header {
@@ -67,7 +66,7 @@
 
 .hero__page-header {
   @include page-header($line-height-mobile: 2);
-  border: 2px solid red;
+  // border: 2px solid red;
   max-width: 60%;
 
   @media screen and (min-width: $tablet-width) {
@@ -78,7 +77,7 @@
 .hero__sub-header {
   @include padding-between-components-bottom;
   @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
-  border: 2px solid blue;
+  // border: 2px solid blue;
 }
 
 .hero__song {
@@ -99,7 +98,7 @@
 // Shows Section
 
 .shows {
-  border: 2px solid red;
+  // border: 2px solid red;
   width: 100%;
   @include padding-inline;
   @include padding-block($padding-top-mobile: 0rem);
@@ -107,7 +106,7 @@
 }
 
 .shows__content-container {
-  border: 2px solid green;
+  // border: 2px solid green;
   width: min(100%, $desktop-width);
   margin: 0 auto;
   // justify-content: center;
@@ -117,15 +116,15 @@
   
   @media screen and (min-width: $desktop-width) {
     display: flex;
-    background: green;
+    // background: green;
     
-    border: 3px dotted #000;
+    // border: 3px dotted #000;
     // justify-content: space-between;
   }
 }
 
 .shows-container {
-  border: 5px solid red;
+  // border: 5px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -138,13 +137,7 @@
     @include margin-inline(
       $margin-right-mobile: 0, $margin-right-tablet: 0
     )
-
   }
-
-}
-
-.highlighted {
-  background: orange;
 }
 
 .shows__heading {
@@ -159,11 +152,16 @@
 
 .show {
   @include divider;
-  border: 2px solid blue;
+  // border: 2px solid blue;
   display: flex;
   flex-direction: column;
   padding-top: 0;
   padding-bottom: 0;
+
+  &:not(:first-child):hover {
+    transition: all 0.5s ease;
+    background: orange;;
+  }
 
   &:first-child {
     display: none;
@@ -177,21 +175,25 @@
   }
   
   @media screen and (min-width: $desktop-width) {
+    
     // max-width: 40rem;
     &:first-child {
       display:flex;
     }
   }
-
 }
+
+.highlighted {
+    background: orange;
+}
+
 
 .show__details {
   @include padding-block;
   padding-left: 1rem;
-  border: 2px solid green;
+  // border: 2px solid green;
   width: 100%;
 }
-
 
 .show__cta {
   width: 100%;
@@ -202,7 +204,6 @@
     // flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: red;
     // justify-content: space-between;
     // align-items: center;
     // width: 100%;
@@ -211,12 +212,10 @@
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
   }
-
 }
 
 
 .btn--buy-tickets {
-  border: 2px solid red;
   text-align: center;
   @include btn;
   color: $white;
@@ -233,13 +232,10 @@
   @media screen and (min-width: $desktop-width) {
     // max-width: 40rem;
   }
-  
 }
-
 
 .details__heading {
   @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
-
 
 }
 

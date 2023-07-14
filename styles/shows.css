@@ -405,7 +405,6 @@ ul a {
   color: #fff;
   position: relative;
   width: 100%;
-  border: 2px solid red;
 }
 @media (min-width: 678px) {
   .hero {
@@ -434,7 +433,6 @@ ul a {
   width: 100%;
 }
 .hero__content-container {
-  border: 2px solid green;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -446,21 +444,11 @@ ul a {
   z-index: 2;
   height: 100%;
 }
-@media screen and (min-width: 678px) {
-  .hero__content-container {
-    border: 2px solid orange;
-  }
-}
 @media screen and (min-width: 1280px) {
   .hero__content-container {
-    border: 2px solid blue;
     flex-direction: row;
     align-items: center;
   }
-}
-
-.hero__text-container {
-  border: 3px dotted #000;
 }
 
 .hero__page-header,
@@ -475,7 +463,6 @@ ul a {
 }
 
 .hero__page-header {
-  border: 2px solid red;
   max-width: 60%;
 }
 @media (max-width: 677px) {
@@ -500,7 +487,6 @@ ul a {
 
 .hero__sub-header {
   padding-bottom: 1rem;
-  border: 2px solid blue;
 }
 @media (min-width: 678px) {
   .hero__sub-header {
@@ -550,7 +536,6 @@ ul a {
 }
 
 .shows {
-  border: 2px solid red;
   width: 100%;
   padding-inline: 1rem;
 }
@@ -573,20 +558,16 @@ ul a {
 }
 
 .shows__content-container {
-  border: 2px solid green;
   width: min(100%, 1280px);
   margin: 0 auto;
 }
 @media screen and (min-width: 1280px) {
   .shows__content-container {
     display: flex;
-    background: green;
-    border: 3px dotted #000;
   }
 }
 
 .shows-container {
-  border: 5px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -603,10 +584,6 @@ ul a {
     margin-left: 2.25rem;
     margin-right: 0;
   }
-}
-
-.highlighted {
-  background: orange;
 }
 
 .shows__heading {
@@ -642,11 +619,14 @@ ul a {
 
 .show {
   border-bottom: 1px solid #e1e1e1;
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   padding-top: 0;
   padding-bottom: 0;
+}
+.show:not(:first-child):hover {
+  transition: all 0.5s ease;
+  background: orange;
 }
 .show:first-child {
   display: none;
@@ -662,9 +642,12 @@ ul a {
   }
 }
 
+.highlighted {
+  background: orange;
+}
+
 .show__details {
   padding-left: 1rem;
-  border: 2px solid green;
   width: 100%;
 }
 @media (max-width: 677px) {
@@ -689,11 +672,9 @@ ul a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: red;
   }
 }
 .btn--buy-tickets {
-  border: 2px solid red;
   text-align: center;
   font-size: 10px;
   line-height: 20px;

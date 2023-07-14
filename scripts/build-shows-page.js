@@ -127,7 +127,6 @@ function createShowElemArray() {
 
 
 showsContainer.addEventListener("click", (e) => {
-
     let showsHTMLCollection = showsContainer.children;
 
     let clickedChild = e.target.closest(".shows-container > * ")

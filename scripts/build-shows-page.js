@@ -36,7 +36,7 @@ let showsArray = [
 window.addEventListener(("DOMContentLoaded"), createShowElemArray())
 
 function createShowElemArray() {
-    let showsArr = showsArray.map((showObj) => {
+    showsArray.map((showObj) => {
         
         let show = document.createElement("div");
         show.setAttribute("class", "show");
@@ -119,25 +119,47 @@ function createShowElemArray() {
         show.appendChild(showCta);    
         
         document.querySelector('.shows-container').appendChild(show);
-        
-        return showObj;
-        });
-    return showsArr;
+        }
+    );
 }
 
+// showsContainer.addEventListener("click", (e) => {
+//     let showsHTMLCollection = showsContainer.children;
+//     let clickedChild = e.target.closest(".shows-container > * ")
+    
+//     if (clickedChild !== showsContainer.firstElementChild &&clickedChild.classList.contains("highlighted")) {
+//         clickedChild.classList.toggle("highlighted")
+//     } else if (clickedChild !== showsContainer.firstElementChild){
+        
+//         for(let i = 0; i < showsHTMLCollection.length; i++) {
+//             showsHTMLCollection[i].classList.remove("highlighted");
+//         } clickedChild.classList.add("highlighted")
+//     }
+// })
 
+  
 showsContainer.addEventListener("click", (e) => {
-    let showsHTMLCollection = showsContainer.children;
-
+    let showsHTMLCollection = showsContainer.querySelectorAll(".show");
     let clickedChild = e.target.closest(".shows-container > * ")
     
-    if(clickedChild === showsContainer.firstElementChild) {
-        console.log("dont show");
-    } else if (clickedChild.classList.contains("highlighted")) {
+    if (clickedChild !== showsContainer.firstElementChild &&clickedChild.classList.contains("highlighted")) {
         clickedChild.classList.toggle("highlighted")
-    } else {
-        for(let i = 0; i < showsHTMLCollection.length; i++) {
-            showsHTMLCollection[i].classList.remove("highlighted");
-        } clickedChild.classList.add("highlighted")
+    } else if (clickedChild !== showsContainer.firstElementChild){
+        showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
+
+        clickedChild.classList.add("highlighted")
+    }
+})
+  
+
+
+document.addEventListener("click", (e) => {
+    if(!showsContainer.contains(e.target)) {
+        console.log("outside");
+        let shows = showsContainer.children;
+
+        for(let show of shows) {
+            show.classList.remove("highlighted")
+        }
     }
 })

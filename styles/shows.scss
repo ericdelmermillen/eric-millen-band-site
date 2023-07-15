@@ -83,8 +83,10 @@
 .hero__song {
   @include padding-inline(1.5rem);
   @include padding-between-components-top(2.5rem);
-  width: 100%; 
+  border: none;
   height: 150px;
+  outline: none;
+  width: 100%; 
   
   @media screen and (min-width: $tablet-width) {
     width: 50%;
@@ -160,7 +162,12 @@
 
   &:not(:first-child):hover {
     transition: all 0.5s ease;
-    background: orange;;
+    background: orange;
+  }
+
+  &:not(:first-child):active {
+    transition: all 0.5s ease;
+    outline: 2px solid $band-site-black;
   }
 
   &:first-child {

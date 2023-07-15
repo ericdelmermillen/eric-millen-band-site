@@ -31,9 +31,9 @@ let showsArray = [
       venue: "Press Club",
       location: "San Francisco, CA"
   }
-]
+];
 
-window.addEventListener(("DOMContentLoaded"), createShowElemArray())
+window.addEventListener(("DOMContentLoaded"), createShowElemArray());
 
 function createShowElemArray() {
     showsArray.map((showObj) => {
@@ -50,7 +50,7 @@ function createShowElemArray() {
         // Date h3
         let detailsHeadingDate = document.createElement("h3");
         detailsHeadingDate.setAttribute("class", "details__heading");
-        detailsHeadingDate.innerText = "DATE"
+        detailsHeadingDate.innerText = "DATE";
         
         showDetailsDate.appendChild(detailsHeadingDate);
         
@@ -90,7 +90,7 @@ function createShowElemArray() {
         // Location h3
         let detailsHeadingLocation = document.createElement("h3");
         detailsHeadingLocation.setAttribute("class", "details__heading");
-        detailsHeadingLocation.innerText = "LOCATION"
+        detailsHeadingLocation.innerText = "LOCATION";
         
         showDetailsLocation.appendChild(detailsHeadingLocation);
         
@@ -112,7 +112,7 @@ function createShowElemArray() {
         btnBuyTickets.setAttribute("class", "btn--buy-tickets");
 
         // Text
-        btnBuyTickets.innerText = "BUY TICKETS"
+        btnBuyTickets.innerText = "BUY TICKETS";
         
         showCta.appendChild(btnBuyTickets);
         
@@ -140,18 +140,16 @@ function createShowElemArray() {
   
 showsContainer.addEventListener("click", (e) => {
     let showsHTMLCollection = showsContainer.querySelectorAll(".show");
-    let clickedChild = e.target.closest(".shows-container > * ")
+    let clickedChild = e.target.closest(".shows-container > * ");
     
-    if (clickedChild !== showsContainer.firstElementChild &&clickedChild.classList.contains("highlighted")) {
-        clickedChild.classList.toggle("highlighted")
+    if (clickedChild !== showsContainer.firstElementChild && clickedChild.classList.contains("highlighted")) {
+        clickedChild.classList.toggle("highlighted");
     } else if (clickedChild !== showsContainer.firstElementChild){
         showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
-
-        clickedChild.classList.add("highlighted")
+        clickedChild.classList.add("highlighted");
     }
 })
   
-
 
 document.addEventListener("click", (e) => {
     if(!showsContainer.contains(e.target)) {
@@ -159,7 +157,7 @@ document.addEventListener("click", (e) => {
         let shows = showsContainer.children;
 
         for(let show of shows) {
-            show.classList.remove("highlighted")
+            show.classList.remove("highlighted");
         }
     }
 })

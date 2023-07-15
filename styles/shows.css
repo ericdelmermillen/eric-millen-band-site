@@ -511,8 +511,10 @@ ul a {
 .hero__song {
   padding-inline: 1.5rem;
   padding-top: 2.5rem;
-  width: 100%;
+  border: none;
   height: 150px;
+  outline: none;
+  width: 100%;
 }
 @media (min-width: 678px) {
   .hero__song {
@@ -627,6 +629,10 @@ ul a {
 .show:not(:first-child):hover {
   transition: all 0.5s ease;
   background: orange;
+}
+.show:not(:first-child):active {
+  transition: all 0.5s ease;
+  outline: 2px solid #323232;
 }
 .show:first-child {
   display: none;

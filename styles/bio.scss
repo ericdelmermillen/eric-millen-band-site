@@ -108,7 +108,7 @@
 }
 
 .bio-section__paragraph-container {
-  @include padding-between-components-gap;
+  @include gap;
   display: flex;
   flex-direction: column;
 
@@ -150,7 +150,7 @@
   }
   
   &__image-container {
-    @include padding-between-components-gap;
+    @include gap;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -81,7 +81,7 @@
 }
 
 .hero__song {
-  @include padding-inline(1.5rem);
+  @include padding-inline($padding-mobile: 1.5rem);
   @include padding-between-components-top(2.5rem);
   border: none;
   height: 150px;

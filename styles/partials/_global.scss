@@ -49,8 +49,8 @@ a,
 a:hover,
 a:visited,
 a:active {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 
@@ -58,8 +58,8 @@ ul {
   list-style: none;
 
   a {
-    text-decoration: none;
     color: inherit;      
+    text-decoration: none;
   }
 }
 
@@ -183,6 +183,7 @@ ul {
   $font-style-tablet: normal,
   $line-height-tablet: 1.5rem,
 ) {
+
   @media (max-width: $mobile-width) {
     font-size: $font-size-mobile;
     font-style: $font-style-mobile;
@@ -285,48 +286,47 @@ ul {
   }
 }
 
+
 // Paddings:
 
-
 // For h1
-@mixin padding-before-headlines($default-padding-left: 1.5rem, $default-tablet-padding-left: 3rem) {
-  padding-left: $default-padding-left;
+@mixin padding-before-headlines($padding-left-mobile: 1.5rem, $padding-left-tablet: 3rem) {
 
-  // Tablet or Desktop
+  @media (max-width: $mobile-width) {
+    padding-left: $padding-left-mobile;
+  }
+
   @media (min-width: $tablet-width) {
-    padding-left: $default-tablet-padding-left;
+    padding-left: $padding-left-tablet;
   }
 }
 
-@mixin padding-after-headlines($default-padding-right: 1rem, $default-tablet-padding-right: 2.25rem) {
-  padding-right: $default-padding-right;
+@mixin padding-after-headlines($padding-right-mobile: 1rem, $padding-right-tablet: 2.25rem) {
   
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-right: $default-tablet-padding-right;
+  @media (max-width: $mobile-width) {
+    padding-right: $padding-right-mobile;
   }
-}
-
-
-// Gap Mixin (padding between elements in style guide)
-@mixin padding-between-components-gap($gap-mobile: 1rem, $gap-tablet: 2.25rem) {
-  gap: $gap-mobile;
   
-  // Tablet or Desktop
   @media (min-width: $tablet-width) {
-    gap: $gap-tablet;
+    padding-right: $padding-right-tablet;
   }
 }
 
+// shouldn't need these
 @mixin padding-between-components-top($default-padding-top: 1rem, $default-tablet-padding-top: 2.25rem) {
   padding-top: $default-padding-top;
   
   // Tablet or Desktop
+  @media (max-width: $mobile-width) {
+    padding-top: $default-tablet-padding-top;
+  }
+
   @media (min-width: $tablet-width) {
     padding-top: $default-tablet-padding-top;
   }
 }
 
+// shouldn't need these
 @mixin padding-between-components-bottom(
   $padding-bottom-mobile: 1rem, $padding-bottom-tablet: 2.25rem
 ) {
@@ -339,12 +339,14 @@ ul {
 }
 
 // padding-inline (
-  @mixin padding-inline($default-padding: 1rem, $default-tablet-padding: 2.25rem) {
-    padding-inline: $default-padding;
+  @mixin padding-inline($padding-mobile: 1rem, $padding-tablet: 2.25rem) {
     
-    // Tablet or Desktop
+    @media (max-width: $mobile-width) {
+      padding-inline: $padding-mobile;
+    }
+
     @media (min-width: $tablet-width) {
-      padding-inline: $default-tablet-padding;
+      padding-inline: $padding-tablet;
     }
   }
 
@@ -388,101 +390,120 @@ ul {
   }
 }
 
-@mixin padding-between-components {
-  gap: 1rem;
+@mixin padding-between-components($gap-mobile: 1rem) {
   
-  // Tablet or Desktop
+  @media (max-width: $mobile-width) {
+    gap: $gap-mobile;
+  }
+  
   @media (min-width: $tablet-width) {
     gap: 2.25rem;
+    border: 5px solid red;
+  }
+}
+
+
+// Gaps:
+
+// Gap Mixin (padding between elements in style guide)
+@mixin gap($gap-mobile: 1rem, $gap-tablet: 2.25rem) {
+  
+  @media (max-width: $mobile-width) {
+    gap: $gap-mobile;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: $gap-tablet;
   }
 }
 
 // Nav
-.nav-bar__container {
-  align-items: center;
-  background: $band-site-black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.nav-bar__nav {
+.nav-bar {
   align-items: center;
   display: flex;
   flex-direction: column;
   width: min(100%, $desktop-width);
-  
-  @media screen and (min-width: $tablet-width) {
-      flex-direction: row;
-      padding-top: 2.5rem;
-  }
-}
 
-.nav-bar__logo {
-  // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
-  @include margin-top($margin-top-mobile: 2rem);
-  height: 1.25rem;
-  width: 7.5rem;
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    padding-top: 2.5rem;
+  }
   
-  @media screen and (min-width: $tablet-width) {
-    @include margin-inline($margin-left-tablet: 3rem, $margin-right-tablet: 3rem);
+  &__container {
+    align-items: center;
+    background: $band-site-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    @include margin-bottom($margin-bottom-tablet: 2rem);
-    margin-top: 0;
+  &__logo {
+    // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
+    @include margin-top($margin-top-mobile: 2rem);
+    height: 1.25rem;
+    width: 7.5rem;
+    
+    @media screen and (min-width: $tablet-width) {
+      @include margin-inline($margin-left-tablet: 3rem, $margin-right-tablet: 3rem);
+  
+      @include margin-bottom($margin-bottom-tablet: 2rem);
+      margin-top: 0;
+    }
   }
-}
+  
+  &__menu {
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    
+    @media (min-width: $tablet-width) {
+      @include gap;
+        justify-content: flex-start;
+    }
+  }
+  
+  &__menu-option,
+  &__menu-option--active {
+    @include padding-between-components-bottom;
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+  
+    @media (min-width: $tablet-width) {
+      flex-grow: 0;
+      // hard value necessary to prevent shows from being pushed right when bio link changes font weight on hover
+      min-width: 5.25rem;
+      text-align: center;
+    }
 
-.nav-bar__menu {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  
-  @media screen and (min-width: $tablet-width) {
-    @include padding-between-components-gap;
-      justify-content: flex-start;
   }
-  
-  &--active-option,
-  .menu-option--active {
-    color: $white;
-    font-weight: 600;
-  }
-  
-  &--inactive-option,
-  .menu-option--inactive {
+  &__menu-option {
     color: $mercury;
-  }
-}
-
-.nav-bar__menu--active-option,
-.nav-bar__menu--inactive-option {
-  @include padding-between-components-bottom;
-  align-items: center;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  text-align: center;
-
-  @media screen and (min-width: $tablet-width) {
-    flex-grow: 0;
-  }
-}
-
-.nav-bar__menu--active-option {
-  border-bottom: 0.188rem solid $white;
-}
-
-.nav-bar__menu--inactive-option {
-  border-bottom: 0.188rem solid $mercury-opacity-zero;
+    border-bottom: 0.188rem solid $mercury-opacity-zero;
   
-  &:hover {
-    border-bottom: 0.188rem solid $mercury;
-    font-weight: 600;
-    transition: all 0.5s ease;
+    &:hover {
+      border-bottom: 0.188rem solid $mercury;
+      color: $white;
+      font-weight: 600;
+      transition: all 0.5s ease;
+    }
+
+    &--active {
+      border-bottom: 0.188rem solid $white;
+      color: $white;
+
+
+      &:hover { 
+        color: $white;
+        font-weight: 600;
+        transition: all 0.5s ease;
+      }
+    }
   }
 }
-
-
 
 // Footer Section
 .footer-section {
@@ -505,7 +526,7 @@ ul {
 
 .socials__container {
   @include padding-between-components-bottom;
-  @include padding-between-components-gap;
+  @include gap;
   @include padding-between-components-top;
   display: flex;
   flex-direction: column;
@@ -520,7 +541,7 @@ ul {
 }
 
 .social-icon__container {
-  @include padding-between-components-gap;
+  @include gap;
   @include padding-between-components-bottom;
   margin-top: 0.5rem;
   display: flex;  
@@ -536,7 +557,7 @@ ul {
 }
 
 .management__container {
-  @include padding-between-components-gap;
+  @include gap;
   display: flex;
   flex-direction: column;
   margin-bottom: 4rem;

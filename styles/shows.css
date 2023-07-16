@@ -105,6 +105,12 @@ ul a {
     margin-right: 3rem;
   }
 }
+@media (min-width: 678px) and (min-width: 1280px) {
+  .nav-bar__logo {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
 .nav-bar__menu {
   display: flex;
   justify-content: space-evenly;
@@ -745,6 +751,12 @@ ul a {
     margin-right: 0;
   }
 }
+@media (min-width: 1280px) and (min-width: 1280px) {
+  .shows-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
 
 .shows__heading {
   padding-left: 1rem;
@@ -865,7 +877,7 @@ ul a {
   text-align: center;
   background: #323232;
   border-radius: 4px;
-  color: #fff;
+  color: #afafaf;
   font-size: 10px;
   font-weight: 700;
   height: 40px;
@@ -882,11 +894,11 @@ ul a {
     width: 150px;
   }
 }
-.btn--buy-tickets:hover {
+.btn--buy-tickets:hover, .btn--buy-tickets:active {
   background: #000;
   color: #fff;
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .btn--buy-tickets {
     flex-direction: row;
     display: flex;
@@ -894,6 +906,7 @@ ul a {
     justify-content: center;
   }
 }
+
 @media (max-width: 677px) {
   .details__heading {
     padding-bottom: 1rem;

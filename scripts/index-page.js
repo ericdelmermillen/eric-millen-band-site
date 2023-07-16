@@ -38,10 +38,8 @@ commentForm.addEventListener("submit", (e) => {
 
 // Creates new comment in commentArray
 function createNewComment(e) {
-    // need to update default image to path once I have the default image
+
     let image = e.target.querySelector('input[type="file"]') || "./assets/images/user-placeholder.png";
-    
-    console.log(image);
     
     const newComment = 
     {

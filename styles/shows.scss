@@ -220,7 +220,6 @@
     background: orange;
 }
 
-
 .btn--buy-tickets {
   text-align: center;
   @include btn;
@@ -230,16 +229,11 @@
   align-items: center;
   justify-content: center;
 
-    
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  @media screen and (min-width: $desktop-width) {
-    // max-width: 40rem;
   }
 }
 

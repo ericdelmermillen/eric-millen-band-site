@@ -256,7 +256,9 @@ ul {
   $margin-left-mobile: 1rem,
   $margin-right-mobile: 1rem,
   $margin-left-tablet: 2.25rem,
-  $margin-right-tablet: 2.25rem
+  $margin-right-tablet: 2.25rem,
+  $margin-left-desktop: 3rem,
+  $margin-right-desktop: 3rem
 ) {
 
   @media (max-width: $mobile-width) {
@@ -267,6 +269,10 @@ ul {
   @media (min-width: $tablet-width) {
     margin-left: $margin-left-tablet;
     margin-right: $margin-right-tablet;
+  }
+  @media (min-width: $desktop-width) {
+    margin-left: $margin-left-desktop;
+    margin-right: $margin-right-desktop;
   }
 }
 
@@ -564,9 +570,17 @@ ul {
 
 @mixin btn($font-size-mobile: 10px, $line-height-mobile: 20px, $font-weight-mobile: 700) {
 
+
+  // active vs inactive color and bg for comment button:
+  // --inactive color: silver
+  // --active color: white (also hover color?)
+  // --inactive bg: Bandsite-black
+  // --active/hover bg: Bandsite-dark black
+
+
   background: $band-site-black;
   border-radius: 4px;
-  color: $white;
+  color: $silver;
   font-size: $font-size-mobile;
   font-weight: $font-weight-mobile;
   height: 40px;
@@ -577,7 +591,8 @@ ul {
     width: 150px;
   }
   
-  &:hover {
+  &:hover,
+  &:active {
     background: $band-site-dark-black;
     color: $white;
   }

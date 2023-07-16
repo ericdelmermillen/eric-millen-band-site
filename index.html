@@ -117,14 +117,15 @@
         </div>
         <form id="commentForm" class="comment__form" action="" method="GET" enctype="multipart/form-data">
           <div class="comment-input__container">
-            <label class="" for="name">NAME</label>
-            <input class="" type="text" name="name" id="name" required placeholder="Enter your name">
+            <label class="comment__label" for="name">NAME</label>
+            <input class="comment__input--name" type="text" name="name" id="name" required placeholder="Enter your name">
           </div>
           <div class="comment-input__container">
-            <label for="comment">COMMENT</label>
-            <textarea id="comment" name="comment" placeholder="Add a new comment" minlength="100"></textarea>
+            <label class="comment__label" for="comment">COMMENT</label>
+            <textarea class="comment__input--text" id="comment" name="comment" placeholder="Add a new comment" minlength="100"></textarea>
           </div>
-        <button id="commentBtn" type="submit">Comment</button>
+          
+        <button id="commentBtn" type="submit" class="comment__btn">COMMENT</button>
           </form>
       </div> <!-- end of comment--new -->
       

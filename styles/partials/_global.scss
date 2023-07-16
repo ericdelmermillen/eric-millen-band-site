@@ -291,7 +291,7 @@ ul {
 
 
 // padding-inline (
-  @mixin padding-inline($padding-left-mobile: 1rem, $padding-right-mobile: 1rem, $padding-left-tablet: 2.25rem, $padding-right-tablet: 2.25rem) {
+  @mixin padding-inline($padding-left-mobile: 1rem, $padding-right-mobile: 1rem, $padding-left-tablet: 2.25rem, $padding-right-tablet: 2.25rem, $padding-left-desktop: 3rem, $padding-right-desktop: 3rem) {
     
     @media (max-width: $mobile-width) {
       padding-left: $padding-left-mobile;
@@ -302,6 +302,11 @@ ul {
       padding-left: $padding-left-tablet;
       padding-right: $padding-left-tablet;
     }
+
+    @media (min-width: $desktop-width) {
+      padding-left: $padding-left-desktop;
+      padding-right: $padding-left-desktop;
+    }
   }
 
   // Padding block
@@ -309,7 +314,9 @@ ul {
   $padding-bottom-mobile: 1rem,
   $padding-top-mobile: 1rem,
   $padding-bottom-tablet: 2.25rem,
-  $padding-top-tablet: 2.25rem
+  $padding-top-tablet: 2.25rem,
+  $padding-bottom-desktop: 3rem,
+  $padding-top-desktop: 3rem
 ) {
 
   @media (max-width: $mobile-width) {
@@ -320,6 +327,11 @@ ul {
   @media (min-width: $tablet-width) {
     padding-bottom: $padding-bottom-tablet;
     padding-top: $padding-top-tablet;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: $padding-bottom-desktop;
+    padding-top: $padding-top-desktop;
   }
 }
 

@@ -43,7 +43,6 @@
     
 // // Bio Section
 .bio {
-  border: 5px solid red;
   width: 100%;
 
   &__content-container {
@@ -58,9 +57,8 @@
   
   &__heading {
     @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 0, $padding-left-tablet: 3rem, $padding-right-tablet: 0);
-    @include padding-block($padding-bottom-mobile: 0, $padding-top-mobile: 1rem, $padding-bottom-tablet: 0, $padding-top-tablet: 2.25rem);
+    @include padding-block($padding-top-mobile: 2.5rem, $padding-top-tablet: 2.5rem);
     @include section-header($font-weight-tablet: 600);
-    color: purple;
     
     @media (min-width: $tablet-width) {
       padding-left: 0;
@@ -69,29 +67,15 @@
 }
 
 .bio-article {
-  @include padding-inline;
-  border: 5px solid green;
-  
-  &__content-container {
-    background: red;
-  }
-  
-  &__sub-container {
-    background: blue;  
-    // padding: 2rem;
-  }
+  @include padding-inline($padding-left-tablet: 4rem, $padding-left-desktop: 5rem);
   
   &__hero-image {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     width: 100%;
-  }
-
-  &__block-quote {
-    background: orange;
   }
   
   &__quote {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     @include quote;
     display: block;
     font-style: normal;
@@ -104,17 +88,22 @@
   }
   &__source {
     @extend .bio-article__quote;
-    background: green;
+    
+    @media (min-width: $tablet-width) {
+      font-size: 1rem;
+    }
   }
   
   &__subheader {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem, $padding-top-desktop: 0);
     font-weight: 600;
   }
   
   &__paragraph-container {
-    border: 3px solid red;
     @include gap;
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 1rem, $padding-top-tablet: 0, $padding-top-desktop: 0, $padding-bottom-desktop: 0);
+    font-weight: 600;
+    
     display: flex;
     flex-direction: column;
   
@@ -125,7 +114,6 @@
 
   &__body-copy {
     @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
-    color: white;
   }
 }
 
@@ -133,9 +121,10 @@
 .gallery {
   background: $alabaster;
   width: 100%;
+  border: 2px solid red;
   
   &__content-container {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
     align-items: center;
     display: flex;
     flex-direction: column;

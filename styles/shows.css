@@ -147,6 +147,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .nav-bar__menu-option, .nav-bar__menu-option--active {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 @media (min-width: 678px) {
   .nav-bar__menu-option, .nav-bar__menu-option--active {
     flex-grow: 0;
@@ -190,6 +196,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .footer-section {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 .footer-section__content-container {
   color: #fff;
   display: flex;
@@ -215,6 +227,12 @@ ul a {
   .socials__container {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .socials__container {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 @media (max-width: 677px) {
@@ -274,6 +292,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .social-icon__container {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 
 .social-icon {
   height: 100%;
@@ -289,6 +313,12 @@ ul a {
   .socials__heading {
     padding-bottom: 2.25rem;
     padding-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .socials__heading {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 @media (max-width: 677px) {
@@ -361,6 +391,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .manager__role {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 
 @media (max-width: 677px) {
   .manager__email {
@@ -372,6 +408,12 @@ ul a {
   .manager__email {
     padding-bottom: 0;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .manager__email {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 .manager__email .manager__email--word-break {
@@ -455,6 +497,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .hero {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 @media screen and (min-width: 678px) {
   .hero {
     height: calc(100vh - 6rem);
@@ -504,6 +552,13 @@ ul a {
     padding-right: 3rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__page-header,
+  .hero__sub-header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 
 .hero__page-header {
   max-width: 60%;
@@ -540,6 +595,12 @@ ul a {
     padding-top: 0;
   }
 }
+@media (min-width: 1280px) {
+  .hero__sub-header {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
 @media (max-width: 677px) {
   .hero__sub-header {
     font-size: 1.25rem;
@@ -573,6 +634,12 @@ ul a {
     padding-right: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero__song {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 @media (max-width: 677px) {
   .hero__song {
     padding-bottom: 0;
@@ -583,6 +650,12 @@ ul a {
   .hero__song {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__song {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 @media screen and (min-width: 678px) {
@@ -611,6 +684,12 @@ ul a {
     padding-right: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .shows {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 @media (max-width: 677px) {
   .shows {
     padding-bottom: 1rem;
@@ -621,6 +700,12 @@ ul a {
   .shows {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 
@@ -672,6 +757,12 @@ ul a {
   .shows__heading {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__heading {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 @media (max-width: 677px) {
@@ -727,6 +818,12 @@ ul a {
   .show__details {
     padding-bottom: 2.25rem;
     padding-top: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .show__details {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }
 @media (min-width: 678px) {
@@ -802,5 +899,11 @@ ul a {
   .details__heading {
     padding-bottom: 2.25rem;
     padding-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .details__heading {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 }/*# sourceMappingURL=shows.css.map */

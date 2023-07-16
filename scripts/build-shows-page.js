@@ -123,20 +123,6 @@ function createShowElemArray() {
     );
 }
 
-// showsContainer.addEventListener("click", (e) => {
-//     let showsHTMLCollection = showsContainer.children;
-//     let clickedChild = e.target.closest(".shows-container > * ")
-    
-//     if (clickedChild !== showsContainer.firstElementChild &&clickedChild.classList.contains("highlighted")) {
-//         clickedChild.classList.toggle("highlighted")
-//     } else if (clickedChild !== showsContainer.firstElementChild){
-        
-//         for(let i = 0; i < showsHTMLCollection.length; i++) {
-//             showsHTMLCollection[i].classList.remove("highlighted");
-//         } clickedChild.classList.add("highlighted")
-//     }
-// })
-
   
 showsContainer.addEventListener("click", (e) => {
     let showsHTMLCollection = showsContainer.querySelectorAll(".show");
@@ -144,6 +130,10 @@ showsContainer.addEventListener("click", (e) => {
     
     if (clickedChild !== showsContainer.firstElementChild && clickedChild.classList.contains("highlighted")) {
         clickedChild.classList.toggle("highlighted");
+
+    } else if(clickedChild === showsContainer.firstElementChild) {
+        console.log("first child clicked");
+        showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
     } else if (clickedChild !== showsContainer.firstElementChild){
         showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
         clickedChild.classList.add("highlighted");
@@ -161,3 +151,8 @@ document.addEventListener("click", (e) => {
         }
     }
 })
+
+// Year for the copyright in the footer
+const year = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+    year.textContent = currentYear;

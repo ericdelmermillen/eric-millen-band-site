@@ -1,14 +1,10 @@
-// let commentForm = document.getElementById("commentForm")
-
-// Pageload: should call function that appends comments array onto container
-
-    // nameInput.value = "";
     // e.target.name.value = "";
     // e.target.comment.value = "";
 
 // Comments Array
-let commentsArray = [
+const commentsArray = [
     {
+        // add url for default image after it is made and in the folder
         avatar__image: "",
         comment__heading: "Connor Walton",
         time_stamp: "02/17/2021",
@@ -28,42 +24,44 @@ let commentsArray = [
     }
 ];
 
-// Load Comments on page load after dom centents loaded
-window.addEventListener("DOMContentLoaded", loadComments);
-
-// Load Comments: called on page load and after createNewComment
-function loadComments() {
-    createCommentElemArray(commentsArray).forEach(comment => document.querySelector(".comments__article").appendChild(comment));
-}
+// Update Comments on page load after dom contents loaded
+window.addEventListener("DOMContentLoaded", updateComments);
 
 // Event Listener on Comment Button
 commentForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    createNewComment(e)
-    updateComments();
+    e.preventDefault();
+
+   (e.target.name.value.trim().length < 2 || e.target.comment.value.trim().length < 100)
+        ? (alert("dont fuck with the bees knees"))
+        : (createNewComment(e), updateComments());
 });
 
 // Creates new comment in commentArray
 function createNewComment(e) {
-    let newComment = 
-        {
-            avatar__image: "",
-            comment__heading: e.target.name.value,
-            time_stamp: new Date().toLocaleDateString(
-                "en-US", {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit"
+    // need to update default image to path once I have the default image
+    let image = e.target.querySelector('input[type="file"]') || "default image";
+    
+    console.log(image);
+    
+    const newComment = 
+    {
+        avatar__image: image,
+        comment__heading: e.target.name.value,
+        time_stamp: new Date().toLocaleDateString(
+            "en-US", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit"
                 }
-        ),
-        comment__body: e.target.comment.value
-    }
-    commentsArray.unshift(newComment)
+            ),
+            comment__body: e.target.comment.value
+        };    
+        commentsArray.unshift(newComment);
 }
 
 // called after creating new comment
 function updateComments() {
-    const commentsArticle = document.querySelector(".comments__article")
+    const commentsArticle = document.querySelector(".comments__article");
 
     // clear inputs
     document.querySelector('#name').value = "";
@@ -79,7 +77,7 @@ function updateComments() {
 // creating the comment array
 function createCommentElemArray(commentsObj) {
     
-    let commentsArr = commentsObj.map((commentElem) => {
+    const commentsArr = commentsObj.map((commentElem) => {
 
         const comment = document.createElement("div");
         comment.setAttribute("class", "comment");
@@ -113,13 +111,13 @@ function createCommentElemArray(commentsObj) {
         commentTimeStamp.setAttribute("class", "comment__time-stamp");
         commentTimeStamp.innerText = commentElem.time_stamp;
         
-        commentHeader.append(commentTimeStamp)
+        commentHeader.append(commentTimeStamp);
         
         const commentBody = document.createElement("p");
         commentBody.setAttribute("class", "comment__body");
         commentBody.innerText = commentElem.comment__body;
 
-        commentText.appendChild(commentBody)
+        commentText.appendChild(commentBody);
 
         return comment;
     })
@@ -129,5 +127,5 @@ function createCommentElemArray(commentsObj) {
 
 // Year for the copyright in the footer
 const year = document.getElementById("year");
-    let currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
     year.textContent = currentYear;

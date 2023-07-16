@@ -121,7 +121,6 @@
 .gallery {
   background: $alabaster;
   width: 100%;
-  border: 2px solid red;
   
   &__content-container {
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
@@ -140,7 +139,6 @@
   &__heading {
     @include section-header;
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
-    color: green;
   }
   
   &__image-container {

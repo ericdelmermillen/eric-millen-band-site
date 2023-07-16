@@ -807,7 +807,6 @@ ul a {
 .gallery {
   background: #fafafa;
   width: 100%;
-  border: 2px solid red;
 }
 .gallery__content-container {
   align-items: center;
@@ -852,9 +851,6 @@ ul a {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-}
-.gallery__heading {
-  color: green;
 }
 @media (max-width: 677px) {
   .gallery__heading {

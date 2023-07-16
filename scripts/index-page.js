@@ -5,19 +5,19 @@
 const commentsArray = [
     {
         // add url for default image after it is made and in the folder
-        avatar__image: "",
+        avatar__image: "./assets/images/user-placeholder.png",
         comment__heading: "Connor Walton",
         time_stamp: "02/17/2021",
         comment__body: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what is is and what it contains"
     },
     {
-        avatar__image: "",
+        avatar__image: "./assets/images/user-placeholder.png",
         comment__heading: "Emilie Beach",
         time_stamp: "01/09/2021",
         comment__body: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
     },
     {
-        avatar__image: "",
+        avatar__image: "./assets/images/user-placeholder.png",
         comment__heading: "Miles Acosta",
         time_stamp: "12/20/2020",
         comment__body: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
@@ -39,7 +39,7 @@ commentForm.addEventListener("submit", (e) => {
 // Creates new comment in commentArray
 function createNewComment(e) {
     // need to update default image to path once I have the default image
-    let image = e.target.querySelector('input[type="file"]') || "default image";
+    let image = e.target.querySelector('input[type="file"]') || "./assets/images/user-placeholder.png";
     
     console.log(image);
     

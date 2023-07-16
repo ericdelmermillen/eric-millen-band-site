@@ -66,45 +66,46 @@ ul a {
   flex-direction: column;
   justify-content: center;
 }
-.nav-bar__logo {
-  height: 1.25rem;
-  width: 7.5rem;
-}
 @media (max-width: 677px) {
   .nav-bar__logo {
+    height: 1.25rem;
+    width: 7.5rem;
+  }
+}
+@media (max-width: 677px) and (max-width: 677px) {
+  .nav-bar__logo {
+    margin-bottom: 0;
     margin-top: 2rem;
   }
 }
-@media (min-width: 678px) {
+@media (max-width: 677px) and (min-width: 678px) {
   .nav-bar__logo {
+    margin-bottom: 2.25rem;
     margin-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
-  .nav-bar__logo {
-    margin-top: 0;
-  }
-}
-@media screen and (min-width: 678px) and (max-width: 677px) {
+@media (min-width: 678px) and (max-width: 677px) {
   .nav-bar__logo {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
-@media screen and (min-width: 678px) and (min-width: 678px) {
+@media (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-left: 3rem;
     margin-right: 3rem;
   }
 }
-@media screen and (min-width: 678px) and (max-width: 677px) {
+@media (min-width: 678px) and (max-width: 677px) {
   .nav-bar__logo {
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
-@media screen and (min-width: 678px) and (min-width: 678px) {
+@media (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-bottom: 2rem;
+    margin-top: 0;
   }
 }
 .nav-bar__menu {
@@ -219,7 +220,7 @@ ul a {
     padding-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .socials__container {
     flex-direction: row;
   }
@@ -303,7 +304,7 @@ ul a {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .management__container {
     margin-bottom: 2rem;
     flex-direction: row;
@@ -383,7 +384,7 @@ ul a {
 .management--uk-eu-au {
   max-width: 100%;
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .management,
   .management--us-south-america-japan,
   .management--uk-eu-au {
@@ -407,7 +408,7 @@ ul a {
     margin-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .footer__logo {
     margin-left: 0rem;
     position: absolute;
@@ -611,13 +612,18 @@ ul a {
   justify-content: space-between;
   width: 100%;
 }
-@media screen and (min-width: 1280px) and (max-width: 677px) {
+@media (min-width: 678px) {
+  .shows-container > .show:first-child {
+    border: none;
+  }
+}
+@media (min-width: 1280px) and (max-width: 677px) {
   .shows-container {
     margin-left: 1rem;
     margin-right: 0;
   }
 }
-@media screen and (min-width: 1280px) and (min-width: 678px) {
+@media (min-width: 1280px) and (min-width: 678px) {
   .shows-container {
     margin-left: 2.25rem;
     margin-right: 0;
@@ -662,16 +668,12 @@ ul a {
   padding-top: 0;
   padding-bottom: 0;
 }
+.show:first-child {
+  display: none;
+}
 .show:not(:first-child):hover {
   transition: all 0.5s ease;
   background: orange;
-}
-.show:not(:first-child):active {
-  transition: all 0.5s ease;
-  outline: 2px solid #323232;
-}
-.show:first-child {
-  display: none;
 }
 @media screen and (min-width: 678px) {
   .show {
@@ -683,11 +685,6 @@ ul a {
     display: flex;
   }
 }
-
-.highlighted {
-  background: orange;
-}
-
 .show__details {
   padding-left: 1rem;
   width: 100%;
@@ -704,34 +701,55 @@ ul a {
     padding-top: 2.25rem;
   }
 }
-
-.show__cta {
-  width: 100%;
-}
-@media screen and (min-width: 678px) {
-  .show__cta {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (min-width: 678px) {
+  .show:first-child .show__details {
+    border: none;
+    padding-bottom: 0;
   }
 }
+@media (min-width: 678px) {
+  .show:not(:first-child) .show__details .details__heading {
+    display: none;
+  }
+}
+.show__cta {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+@media (min-width: 678px) {
+  .show__cta {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.highlighted {
+  background: orange;
+}
+
 .btn--buy-tickets {
   text-align: center;
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 700;
   background: #323232;
-  color: #fff;
   border-radius: 4px;
   color: #fff;
-  padding: 1rem 0;
-  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 20px;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .btn--buy-tickets {
-    width: 150px;
     padding: 0 32px;
+    width: 150px;
   }
 }
 .btn--buy-tickets:hover {
@@ -756,11 +774,5 @@ ul a {
   .details__heading {
     padding-bottom: 2.25rem;
     padding-top: 0;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .show:not(:first-child) .show__details .details__heading {
-    display: none;
   }
 }/*# sourceMappingURL=shows.css.map */

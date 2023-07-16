@@ -225,16 +225,16 @@ ul {
 // Margins:
 
 // margin-top
-@mixin margin-top($margin-top-mobile: 1rem, $margin-top-tablet: 2.25rem) {
+// @mixin margin-top($margin-top-mobile: 1rem, $margin-top-tablet: 2.25rem) {
 
-  @media (max-width: $mobile-width) {
-    margin-top: $margin-top-mobile;
-  }
+//   @media (max-width: $mobile-width) {
+//     margin-top: $margin-top-mobile;
+//   }
 
-  @media (min-width: $tablet-width) {
-    margin-top: $margin-top-tablet;
-  }
-}
+//   @media (min-width: $tablet-width) {
+//     margin-top: $margin-top-tablet;
+//   }
+// }
  
 // margin-bottom
 @mixin margin-bottom($margin-bottom-mobile: 1rem, $margin-bottom-tablet: 2.25rem) {
@@ -438,15 +438,17 @@ ul {
 
   &__logo {
     // stylesheet specifies logo to always be 20px (1.25rem) x 120px (7.5rem)
-    @include margin-top($margin-top-mobile: 2rem);
-    height: 1.25rem;
-    width: 7.5rem;
-    
-    @media screen and (min-width: $tablet-width) {
+
+    @media (max-width: $mobile-width) {
+      @include margin-block($margin-top-mobile: 2rem, $margin-bottom-mobile: 0);
+      height: 1.25rem;
+      width: 7.5rem;
+    }
+
+    @media (min-width: $tablet-width) {
       @include margin-inline($margin-left-tablet: 3rem, $margin-right-tablet: 3rem);
   
-      @include margin-bottom($margin-bottom-tablet: 2rem);
-      margin-top: 0;
+      @include margin-block($margin-bottom-tablet: 2rem, $margin-top-tablet: 0);
     }
   }
   
@@ -529,7 +531,7 @@ ul {
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     flex-direction: row;
   }
 }
@@ -560,7 +562,7 @@ ul {
   flex-direction: column;
   margin-bottom: 4rem;
   
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     margin-bottom: 2rem;
     flex-direction: row;
   }
@@ -601,7 +603,7 @@ ul {
 .management--uk-eu-au {
   max-width: 100%;
   
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
       max-width: 29%;
   }
 }
@@ -612,31 +614,28 @@ ul {
   height: 2.5rem;
   width: 8.75rem;
 
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
       margin-left: 0rem;
       position: absolute;
       right: 2rem;
       top: 0;
   }
 }
-@mixin divider {
-  border-bottom: 1px solid $mercury;
-}
 
 
 @mixin btn($font-size-mobile: 10px, $line-height-mobile: 20px, $font-weight-mobile: 700) {
 
-  font-size: $font-size-mobile;
-  line-height: $line-height-mobile;
-  font-weight: $font-weight-mobile;
-  // height: 40px;
   background: $band-site-black;
-  color: $white;
   border-radius: 4px;
+  color: $white;
+  font-size: $font-size-mobile;
+  font-weight: $font-weight-mobile;
+  height: 40px;
+  line-height: $line-height-mobile;
 
-  @media screen and (min-width: $tablet-width) {
-    width: 150px;
+  @media (min-width: $tablet-width) {
     padding: 0 32px;
+    width: 150px;
   }
   
   &:hover {

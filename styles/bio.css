@@ -66,45 +66,46 @@ ul a {
   flex-direction: column;
   justify-content: center;
 }
-.nav-bar__logo {
-  height: 1.25rem;
-  width: 7.5rem;
-}
 @media (max-width: 677px) {
   .nav-bar__logo {
+    height: 1.25rem;
+    width: 7.5rem;
+  }
+}
+@media (max-width: 677px) and (max-width: 677px) {
+  .nav-bar__logo {
+    margin-bottom: 0;
     margin-top: 2rem;
   }
 }
-@media (min-width: 678px) {
+@media (max-width: 677px) and (min-width: 678px) {
   .nav-bar__logo {
+    margin-bottom: 2.25rem;
     margin-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
-  .nav-bar__logo {
-    margin-top: 0;
-  }
-}
-@media screen and (min-width: 678px) and (max-width: 677px) {
+@media (min-width: 678px) and (max-width: 677px) {
   .nav-bar__logo {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
-@media screen and (min-width: 678px) and (min-width: 678px) {
+@media (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-left: 3rem;
     margin-right: 3rem;
   }
 }
-@media screen and (min-width: 678px) and (max-width: 677px) {
+@media (min-width: 678px) and (max-width: 677px) {
   .nav-bar__logo {
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
-@media screen and (min-width: 678px) and (min-width: 678px) {
+@media (min-width: 678px) and (min-width: 678px) {
   .nav-bar__logo {
     margin-bottom: 2rem;
+    margin-top: 0;
   }
 }
 .nav-bar__menu {
@@ -219,7 +220,7 @@ ul a {
     padding-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .socials__container {
     flex-direction: row;
   }
@@ -303,7 +304,7 @@ ul a {
     gap: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .management__container {
     margin-bottom: 2rem;
     flex-direction: row;
@@ -383,7 +384,7 @@ ul a {
 .management--uk-eu-au {
   max-width: 100%;
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .management,
   .management--us-south-america-japan,
   .management--uk-eu-au {
@@ -407,7 +408,7 @@ ul a {
     margin-top: 2.25rem;
   }
 }
-@media screen and (min-width: 678px) {
+@media (min-width: 678px) {
   .footer__logo {
     margin-left: 0rem;
     position: absolute;

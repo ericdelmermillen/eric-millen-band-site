@@ -132,10 +132,14 @@
   justify-content: space-between;
   width: 100%;
     
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
+
+    & > .show:first-child {
+      border: none;
+    }
   }
   
-  @media screen and (min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     @include margin-inline(
       $margin-right-mobile: 0, $margin-right-tablet: 0
     )
@@ -153,25 +157,19 @@
 
 
 .show {
-  @include divider;
-  // border: 2px solid blue;
+  border-bottom: 1px solid $mercury;
   display: flex;
   flex-direction: column;
   padding-top: 0;
   padding-bottom: 0;
+  
+  &:first-child {
+    display: none;
+  }
 
   &:not(:first-child):hover {
     transition: all 0.5s ease;
     background: orange;
-  }
-
-  &:not(:first-child):active {
-    transition: all 0.5s ease;
-    outline: 2px solid $band-site-black;
-  }
-
-  &:first-child {
-    display: none;
   }
   
   @media screen and (min-width: $tablet-width) {
@@ -188,6 +186,47 @@
       display:flex;
     }
   }
+  
+  &__details {
+    @include padding-block;
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  &:first-child {
+    @media (min-width: $tablet-width) {
+      .show__details {
+        border: none;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &:not(:first-child) {
+    @media (min-width: $tablet-width) {
+
+      .show__details {
+        .details__heading {
+          display: none;
+          
+        }
+      }
+    }
+  }
+
+  &__cta {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    
+    @media (min-width: $tablet-width) {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
 
 .highlighted {
@@ -195,39 +234,15 @@
 }
 
 
-.show__details {
-  @include padding-block;
-  padding-left: 1rem;
-  // border: 2px solid green;
-  width: 100%;
-}
-
-.show__cta {
-  width: 100%;
-  
-  @media screen and (min-width: $tablet-width) {
-    flex-direction: row;
-    display: flex;
-    // flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // justify-content: space-between;
-    // align-items: center;
-    // width: 100%;
-  }
-  
-  @media screen and (min-width: $desktop-width) {
-    // max-width: 40rem;
-  }
-}
-
-
 .btn--buy-tickets {
   text-align: center;
   @include btn;
   color: $white;
-  padding: 1rem 0; 
-  display: block;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
     
   @media screen and (min-width: $tablet-width) {
     flex-direction: row;
@@ -246,16 +261,4 @@
 
 }
 
-.show:not(:first-child) {
-  @media screen and (min-width: $desktop-width) {
-    // max-width: 40rem;
-    
-    .show__details {
-      
-      .details__heading {
-        display: none;
-        
-      }
-    }
-  }
-}
+

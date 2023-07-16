@@ -59,33 +59,32 @@
 
 .hero__page-header {
   @include page-header($line-height-mobile: 2);
-  // border: 2px solid red;
   max-width: 60%;
-
-  @media screen and (min-width: $tablet-width) {
+  
+  @media (min-width: $tablet-width) {
+    @include padding-block($padding-top-tablet: 0);
     max-width: min(90%, 40rem);
   }
 }
 
 .hero__sub-header {
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0, $padding-bottom-desktop: 0);
   @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
 }
 
 .hero__song {
   @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 1.5rem);
-  @include padding-block($padding-bottom-mobile: 0);
   border: none;
-  height: 150px;
   outline: none;
   width: 100%; 
   
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     width: 50%;
   }
   
   @media screen and (min-width: $desktop-width) {
     max-width: 40rem;
+    margin-top: 2rem;
   }
 }
 
@@ -118,7 +117,6 @@
 }
 
 .shows-container {
-  // border: 5px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -152,11 +150,13 @@
   border-bottom: 1px solid $mercury;
   display: flex;
   flex-direction: column;
-  padding-top: 0;
   padding-bottom: 0;
+  padding-top: 0;
   
+  @media (max-width: $mobile-width) {
   &:first-child {
     display: none;
+    }
   }
 
   &:not(:first-child):hover {
@@ -164,16 +164,11 @@
     background: orange;
   }
   
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     flex-direction: row;
-    // justify-content: space-between;
-    // align-items: center;
-    // width: 100%;
   }
   
-  @media screen and (min-width: $desktop-width) {
-    
-    // max-width: 40rem;
+  @media (min-width: $desktop-width) {
     &:first-child {
       display:flex;
     }

@@ -108,7 +108,6 @@ ul a {
   }
 }
 .nav-bar__menu {
-  border: 2px solid red;
   display: flex;
   justify-content: space-evenly;
   width: 100%;

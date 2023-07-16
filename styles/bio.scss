@@ -7,7 +7,7 @@
   color: $white;
   position: relative;
   width: 100%;
-
+  
   &__image-description {
     display: none;
   }
@@ -20,7 +20,7 @@
     top: 0;
     width: 100%;
   }
-
+  
   &__content-container {
     align-items: center;
     display: flex;
@@ -30,19 +30,20 @@
     width: min(100%, $desktop-width);
     z-index: 2;
     
-    @media screen and (min-width: $tablet-width) {
+    @media (min-width: $tablet-width) {
       height: calc(100vh - 6rem);
     }
   }
-}
-
-.hero-section__page-header {
-  @include padding-before-headlines;
-  @include page-header;
+  
+  &__page-header {
+    @include padding-before-headlines;
+    @include page-header;
+  }
 }
     
 // // Bio Section
-.bio-section {
+.bio {
+  border: 5px solid red;
   width: 100%;
 
   &__content-container {
@@ -50,8 +51,8 @@
     margin: 0 auto;
     width: min(100%, $desktop-width);
     
-    @media screen and (min-width: $tablet-width) {
-        @include padding-inline;
+    @media (min-width: $tablet-width) {
+      @include padding-inline;
     }
   }
   
@@ -59,66 +60,76 @@
     @include padding-before-headlines;
     @include padding-between-components-top;
     @include section-header($font-weight-tablet: 600);
-
-    @media screen and (min-width: $tablet-width) {
+    color: purple;
+    
+    @media (min-width: $tablet-width) {
       padding-left: 0;
     }
   }
+}
+
+.bio-article {
+  @include padding-inline;
+  border: 5px solid green;
   
-  &__bio-article {
-    @include padding-inline;
+  &__content-container {
+    background: red;
   }
-}
-
-.bio-article__content-container {
-
-  @media screen and (min-width: $tablet-width) {
-      @include padding-inline;
+  
+  &__sub-container {
+    background: blue;  
+    // padding: 2rem;
   }
-}
-
-.bio-article__hero-image {
-  @include padding-between-components-bottom;
-  @include padding-between-components-top;
-  width: 100%;
-}
-
-.bio-article__quote {
-  @include padding-between-components-bottom;
-  @include quote;
-  display: block;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.094rem;
-
-  @media screen and (min-width: $desktop-width) {
-    max-width: 75%;
+  
+  &__hero-image {
+    @include padding-between-components-bottom;
+    @include padding-between-components-top;
+    width: 100%;
   }
-}
 
-.bio-article__source {
-  @extend .bio-article__quote;
-}
-
-
-.bio-section__subheader {
-  @include padding-between-components-bottom;
-  @include padding-between-components-top;
-  font-weight: 600;
-}
-
-.bio-section__paragraph-container {
-  @include gap;
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: $tablet-width) {
-    flex-direction: row;
+  &__block-quote {
+    background: orange;
   }
-}
+  
+  &__quote {
+    @include padding-between-components-bottom;
+    @include quote;
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.094rem;
+  
+    @media (min-width: $desktop-width) {
+      max-width: 75%;
+    }
+  }
+  &__source {
+    @extend .bio-article__quote;
+    background: green;
+  }
+  
+  &__subheader {
+    @include padding-between-components-bottom;
+    @include padding-between-components-top;
+    font-weight: 600;
+    // background-color: white;
+  }
+  
+  &__paragraph-container {
+    border: 3px solid red;
+    @include gap;
+    display: flex;
+    flex-direction: column;
+  
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+    }
+  }
 
-.bio-section__body-copy {
-  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
+  &__body-copy {
+    @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
+    color: white;
+  }
 }
 
 // // Gallery Section

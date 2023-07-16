@@ -398,7 +398,6 @@ ul {
   
   @media (min-width: $tablet-width) {
     gap: 2.25rem;
-    border: 5px solid red;
   }
 }
 
@@ -452,7 +451,6 @@ ul {
   }
   
   &__menu {
-    border: 2px solid red;
     display: flex;
     justify-content: space-evenly;
     width: 100%;

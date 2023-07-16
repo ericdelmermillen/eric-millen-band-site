@@ -99,7 +99,7 @@ function createCommentElemArray(commentsObj) {
         commentHeader.setAttribute("class", "comment__header");
         commentText.appendChild(commentHeader);
         
-        const comment__heading = document.createElement("h3");
+        const comment__heading = document.createElement("p");
         comment__heading.setAttribute("class", "comment__heading");
         comment__heading.innerText = commentElem.comment__heading;
         

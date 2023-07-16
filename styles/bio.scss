@@ -46,7 +46,7 @@
   width: 100%;
 
   &__content-container {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     margin: 0 auto;
     width: min(100%, $desktop-width);
     
@@ -75,7 +75,7 @@
   }
   
   &__quote {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 0, $padding-top-tablet: 0,$padding-bottom-desktop: 0, $padding-top-desktop: 0);
     @include quote;
     display: block;
     font-style: normal;
@@ -88,6 +88,7 @@
   }
   &__source {
     @extend .bio-article__quote;
+    @include padding-block($padding-top-desktop: 1rem);
     
     @media (min-width: $tablet-width) {
       font-size: 1rem;
@@ -95,7 +96,7 @@
   }
   
   &__subheader {
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem, $padding-top-desktop: 0);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     font-weight: 600;
   }
   
@@ -132,13 +133,13 @@
     width: min(100%, $desktop-width);
   }
   
-    &__content {
-      @include padding-inline;
-    }
+  &__content {
+    @include padding-inline;
+  }
 
   &__heading {
     @include section-header;
-    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem, $padding-top-desktop: 1rem);
   }
   
   &__image-container {
@@ -170,130 +171,130 @@
 
 
 // Comments Section
-
 .comments {
-  border: 2px solid red;
   @include padding-block;
-
-
   @include margin-inline;
 
   &__container {
-    width: min(100%, $desktop-width);
     margin: 0 auto;
+    width: min(100%, $desktop-width);
   }
   
   &__heading {
     @include section-header;
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    font-weight: bold;
   }
 
   &__sub-container {
-    border: 5px solid red;
-    // @include margin-inline($margin-left-tablet: 0, $margin-right-tablet: 0, $margin-left-desktop: 15rem, $margin-right-desktop: 15rem);
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 750px;
   }
-  
-  // &__article {
-  // }
+
 }
 
 .comment--new {
   display: flex;
 }
 
-.comment__form {
-  // border: 5px solid red;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.comment__avatar {
-  width: 50px;
-  height: 50px;
+.comment__avatar,
+.comment__avatar--new {
   background: #333;
   border-radius: 50%;
+  height: 50px;
   margin-right: 1rem;
+  margin-top: 0.25rem;
+  width: 50px;
+}
+
+.comment__form {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.comment__avatar--new {
   margin-top: 1.5rem;
 }
 
 .comment-input__container {
   display: flex;
   flex-direction: column;
-  // width: 20rem;
   width: 100%;
-  // flex-grow: 1;
 }
 
 .comment {
-  // border: 2px solid green;
-  display: flex;
   border-bottom: 1px solid $mercury;
   border-top: 1px solid $mercury;
+  display: flex;
+  padding: 1rem 0;
 
   &__btn {
     @include btn;
-    text-align: center;
+    align-items: center;
     color: $white;
     display: flex;
-    width: 100%;
-    align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    
+    text-align: center;
+    width: 100%;
     
     @media (min-width: $tablet-width) {
-      flex-direction: row;
-      display: flex;
       align-items: center;
+      display: flex;
+      flex-direction: row;
       justify-content: center;
     }
   }
 }
 
 .comment__label {
-  @include body-copy;
+  @include body-copy($font-weight-mobile: 600, $font-weight-tablet: 600);
   color: $silver;
-  padding-bottom: 0.25rem
+  padding-bottom: 0.25rem;
 }
 
 .comment__input--name,
 .comment__input--text {
-  font-family: inherit;
-  padding: 0.75rem 0.5rem;
-  margin-bottom: 1rem;
   border: 2px solid $silver;
   border-radius: 4px;
+  font-family: inherit;
+  padding: 0.75rem 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .comment__input--name[placeholder],
 .comment__input--text[placeholder] {
   @include body-copy;
-  // color: $band-site-black;
 }
 
 .comment__input--name:focus,
 .comment__input--text:focus {
+  box-shadow: inset 0 0 1px 2px rgba(0, 0, 0, 0.4);
   outline: none;
-  box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.7);
   
 }
 .comment__input--text {  
+  height: 10rem;
   resize: none;
 }
 
-
-
 .comment__header {
-  // border: 2px solid blue;
   display: flex;
   justify-content: space-between;
 }
 
+.comment__heading {
+  @include body-copy($font-weight-mobile: bold, $font-weight-tablet: bold);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
 
-
+.comment__time-stamp {
+  color: $silver;
+  font-weight: 600;
+}
 
 

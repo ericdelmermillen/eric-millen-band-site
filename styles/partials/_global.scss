@@ -454,7 +454,7 @@ ul {
 .footer-section {
   background: $band-site-black;
   width: 100%;
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 1rem, $padding-top-desktop: 0);
   
   &__content-container {
     color: $white;
@@ -519,7 +519,7 @@ ul {
 }
 
 .manager__role {
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
 }
 
 .manager__email {

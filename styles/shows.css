@@ -196,13 +196,13 @@ ul a {
 @media (min-width: 678px) {
   .footer-section {
     padding-bottom: 2.25rem;
-    padding-top: 0;
+    padding-top: 1rem;
   }
 }
 @media (min-width: 1280px) {
   .footer-section {
     padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-top: 0;
   }
 }
 .footer-section__content-container {
@@ -397,7 +397,7 @@ ul a {
 @media (min-width: 1280px) {
   .manager__role {
     padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-top: 0;
   }
 }
 

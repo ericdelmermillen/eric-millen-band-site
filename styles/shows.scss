@@ -3,13 +3,11 @@
 
 // Hero Section
 .hero {
-  @include padding-between-components-top($default-padding-top: 2rem);
-  @include padding-between-components-bottom($padding-bottom-mobile: 2rem);
+  @include padding-block($padding-bottom-mobile: 2rem, $padding-top-mobile: 2rem, $padding-bottom-tablet: 2rem, $padding-top-tablet: 0);
   background: url("../assets/images/hero-shows.jpg") center center / cover;
   color: $white;
   position: relative;
   width: 100%;
-  // border: 2px solid red;
 
   @media screen and (min-width: $tablet-width) {
     height: calc(100vh - 6rem);
@@ -33,7 +31,6 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    // @include padding-between-components-gap;
     height: calc(50vh - 3rem);
     justify-content: center;
     margin: 0 auto;
@@ -46,8 +43,7 @@
     //   border: 2px solid orange;
     // }
     
-    @media screen and (min-width: $desktop-width) {
-      // border: 2px solid blue;
+    @media (min-width: $desktop-width) {
       flex-direction: row;
       align-items: center;
     }
@@ -55,13 +51,10 @@
   }
 }
 
-// .hero__text-container {
-//   border: 3px dotted #000;
-// }
 
 .hero__page-header,
 .hero__sub-header {
-  @include padding-before-headlines;
+  @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 0, $padding-left-tablet: 3rem, $padding-right-tablet: 0);
 }
 
 .hero__page-header {
@@ -75,14 +68,13 @@
 }
 
 .hero__sub-header {
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
   @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
-  // border: 2px solid blue;
 }
 
 .hero__song {
-  @include padding-inline($padding-mobile: 1.5rem);
-  @include padding-between-components-top(2.5rem);
+  @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 1.5rem);
+  @include padding-block($padding-bottom-mobile: 0);
   border: none;
   height: 150px;
   outline: none;

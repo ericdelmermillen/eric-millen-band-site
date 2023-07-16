@@ -224,29 +224,6 @@ ul {
 
 // Margins:
 
-// margin-top
-// @mixin margin-top($margin-top-mobile: 1rem, $margin-top-tablet: 2.25rem) {
-
-//   @media (max-width: $mobile-width) {
-//     margin-top: $margin-top-mobile;
-//   }
-
-//   @media (min-width: $tablet-width) {
-//     margin-top: $margin-top-tablet;
-//   }
-// }
- 
-// margin-bottom
-@mixin margin-bottom($margin-bottom-mobile: 1rem, $margin-bottom-tablet: 2.25rem) {
-
-  @media (max-width: $mobile-width) {
-    margin-bottom: $margin-bottom-mobile;
-  }
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: $margin-bottom-tablet;
-  }
-}
  
 
 // margin-block (margin top & margin-bottom)
@@ -312,41 +289,18 @@ ul {
   }
 }
 
-// shouldn't need these
-@mixin padding-between-components-top($default-padding-top: 1rem, $default-tablet-padding-top: 2.25rem) {
-  padding-top: $default-padding-top;
-  
-  // Tablet or Desktop
-  @media (max-width: $mobile-width) {
-    padding-top: $default-tablet-padding-top;
-  }
-
-  @media (min-width: $tablet-width) {
-    padding-top: $default-tablet-padding-top;
-  }
-}
-
-// shouldn't need these
-@mixin padding-between-components-bottom(
-  $padding-bottom-mobile: 1rem, $padding-bottom-tablet: 2.25rem
-) {
-  padding-bottom: $padding-bottom-mobile;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-bottom: $padding-bottom-tablet;
-  }
-}
 
 // padding-inline (
-  @mixin padding-inline($padding-mobile: 1rem, $padding-tablet: 2.25rem) {
+  @mixin padding-inline($padding-left-mobile: 1rem, $padding-right-mobile: 1rem, $padding-left-tablet: 2.25rem, $padding-right-tablet: 2.25rem) {
     
     @media (max-width: $mobile-width) {
-      padding-inline: $padding-mobile;
+      padding-left: $padding-left-mobile;
+      padding-right: $padding-right-mobile;
     }
 
     @media (min-width: $tablet-width) {
-      padding-inline: $padding-tablet;
+      padding-left: $padding-left-tablet;
+      padding-right: $padding-left-tablet;
     }
   }
 
@@ -368,39 +322,6 @@ ul {
     padding-top: $padding-top-tablet;
   }
 }
-  
-
-
-// Spacings - Padding - Mobile:
-@mixin padding-before-headlines {
-  padding-left: 1.5rem;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-left: 3rem;
-  }
-}
-
-@mixin padding-after-headlines {
-  padding-right: 1rem;
-  
-  // Tablet or Desktop
-  @media (min-width: $tablet-width) {
-    padding-right: 2.25rem;
-  }
-}
-
-@mixin padding-between-components($gap-mobile: 1rem) {
-  
-  @media (max-width: $mobile-width) {
-    gap: $gap-mobile;
-  }
-  
-  @media (min-width: $tablet-width) {
-    gap: 2.25rem;
-  }
-}
-
 
 // Gaps:
 
@@ -465,7 +386,7 @@ ul {
   
   &__menu-option,
   &__menu-option--active {
-    @include padding-between-components-bottom;
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
     align-items: center;
     display: flex;
     flex-grow: 1;
@@ -509,7 +430,7 @@ ul {
 .footer-section {
   background: $band-site-black;
   width: 100%;
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
   
   &__content-container {
     color: $white;
@@ -525,9 +446,8 @@ ul {
 
 
 .socials__container {
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
   @include gap;
-  @include padding-between-components-top;
   display: flex;
   flex-direction: column;
 
@@ -542,7 +462,7 @@ ul {
 
 .social-icon__container {
   @include gap;
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
   margin-top: 0.5rem;
   display: flex;  
 }
@@ -552,7 +472,7 @@ ul {
 }
 
 .socials__heading {
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
   @include section-header($font-weight-mobile: 600, $font-weight-tablet: 600);
 }
 
@@ -575,11 +495,12 @@ ul {
 }
 
 .manager__role {
-  @include padding-between-components-bottom;
+  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
 }
 
 .manager__email {
-  @include padding-between-components-top;
+  @include padding-block($padding-bottom-mobile: 0, $padding-top-mobile: 1rem, $padding-bottom-tablet: 0, $padding-top-tablet: 2.25rem);
+  
   
   .manager__email--word-break {
     overflow-wrap: break-word;

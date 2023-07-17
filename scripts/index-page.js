@@ -4,7 +4,6 @@
 // Comments Array
 const commentsArray = [
     {
-        // add url for default image after it is made and in the folder
         avatar__image: "./assets/images/user-placeholder.png",
         comment__heading: "Connor Walton",
         time_stamp: "02/17/2021",
@@ -31,8 +30,11 @@ window.addEventListener("DOMContentLoaded", updateComments);
 commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-   (e.target.name.value.trim().length < 2 || e.target.comment.value.trim().length < 100)
-        ? (alert("dont fuck with the bees knees"))
+   (e.target.name.value.trim().length < 2 || 
+   e.target.name.value.trim().length > 100 || 
+   e.target.comment.value.trim().length < 100 || 
+   e.target.comment.value.trim().length > 500)
+        ? (alert("Name must be between 2-100 characters.\nComment must be between 100-500 characters."))
         : (createNewComment(e), updateComments());
 });
 

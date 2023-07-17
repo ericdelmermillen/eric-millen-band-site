@@ -47,8 +47,8 @@ function createShowElemArray() {
         
         show.appendChild(showDetailsDate);
         
-        // Date h3
-        let detailsHeadingDate = document.createElement("h3");
+        // Date header p
+        let detailsHeadingDate = document.createElement("p");
         detailsHeadingDate.setAttribute("class", "details__heading");
         detailsHeadingDate.innerText = "DATE";
         
@@ -67,8 +67,8 @@ function createShowElemArray() {
         
         show.appendChild(showDetailsVenue);
         
-        // Venue h3
-        let detailsHeadingVenue = document.createElement("h3");
+        // Venue header p
+        let detailsHeadingVenue = document.createElement("p");
         detailsHeadingVenue.setAttribute("class", "details__heading");
         detailsHeadingVenue.innerText = "VENUE"
         
@@ -87,8 +87,8 @@ function createShowElemArray() {
         
         show.appendChild(showDetailsLocation);
         
-        // Location h3
-        let detailsHeadingLocation = document.createElement("h3");
+        // Location header p
+        let detailsHeadingLocation = document.createElement("p");
         detailsHeadingLocation.setAttribute("class", "details__heading");
         detailsHeadingLocation.innerText = "LOCATION";
         
@@ -128,26 +128,25 @@ showsContainer.addEventListener("click", (e) => {
     let showsHTMLCollection = showsContainer.querySelectorAll(".show");
     let clickedChild = e.target.closest(".shows-container > * ");
     
-    if (clickedChild !== showsContainer.firstElementChild && clickedChild.classList.contains("highlighted")) {
-        clickedChild.classList.toggle("highlighted");
+    if (clickedChild !== showsContainer.firstElementChild && clickedChild.classList.contains("selected")) {
+        clickedChild.classList.toggle("selected");
 
     } else if(clickedChild === showsContainer.firstElementChild) {
         console.log("first child clicked");
-        showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
+        showsHTMLCollection.forEach((show) => show.classList.remove("selected"));
     } else if (clickedChild !== showsContainer.firstElementChild){
-        showsHTMLCollection.forEach((show) => show.classList.remove("highlighted"));
-        clickedChild.classList.add("highlighted");
+        showsHTMLCollection.forEach((show) => show.classList.remove("selected"));
+        clickedChild.classList.add("selected");
     }
 })
   
 
 document.addEventListener("click", (e) => {
     if(!showsContainer.contains(e.target)) {
-        console.log("outside");
         let shows = showsContainer.children;
 
         for(let show of shows) {
-            show.classList.remove("highlighted");
+            show.classList.remove("selected");
         }
     }
 })

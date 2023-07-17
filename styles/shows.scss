@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
 
-  @media screen and (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     height: calc(100vh - 6rem);
   }
 
@@ -27,25 +27,19 @@
   }
 
   &__content-container {
-    // border: 2px solid green;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    height: calc(50vh - 3rem);
     justify-content: center;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     width: min(100%, $desktop-width);
     z-index: 2;
-    height: 100%;
-
-    // @media screen and (min-width: $tablet-width) {
-    //   border: 2px solid orange;
-    // }
     
     @media (min-width: $desktop-width) {
-      flex-direction: row;
       align-items: center;
+      flex-direction: row;
     }
 
   }
@@ -58,7 +52,7 @@
 }
 
 .hero__page-header {
-  @include page-header($line-height-mobile: 2);
+  @include page-header($line-height-mobile: 1.75, $line-height-tablet: 1.5);
   max-width: 60%;
   
   @media (min-width: $tablet-width) {
@@ -77,42 +71,33 @@
   border: none;
   outline: none;
   width: 100%; 
+  height: 7.5rem;
   
   @media (min-width: $tablet-width) {
     width: 50%;
   }
   
-  @media screen and (min-width: $desktop-width) {
-    max-width: 40rem;
+  @media (min-width: $desktop-width) {
     margin-top: 2rem;
+    max-width: 40rem;
   }
 }
 
 // Shows Section
 
 .shows {
-  // border: 2px solid red;
-  width: 100%;
-  @include padding-inline;
   @include padding-block($padding-top-mobile: 0rem);
+  @include padding-inline;
+  width: 100%;
 
 }
 
 .shows__content-container {
-  // border: 2px solid green;
-  width: min(100%, $desktop-width);
   margin: 0 auto;
-  // justify-content: center;
+  width: min(100%, $desktop-width);
   
-  @media screen and (min-width: $tablet-width) {
-  }
-  
-  @media screen and (min-width: $desktop-width) {
+  @media (min-width: $desktop-width) {
     display: flex;
-    // background: green;
-    
-    // border: 3px dotted #000;
-    // justify-content: space-between;
   }
 }
 
@@ -141,13 +126,13 @@
   @include page-header(
     $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
     );
-  padding-left: 1rem;
-  width: 20%;
+    padding-left: 1rem;
+    width: 20%;
 }
 
 
 .show {
-  border-bottom: 1px solid $mercury;
+  border-bottom: 0.0625rem solid $mercury;
   display: flex;
   flex-direction: column;
   padding-bottom: 0;
@@ -160,8 +145,8 @@
   }
 
   &:not(:first-child):hover {
+    background: $alabaster;
     transition: all 0.5s ease;
-    background: orange;
   }
   
   @media (min-width: $tablet-width) {
@@ -192,12 +177,9 @@
   &:not(:first-child) {
     @media (min-width: $tablet-width) {
 
-      .show__details {
         .details__heading {
           display: none;
-          
         }
-      }
     }
   }
 
@@ -216,30 +198,31 @@
   }
 }
 
-.highlighted {
-    background: orange;
+.selected {
+    background: $mercury;
 }
 
 .btn--buy-tickets {
-  text-align: center;
   @include btn;
+  align-items: center;
   color: $white;
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  width: 100%;
 
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
   }
 }
 
 .details__heading {
-  @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0);
-
+  @include padding-block($padding-top-mobile: 0, $padding-top-tablet: 0, $padding-bottom-tablet: 0, $padding-bottom-desktop: 0, $padding-top-desktop: 0);
+  color: $silver;
+  font-weight: 600;
 }
 
 

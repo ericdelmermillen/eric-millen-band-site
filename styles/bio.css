@@ -256,22 +256,22 @@ ul a {
 
 @media (max-width: 677px) {
   .socials__heading {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 1.375rem;
   }
 }
 @media (min-width: 678px) {
   .socials__heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 
 .social-icon__container {
-  margin-top: 0.5rem;
   display: flex;
+  margin-top: 0.5rem;
 }
 @media (max-width: 677px) {
   .social-icon__container {
@@ -326,16 +326,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .socials__heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 678px) {
   .socials__heading {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 2.75rem;
   }
 }
 
@@ -368,7 +368,7 @@ ul a {
 @media (max-width: 677px) {
   .manager__name,
   .manager__role {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     line-height: 1.75;
   }
@@ -376,7 +376,7 @@ ul a {
 @media (min-width: 678px) {
   .manager__name,
   .manager__role {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.75;
   }
@@ -431,14 +431,14 @@ ul a {
 
 @media (max-width: 677px) {
   .manager__address {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.75;
   }
 }
 @media (min-width: 678px) {
   .manager__address {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.75;
   }
@@ -539,16 +539,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .hero-section__page-header {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 678px) {
   .hero-section__page-header {
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: 700;
-    line-height: 68px;
+    line-height: 4.25rem;
   }
 }
 
@@ -633,16 +633,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .bio__heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 678px) {
   .bio__heading {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 600;
-    line-height: 44px;
+    line-height: 2.75rem;
   }
 }
 @media (min-width: 678px) {
@@ -815,14 +815,14 @@ ul a {
 }
 @media (max-width: 677px) {
   .bio-article__body-copy {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.75;
   }
 }
 @media (min-width: 678px) {
   .bio-article__body-copy {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.75;
   }
@@ -878,16 +878,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .gallery__heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 678px) {
   .gallery__heading {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
-    line-height: 44px;
+    line-height: 2.75rem;
   }
 }
 @media (max-width: 677px) {
@@ -988,16 +988,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .comments__heading {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 32px;
+    line-height: 2rem;
   }
 }
 @media (min-width: 678px) {
   .comments__heading {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
-    line-height: 44px;
+    line-height: 2.75rem;
   }
 }
 @media (max-width: 677px) {
@@ -1020,7 +1020,7 @@ ul a {
 }
 .comments__sub-container {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 46.875rem;
 }
 
 .comment--new {
@@ -1031,10 +1031,10 @@ ul a {
 .comment__avatar--new {
   background: #333;
   border-radius: 50%;
-  height: 50px;
+  height: 3.125rem;
   margin-right: 1rem;
   margin-top: 0.25rem;
-  width: 50px;
+  width: 3.125rem;
 }
 
 .comment__form {
@@ -1055,19 +1055,19 @@ ul a {
 }
 
 .comment {
-  border-bottom: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1;
+  border-bottom: 0.0625rem solid #e1e1e1;
+  border-top: 0.0625rem solid #e1e1e1;
   display: flex;
   padding: 1rem 0;
 }
 .comment__btn {
   background: #323232;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: #afafaf;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 700;
-  height: 40px;
-  line-height: 20px;
+  height: 2.5rem;
+  line-height: 1.25rem;
   align-items: center;
   color: #fff;
   display: flex;
@@ -1078,13 +1078,20 @@ ul a {
 }
 @media (min-width: 678px) {
   .comment__btn {
-    padding: 0 32px;
-    width: 150px;
+    padding: 0 2rem;
+    width: 9.375rem;
   }
 }
 .comment__btn:hover, .comment__btn:active {
   background: #000;
   color: #fff;
+}
+.comment__btn:active {
+  scale: 0.98;
+}
+.comment__btn:focus {
+  border: none;
+  outline: none;
 }
 @media (min-width: 678px) {
   .comment__btn {
@@ -1101,23 +1108,23 @@ ul a {
 }
 @media (max-width: 677px) {
   .comment__label {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 1.125rem;
   }
 }
 @media (min-width: 678px) {
   .comment__label {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 1.375rem;
   }
 }
 
 .comment__input--name,
 .comment__input--text {
-  border: 2px solid #afafaf;
-  border-radius: 4px;
+  border: 0.125rem solid #afafaf;
+  border-radius: 0.25rem;
   font-family: inherit;
   padding: 0.75rem 0.75rem;
   margin-bottom: 1rem;
@@ -1126,23 +1133,23 @@ ul a {
 @media (max-width: 677px) {
   .comment__input--name[placeholder],
   .comment__input--text[placeholder] {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 1.125rem;
   }
 }
 @media (min-width: 678px) {
   .comment__input--name[placeholder],
   .comment__input--text[placeholder] {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 1.375rem;
   }
 }
 
 .comment__input--name:focus,
 .comment__input--text:focus {
-  box-shadow: inset 0 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.4);
   outline: none;
 }
 
@@ -1163,16 +1170,16 @@ ul a {
 }
 @media (max-width: 677px) {
   .comment__heading {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: bold;
-    line-height: 18px;
+    line-height: 1.125rem;
   }
 }
 @media (min-width: 678px) {
   .comment__heading {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
-    line-height: 22px;
+    line-height: 1.375rem;
   }
 }
 

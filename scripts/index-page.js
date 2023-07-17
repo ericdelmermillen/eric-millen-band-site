@@ -1,3 +1,21 @@
+// note from Louis:
+
+// specified width and word breakoverflow: hidden
+// text-overflow: elipsis
+
+// word-wrap: wrap or breakword// 
+
+
+// make clear comments a function
+
+// make clar inputs a function
+
+const BASE_URL = "https://project-1-api.herokuapp.com/";
+
+const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
+    
+    // You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
+    
     // e.target.name.value = "";
     // e.target.comment.value = "";
 
@@ -24,7 +42,9 @@ const commentsArray = [
 ];
 
 // Update Comments on page load after dom contents loaded
+
 window.addEventListener("DOMContentLoaded", updateComments);
+// change to calling getComments (call comments endpoint)
 
 // Event Listener on Comment Button
 commentForm.addEventListener("submit", (e) => {
@@ -129,3 +149,23 @@ function createCommentElemArray(commentsObj) {
 const year = document.getElementById("year");
     const currentYear = new Date().getFullYear();
     year.textContent = currentYear;
+
+
+
+
+
+// Changes:
+
+// window page load listener
+// 1: page load calls getComments; get request 
+// --> .then returns commentObjectArray from api 
+// --> calls createCommentElemArray (passes commentObjectArray to createCommentElemArray) 
+// --> createElemCommentArray calls loadComments (passes commentElemArray to loadComments)  
+// loadComments appends commentElems to container
+
+
+// comment submit listener
+// 2: createComment: put request passing event to api
+// --> .then returns confirmation
+// --> .then calls getComments get request (.catch calls error function if error returned)
+// --> .then returns commentObjectArray

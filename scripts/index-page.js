@@ -228,9 +228,9 @@ function loadComments(commentsArr) {
 // }
 
 // Year for the copyright in the footer
-// const year = document.getElementById("year");
-//     const currentYear = new Date().getFullYear();
-//     year.textContent = currentYear;
+const year = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+    year.textContent = currentYear;
 
 
 

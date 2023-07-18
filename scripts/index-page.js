@@ -35,7 +35,9 @@ function getComments() {
 
 // createComments array
 function createCommentElemArray(comments) {
-    const commentElems = comments.map((comment) => {
+    let sortedComments = comments.sort((x, y) => y.timestamp - x.timestamp)
+
+    const commentElems = sortedComments.map((comment) => {
         let image = comment.image || "./assets/images/user-placeholder.png";
         
         // create comment div
@@ -95,6 +97,8 @@ function createCommentElemArray(comments) {
 
         return commentDiv;
     })
+
+    // commentElems.forEach(elem => console.log(elem.innerHTML))
     return commentElems
 }
 
@@ -111,6 +115,7 @@ function loadComments(commentsArr) {
     commentsArticle.innerHTML = "";
     
     commentsArr.forEach(comment => commentsArticle.appendChild(comment));
+    // commentsArr.forEach(elem => console.log(elem.outerHTML))
 }
 
 

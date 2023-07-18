@@ -1060,7 +1060,6 @@ ul a {
   display: flex;
   flex-direction: row;
   padding: 1rem 0;
-  border: 2px solid red;
 }
 .comment__btn {
   background: #323232;
@@ -1104,7 +1103,6 @@ ul a {
   }
 }
 .comment__text {
-  border: 2px solid blue;
   flex-grow: 1;
 }
 

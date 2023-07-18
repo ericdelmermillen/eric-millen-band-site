@@ -185,12 +185,12 @@
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
     font-weight: bold;
   }
-
+  
   &__sub-container {
     margin: 0 auto;
     max-width: 46.875rem;
   }
-
+  
 }
 
 .comment--new {
@@ -230,7 +230,7 @@
   display: flex;
   flex-direction: row;
   padding: 1rem 0;
-
+  
   &__btn {
     @include btn;
     align-items: center;
@@ -248,9 +248,10 @@
       justify-content: center;
     }
   }
-
+  
   &__text {
     flex-grow: 1;
+    max-width: 100%;
   }
 }
 
@@ -258,6 +259,11 @@
   @include body-copy($font-weight-mobile: 600, $font-weight-tablet: 600);
   color: $silver;
   padding-bottom: 0.25rem;
+}
+
+
+.comment__body {
+  word-break: break-all;
 }
 
 .comment__input--name,
@@ -288,6 +294,7 @@
 .comment__header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .comment__heading {
@@ -295,6 +302,11 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
+  max-width: 70%;
+  
+  // text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
 }
 
 .comment__time-stamp {

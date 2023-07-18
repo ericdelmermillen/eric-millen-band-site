@@ -1104,6 +1104,7 @@ ul a {
 }
 .comment__text {
   flex-grow: 1;
+  max-width: 100%;
 }
 
 .comment__label {
@@ -1123,6 +1124,10 @@ ul a {
     font-weight: 600;
     line-height: 1.375rem;
   }
+}
+
+.comment__body {
+  word-break: break-all;
 }
 
 .comment__input--name,
@@ -1165,12 +1170,16 @@ ul a {
 .comment__header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .comment__heading {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
+  max-width: 70%;
+  word-break: break-all;
+  overflow: hidden;
 }
 @media (max-width: 677px) {
   .comment__heading {

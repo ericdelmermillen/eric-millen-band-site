@@ -1,3 +1,4 @@
+// *** Don't foreget to uncomment the iframe
 let showsContainer = document.querySelector(".shows-container");
 
 const BASE_URL = "https://project-1-api.herokuapp.com/";

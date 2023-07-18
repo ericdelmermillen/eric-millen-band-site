@@ -27,7 +27,9 @@ window.addEventListener("DOMContentLoaded", getComments);
 function getComments() {
     axios.get(`${BASE_URL}comments?api_key=${API_KEY}`)
     .then(response => {
+        
         const commentsArr = createCommentElemArray(response.data);
+
         loadComments(commentsArr);
     })
     .catch(error => console.error(error));
@@ -35,6 +37,7 @@ function getComments() {
 
 // createComments array
 function createCommentElemArray(comments) {
+
     let sortedComments = comments.sort((x, y) => y.timestamp - x.timestamp)
 
     const commentElems = sortedComments.map((comment) => {
@@ -72,7 +75,7 @@ function createCommentElemArray(comments) {
         // create comment__heading *need to rename to comment__heading--name(?)
         const comment__heading = document.createElement("p");
         comment__heading.setAttribute("class", "comment__heading");
-        comment__heading.innerText = comment.name;
+        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 20)+"..."
         
         commentHeader.appendChild(comment__heading);
         
@@ -115,56 +118,51 @@ function loadComments(commentsArr) {
     commentsArticle.innerHTML = "";
     
     commentsArr.forEach(comment => commentsArticle.appendChild(comment));
-    // commentsArr.forEach(elem => console.log(elem.outerHTML))
 }
 
 
 
 
-
-// const commentsArray = [
-//     {
-//         id: "./assets/images/user-placeholder.png",
-//         avatar__image: "./assets/images/user-placeholder.png",
-//         comment__heading: "Connor Walton",
-//         time_stamp: "02/17/2021",
-//         comment__body: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what is is and what it contains"
-//     },
-// ];
-
-
 // Event Listener on Comment Button
-// commentForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
+commentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-//    (e.target.name.value.trim().length < 2 || 
-//    e.target.name.value.trim().length > 100 || 
-//    e.target.comment.value.trim().length < 100 || 
-//    e.target.comment.value.trim().length > 500)
-//         ? (alert("Name must be between 2-100 characters.\nComment must be between 100-500 characters."))
-//         : (createNewComment(e), updateComments());
-// });
+    
+    (e.target.name.value.trim().length < 2 || 
+    e.target.name.value.trim().length > 100 || 
+    e.target.comment.value.trim().length < 100 || 
+    e.target.comment.value.trim().length > 500)
+
+    // console.log(e.target.name.value)
+
+        ? (alert("Name must be between 2-100 characters.\nComment must be between 100-500 characters."))
+        : (createNewComment(e), getComments());
+
+        //   (*** Does the createNewComment call need to be a promise since we don't know when it will return?)
+});
 
 // Creates new comment in commentArray
-// function createNewComment(e) {
+function createNewComment(e) {
 
-//     let image = e.target.querySelector('input[type="file"]') || "./assets/images/user-placeholder.png";
+    const newComment = {"name": e.target.name.value, "comment": e.target.comment.value};
+
+    axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment)
+    .then(response => {
+        console.log(response)
+        // response.forEach(response => console.log(response))
+        // const commentsArr = createCommentElemArray(response.data);
+
+        getComments();
+    })
+    .catch(error => console.error(error));
+
+    console.log(newComment)
+
+
     
-//     const newComment = 
-//     {
-//         avatar__image: image,
-//         comment__heading: e.target.name.value,
-//         time_stamp: new Date().toLocaleDateString(
-//             "en-US", {
-//                 year: "numeric",
-//                 month: "2-digit",
-//                 day: "2-digit"
-//                 }
-//             ),
-//             comment__body: e.target.comment.value
-//         };    
-//         commentsArray.unshift(newComment);
-// }
+    // (***)needs to make post request to comment end point
+    // --> .catch handles error; call errorOnCreateComment
+}
 
 // called after creating new comment
 // function updateComments() {

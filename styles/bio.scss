@@ -262,9 +262,9 @@
 }
 
 
-.comment__body {
-  word-break: break-all;
-}
+// .comment__body {
+//   word-break: break-all;
+// }
 
 .comment__input--name,
 .comment__input--text {
@@ -303,10 +303,12 @@
   justify-content: space-between;
   padding-bottom: 1rem;
   max-width: 70%;
+  word-break: break-all;
+  outline: 2px solid blue;
   
   // text-overflow: ellipsis;
-  word-break: break-all;
-  overflow: hidden;
+  // word-break: break-all;
+  // overflow: hidden;
 }
 
 .comment__time-stamp {

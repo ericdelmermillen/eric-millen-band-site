@@ -129,7 +129,7 @@ commentForm.addEventListener("submit", (e) => {
 
     
     (e.target.name.value.trim().length < 2 || 
-    e.target.name.value.trim().length > 100 || 
+    e.target.name.value.trim().length > 50 || 
     e.target.comment.value.trim().length < 100 || 
     e.target.comment.value.trim().length > 500)
 

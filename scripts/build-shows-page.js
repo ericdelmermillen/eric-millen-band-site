@@ -4,7 +4,6 @@ const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
 // showdates: example return
-
 // {
 //     "id": 0,
 //     "date": 1630900800000,

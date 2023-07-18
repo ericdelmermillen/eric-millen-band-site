@@ -15,7 +15,7 @@
 // e.target.name.value = "";
 // e.target.comment.value = "";
 
-
+// ** environment variables get caps names
 
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
@@ -251,3 +251,26 @@ const year = document.getElementById("year");
 // --> .then returns confirmation
 // --> .then calls getComments get request (.catch calls error function if error returned)
 // --> .then returns commentObjectArray
+
+
+// <-- -->
+
+// Planning:
+// On submit form: --> createCommentObj (need to construct comment before making post request)
+
+//  --> validate name and comment input min and max length
+
+// --> if passes validation --> post request to bandsite api --> ***can call loading function to show something
+
+// --> receives status + new comment back (*** could prepend to parent)
+
+// --> call getComments
+
+// --> when getComments returns promise set loading element to ""
+
+// --> call load comments
+
+
+
+
+// * eventListener on textArea for Enter submits form

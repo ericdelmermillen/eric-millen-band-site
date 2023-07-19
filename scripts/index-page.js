@@ -10,6 +10,8 @@
 // make clear inputs a function
 
 
+// *** add validation on building elements to the length of the longest word (can .split(" ")) then sort and get the longest; if the longest is > 12; if greater than 12 add the class that breaks the word to that element
+
 // You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
 
 // e.target.name.value = "";
@@ -75,7 +77,7 @@ function createCommentElemArray(comments) {
         // create comment__heading *need to rename to comment__heading--name(?)
         const comment__heading = document.createElement("p");
         comment__heading.setAttribute("class", "comment__heading");
-        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 20)+"..."
+        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 30)+"..."
         
         commentHeader.appendChild(comment__heading);
         
@@ -93,7 +95,23 @@ function createCommentElemArray(comments) {
         
         // create comment__body
         const commentBody = document.createElement("p");
-        commentBody.setAttribute("class", "comment__body");
+        
+        function breakLongWords(comment) {
+            commentBody.setAttribute("class", "comment__body");
+
+            let wordsSorted = comment.split(" ").sort((x, y) => x.length - y.length);
+
+            let longestWord = wordsSorted[wordsSorted.length - 1];
+
+            if(longestWord.length > 30 ) {
+                commentBody.classList.add("break-word")
+            }
+        }
+
+        breakLongWords(comment.comment)
+
+
+
         commentBody.innerText = comment.comment;
 
         commentText.appendChild(commentBody);
@@ -135,7 +153,7 @@ commentForm.addEventListener("submit", (e) => {
 
     // console.log(e.target.name.value)
 
-        ? (alert("Name must be between 2-100 characters.\nComment must be between 100-500 characters."))
+        ? (alert("Name must be between 2-50 characters.\nComment must be between 100-500 characters."))
         : (createNewComment(e), getComments());
 
         //   (*** Does the createNewComment call need to be a promise since we don't know when it will return?)

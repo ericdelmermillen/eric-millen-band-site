@@ -1126,6 +1126,10 @@ ul a {
   }
 }
 
+.break-word {
+  word-break: break-all;
+}
+
 .comment__input--name,
 .comment__input--text {
   border: 0.125rem solid #afafaf;
@@ -1175,7 +1179,6 @@ ul a {
   padding-bottom: 1rem;
   max-width: 70%;
   word-break: break-all;
-  outline: 2px solid blue;
 }
 @media (max-width: 677px) {
   .comment__heading {

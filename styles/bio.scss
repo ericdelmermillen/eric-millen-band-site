@@ -261,10 +261,14 @@
   padding-bottom: 0.25rem;
 }
 
-
 // .comment__body {
 //   word-break: break-all;
 // }
+
+// for comment__body if word too long
+.break-word {
+  word-break: break-all;
+}
 
 .comment__input--name,
 .comment__input--text {
@@ -304,7 +308,6 @@
   padding-bottom: 1rem;
   max-width: 70%;
   word-break: break-all;
-  outline: 2px solid blue;
   
   // text-overflow: ellipsis;
   // word-break: break-all;

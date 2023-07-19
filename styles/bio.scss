@@ -188,9 +188,8 @@
   
   &__sub-container {
     margin: 0 auto;
-    max-width: 46.875rem;
+    max-width: 42rem;
   }
-  
 }
 
 .comment--new {
@@ -271,8 +270,14 @@
   border: 0.125rem solid $silver;
   border-radius: 0.25rem;
   font-family: inherit;
-  padding: 0.75rem 0.75rem;
   margin-bottom: 1rem;
+  min-height: 36px;
+  padding: 0.75rem 0.75rem;
+  
+  @media (min-width: $tablet-width) {
+    min-height: 48px;
+  }
+
 }
 
 .comment__input--name[placeholder],
@@ -302,12 +307,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
-  max-width: 70%;
   word-break: break-all;
-  
-  // text-overflow: ellipsis;
-  // word-break: break-all;
-  // overflow: hidden;
 }
 
 .comment__time-stamp {

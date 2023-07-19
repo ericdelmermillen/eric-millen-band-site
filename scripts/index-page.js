@@ -1,16 +1,3 @@
-// note from Louis:
-
-// specified width and word breakoverflow: hidden
-// text-overflow: elipsis
-
-// word-wrap: wrap or breakword// 
-
-// make clear comments a function
-
-// make clear inputs a function
-
-
-// *** add validation on building elements to the length of the longest word (can .split(" ")) then sort and get the longest; if the longest is > 12; if greater than 12 add the class that breaks the word to that element
 
 // You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
 
@@ -22,8 +9,6 @@
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
-
-window.addEventListener("DOMContentLoaded", getComments);
 
 // getComments
 function getComments() {
@@ -103,7 +88,7 @@ function createCommentElemArray(comments) {
                 .split(" ")
                 .sort((x, y) => y.length - x.length)[0].length;
 
-            if(longestWordLength ) {
+            if(longestWordLength > 30) {
                 commentBody.classList.add("break-word");
                 commentBody.classList.add(`longest-word-length:${longestWordLength}`)
             }
@@ -138,15 +123,14 @@ function loadComments(commentsArr) {
 }
 
 
-
-
 // Event Listener on Comment Button
 commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     
+    // rule for name validation: outline on name input; span with message ?
     (e.target.name.value.trim().length < 2 || 
     e.target.name.value.trim().length > 50 || 
+    // rule for comment validation: outline on name input; span with message ?
     e.target.comment.value.trim().length < 100 || 
     e.target.comment.value.trim().length > 500)
 
@@ -166,15 +150,10 @@ function createNewComment(e) {
     axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment)
     .then(response => {
         console.log(response)
-        // response.forEach(response => console.log(response))
-        // const commentsArr = createCommentElemArray(response.data);
 
         getComments();
     })
     .catch(error => console.error(error));
-
-    console.log(newComment)
-
 
     
     // (***)needs to make post request to comment end point
@@ -291,6 +270,14 @@ const year = document.getElementById("year");
 // --> call load comments
 
 
-
-
 // * eventListener on textArea for Enter submits form
+document.querySelector(".comment__input--text").addEventListener("keyup", (e) => {
+    if(e.key === "Enter") {
+        console.log("You pushed 'Enter")
+        document.querySelector(".comment__btn").click()
+    }
+})
+
+
+// call get comments on page load
+getComments();

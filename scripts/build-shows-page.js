@@ -13,7 +13,7 @@ const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 //   },
 
 
-window.addEventListener(("DOMContentLoaded"), getShows());
+window.addEventListener(("load"), getShows());
 
 
 // getShows

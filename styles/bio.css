@@ -1020,7 +1020,7 @@ ul a {
 }
 .comments__sub-container {
   margin: 0 auto;
-  max-width: 46.875rem;
+  max-width: 42rem;
 }
 
 .comment--new {
@@ -1135,8 +1135,15 @@ ul a {
   border: 0.125rem solid #afafaf;
   border-radius: 0.25rem;
   font-family: inherit;
-  padding: 0.75rem 0.75rem;
   margin-bottom: 1rem;
+  min-height: 36px;
+  padding: 0.75rem 0.75rem;
+}
+@media (min-width: 678px) {
+  .comment__input--name,
+  .comment__input--text {
+    min-height: 48px;
+  }
 }
 
 @media (max-width: 677px) {
@@ -1177,7 +1184,6 @@ ul a {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
-  max-width: 70%;
   word-break: break-all;
 }
 @media (max-width: 677px) {

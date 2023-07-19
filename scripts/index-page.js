@@ -99,18 +99,17 @@ function createCommentElemArray(comments) {
         function breakLongWords(comment) {
             commentBody.setAttribute("class", "comment__body");
 
-            let wordsSorted = comment.split(" ").sort((x, y) => x.length - y.length);
+            let longestWordLength = comment
+                .split(" ")
+                .sort((x, y) => y.length - x.length)[0].length;
 
-            let longestWord = wordsSorted[wordsSorted.length - 1];
-
-            if(longestWord.length > 30 ) {
-                commentBody.classList.add("break-word")
+            if(longestWordLength ) {
+                commentBody.classList.add("break-word");
+                commentBody.classList.add(`longest-word-length:${longestWordLength}`)
             }
         }
 
         breakLongWords(comment.comment)
-
-
 
         commentBody.innerText = comment.comment;
 

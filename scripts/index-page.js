@@ -9,6 +9,11 @@
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
+const headers = {
+    'Content-Type': 'application/json'
+};
+
+
 
 // getComments
 function getComments() {
@@ -147,7 +152,7 @@ function createNewComment(e) {
 
     const newComment = {"name": e.target.name.value, "comment": e.target.comment.value};
 
-    axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment)
+    axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment, {headers})
     .then(response => {
         console.log(response)
 

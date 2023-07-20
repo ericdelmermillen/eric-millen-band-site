@@ -571,6 +571,8 @@ ul {
   font-weight: $font-weight-mobile;
   height: 2.5rem;
   line-height: $line-height-mobile;
+  border: none;
+  outline: none;
 
   @media (min-width: $tablet-width) {
     padding: 0 2rem;

@@ -11,23 +11,22 @@
 <body>
 
 <!-- Navbar begins -->
-  <div class="nav-bar__container">
+  <section class="nav">
     <nav class="nav-bar">
       <a href="/">
         <img class="nav-bar__logo" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo menu option leading to home page">
       </a>
-
       <ul class="nav-bar__menu">
-        <li class="nav-bar__menu-option--active">
-          <a class="menu-option--active" href="/">Biography</a>
+        <li class="nav-bar__option--active">
+          <a class="nav-bar__link--active" href="/">Biography</a>
         </li>    
-        <li class="nav-bar__menu-option">
-          <a class="menu-option" href="./pages/shows.html">Shows</a>
+        <li class="nav-bar__option">
+          <a class="nav-bar__link" href="./pages/shows.html">Shows</a>
         </li>
       </ul>
 
     </nav>
-  </div>
+  </section>
 <!--  end of Navbar -->
 
 <!-- Hero Section begins -->
@@ -154,27 +153,27 @@
 <!-- end of Gallery Section -->    
 
 <!-- Footer Section begins -->
-  <footer class="footer-section">
+  <footer class="footer">
 
-    <div class="footer-section__content-container">
+    <div class="footer__content-container">
       
-      <div class="socials__container">
+      <div class="socials">
         <h3 class="socials__heading">Get in Touch</h3>
-        <div class="social-icon__container">
+        <div class="socials__icons">
           <a href="https://www.instagram.com/">
-            <img class="social-icon" src="./assets/icons/Icon-instagram.svg" alt="instagram icon">
+            <img class="socials__icon" src="./assets/icons/Icon-instagram.svg" alt="instagram icon">
           </a>
           <a href="https://www.facebook.com/">
-            <img class="social-icon" src="./assets/icons/Icon-facebook.svg" alt="facebook icon">
+            <img class="socials__icon" src="./assets/icons/Icon-facebook.svg" alt="facebook icon">
           </a>
           <a href="https://twitter.com/">
-            <img class="social-icon" src="./assets/icons/Icon-twitter.svg" alt="twitter icon">
+            <img class="socials__icon" src="./assets/icons/Icon-twitter.svg" alt="twitter icon">
           </a>
         </div>
       </div>
       
-      <div class="management__container">
-        <div class="management">
+      <div class="management">
+        <div class="manager">
           <p class="manager__name">Cam Adams</p>
           <p class="manager__role">The Bees Knees Management</p>
           <p class="manager__address" >503 Broadway Penthouse,</p>
@@ -186,7 +185,7 @@
           </p>
         </div>
         
-        <div class="management--us-south-america-japan">
+        <div class="manager">
           <p class="manager__name">Pearl Gregg</p>
           <p class="manager__role">Limitless Artist Group</p>
           <p class="manager__address" >Booking Agent for</p>
@@ -198,7 +197,7 @@
           </p>
         </div>
         
-        <div class="management--uk-eu-au">
+        <div class="manager">
           <p class="manager__name">Carson Whyte</p>
           <p class="manager__role">ARCH Entertainment</p>
           <p class="manager__address" >Booking Agent for</p>
@@ -224,16 +223,3 @@
 <script src="./scripts/index-page.js"></script>
 </body>
 </html> 
-
-
-
-<!-- Yep, good start for sure, personally I might've made some changes:
-nav-bar === nav (what does -bar add extra contextually here?)
-
-nav-bar__container === nav-container (container is the exact opposite of element, it's not nested in the block)
-
-nav-bar__menu-option === nav-bar__item (again, shorter version doesn't take away from context or clarity)
-
-menu-option === nav-bar__link (menu-option being it's own block seems like an unnecessary promotion to a block when it's contextually very much so an element of a block that on it's own doesn't really make much sense)
-
-PS: you can use "```" to make text code blocks in Slack -->

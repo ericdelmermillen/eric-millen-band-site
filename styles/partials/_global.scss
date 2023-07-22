@@ -65,6 +65,15 @@ ul {
 
 
 // Nav
+
+.nav {
+  align-items: center;
+  background: $band-site-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .nav-bar {
   align-items: center;
   display: flex;
@@ -78,14 +87,6 @@ ul {
 
   @media (min-width: $desktop-width) {
     padding-top: 0;
-  }
-  
-  &__container {
-    align-items: center;
-    background: $band-site-black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   &__logo {
@@ -110,8 +111,8 @@ ul {
     }
   }
   
-  &__menu-option,
-  &__menu-option--active {
+  &__option,
+  &__option--active {
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
     align-items: center;
     display: flex;
@@ -127,7 +128,7 @@ ul {
     }
 
   }
-  &__menu-option {
+  &__option {
     color: $mercury;
     border-bottom: 0.188rem solid $mercury-opacity-zero;
   
@@ -153,7 +154,7 @@ ul {
 }
 
 // Footer Section
-.footer-section {
+.footer {
   @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 1rem, $padding-top-desktop: 0);
   background: $band-site-black;
   width: 100%;
@@ -168,10 +169,25 @@ ul {
     position: relative;
     width: min(100%, $desktop-width);
   }
+  
+  
+  &__logo {
+    @include margin-block;
+    // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
+    height: 2.5rem;
+    width: 8.75rem;
+    
+    @media (min-width: $tablet-width) {
+      margin-left: 0rem;
+      position: absolute;
+      right: 2rem;
+      top: 0;
+    }
+  }
 }
+  
 
-
-.socials__container {
+.socials {
   @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem);
   @include gap;
   display: flex;
@@ -180,29 +196,26 @@ ul {
   @media (min-width: $tablet-width) {
     flex-direction: row;
   }
+  
+  &__heading {
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    @include section-header($font-weight-mobile: 600, $font-weight-tablet: 600);
+  }
+  
+  &__icons {
+    @include gap;
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
+    display: flex;  
+    margin-top: 0.5rem;
+
+  }
+  
+  &__icon {
+    height: 100%;
+  }
 }
 
-.socials__heading {
-  @include sub-header;
-}
-
-.social-icon__container {
-  @include gap;
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
-  display: flex;  
-  margin-top: 0.5rem;
-}
-
-.social-icon {
-  height: 100%;
-}
-
-.socials__heading {
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
-  @include section-header($font-weight-mobile: 600, $font-weight-tablet: 600);
-}
-
-.management__container {
+.management {
   @include gap;
   display: flex;
   flex-direction: column;
@@ -211,61 +224,44 @@ ul {
   @media (min-width: $tablet-width) {
     margin-bottom: 2rem;
     flex-direction: row;
-  }
+  }  
 }
 
-.manager__name,
-.manager__role {
-  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75, $font-weight-mobile: 600, $font-weight-tablet: 600);
-  white-space: nowrap;
-}
-
-.manager__role {
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
-}
-
-.manager__email {
-  @include padding-block($padding-bottom-mobile: 0, $padding-top-mobile: 1rem, $padding-bottom-tablet: 0, $padding-top-tablet: 2.25rem);
-  
-  
-  .manager__email--word-break {
-    overflow-wrap: break-word;
-  }
-
-    & a {
-      color: inherit;
-    }
-
-  .manager__email--no-wrap {
-    white-space: nowrap;
-  }
-}
-
-.manager__address {
-  @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
-}
-
-.management,
-.management--us-south-america-japan,
-.management--uk-eu-au {
+.manager {
   max-width: 100%;
   
   @media (min-width: $tablet-width) {
-      max-width: 29%;
+    max-width: 29%;
   }
-}
+  
+  &__name,
+  &__role {
+    @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75, $font-weight-mobile: 600, $font-weight-tablet: 600);
+    white-space: nowrap;
+  }
+  
+  &__role {
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
+  }
+  
+  &__email {
+    @include padding-block($padding-bottom-mobile: 0, $padding-top-mobile: 1rem, $padding-bottom-tablet: 0, $padding-top-tablet: 2.25rem);
+    
+    &--word-break {
+      overflow-wrap: break-word;
+    }
+  
+      & a {
+        color: inherit;
+      }
+  
+    &--no-wrap {
+      white-space: nowrap;
+    }
+  }
 
-.footer__logo {
-  @include margin-block;
-  // *specs say logo should always be 20px x 120px but it seems far too small for the footer logo: I have doubled those dimensions here
-  height: 2.5rem;
-  width: 8.75rem;
-
-  @media (min-width: $tablet-width) {
-      margin-left: 0rem;
-      position: absolute;
-      right: 2rem;
-      top: 0;
+  &__address {
+    @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
   }
 }
 

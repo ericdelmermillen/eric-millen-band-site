@@ -12,7 +12,6 @@ const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 //     "location": "New York City, NY, United States"
 //   },
 
-
 window.addEventListener(("load"), getShows());
 
 
@@ -123,9 +122,85 @@ function createShowElemsArray(showObjsArr) {
 
     return showsArr
 }
+// create dummyShow
+function createDummyShow() {
+    let dummyShow = document.createElement("div");
+
+        dummyShow.setAttribute("class", "show");
+        
+        // // 1st show details div
+        let showDetailsDate = document.createElement("div");
+        showDetailsDate.setAttribute("class", "show__details");
+        
+        dummyShow.appendChild(showDetailsDate);
+
+        // // Date header p
+        let detailsHeadingDate = document.createElement("p");
+        detailsHeadingDate.setAttribute("class", "details__heading");
+        detailsHeadingDate.innerText = "DATE";
+
+        showDetailsDate.appendChild(detailsHeadingDate);
+
+        // // Date p
+        let dateDetails = document.createElement("p");
+        dateDetails.setAttribute("class", "date__details");
+        dateDetails.innerText = ""
+
+        showDetailsDate.appendChild(dateDetails);
+
+        // // 2nd show details div
+        let showDetailsVenue = document.createElement("div");
+        showDetailsVenue.setAttribute("class", "show__details");
+        
+        dummyShow.appendChild(showDetailsVenue);
+
+        // // Venue header p
+        let detailsHeadingVenue = document.createElement("p");
+        detailsHeadingVenue.setAttribute("class", "details__heading");
+        detailsHeadingVenue.innerText = "VENUE"
+        
+        showDetailsVenue.appendChild(detailsHeadingVenue);
+
+        // // Venue p
+        let dateDetailsVenue = document.createElement("p");
+        dateDetailsVenue.setAttribute("class", "venue__details");
+        dateDetailsVenue.innerText = "";
+        
+        showDetailsVenue.appendChild(dateDetailsVenue);
+
+        // // 3rd show details div
+        let showDetailsLocation = document.createElement("div");
+        showDetailsLocation.setAttribute("class", "show__details");
+        
+        dummyShow.appendChild(showDetailsLocation);
+        
+        // // Location header p
+        let detailsHeadingLocation = document.createElement("p");
+        detailsHeadingLocation.setAttribute("class", "details__heading");
+        detailsHeadingLocation.innerText = "LOCATION";
+        
+        showDetailsLocation.appendChild(detailsHeadingLocation);
+            
+        // // Venue p
+        let dateDetailsLocation = document.createElement("p");
+        dateDetailsLocation.setAttribute("class", "location__details");
+        dateDetailsLocation.innerText = "";
+        
+        showDetailsLocation.appendChild(dateDetailsLocation);
+    
+        // // cta div
+        let showCta = document.createElement("div");
+        showCta.setAttribute("class", "show__cta");
+        
+        dummyShow.appendChild(showCta);
+        
+    return dummyShow
+}
 
 function loadShows(showsArr) {
-    console.log(showsArr[0].outerHTML)
+    let dummyShow = createDummyShow();
+    showsContainer.appendChild(dummyShow)
+    
     showsArr.forEach(show => showsContainer.appendChild(show))
 }
 
@@ -137,7 +212,6 @@ showsContainer.addEventListener("click", (e) => {
         clickedChild.classList.toggle("selected");
 
     } else if(clickedChild === showsContainer.firstElementChild) {
-        console.log("first child clicked");
         showsHTMLCollection.forEach((show) => show.classList.remove("selected"));
     } else if (clickedChild !== showsContainer.firstElementChild){
         showsHTMLCollection.forEach((show) => show.classList.remove("selected"));

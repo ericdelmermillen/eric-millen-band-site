@@ -3,7 +3,7 @@
 @use "./partials/mixins" as *;
 
 // Hero Section
-.hero-section {
+.hero {
   background: url("../assets/images/hero-bio.jpg") center center / cover;
   color: $white;
   position: relative;
@@ -70,7 +70,7 @@
 .bio-article {
   @include padding-inline($padding-left-tablet: 4rem, $padding-left-desktop: 5rem);
   
-  &__hero-image {
+  &__image {
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     width: 100%;
   }
@@ -87,6 +87,7 @@
       max-width: 75%;
     }
   }
+
   &__source {
     @extend .bio-article__quote;
     @include padding-block($padding-top-desktop: 1rem);
@@ -101,19 +102,20 @@
     font-weight: 600;
   }
   
+  
+  
   &__paragraph-container {
     @include gap;
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 1rem, $padding-top-tablet: 0, $padding-top-desktop: 0, $padding-bottom-desktop: 0);
-    font-weight: 600;
-    
     display: flex;
     flex-direction: column;
-  
+    font-weight: 600;
+    
     @media (min-width: $tablet-width) {
       flex-direction: row;
     }
   }
-
+  
   &__body-copy {
     @include body-copy($line-height-mobile: 1.75, $line-height-tablet: 1.75);
   }
@@ -137,7 +139,7 @@
   &__content {
     @include padding-inline;
   }
-
+  
   &__heading {
     @include section-header;
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 2.25rem, $padding-top-desktop: 1rem);
@@ -170,12 +172,11 @@
   }
 }
 
-
 // Comments Section
 .comments {
   @include padding-block;
   @include margin-inline;
-
+  
   &__container {
     margin: 0 auto;
     width: min(100%, $desktop-width);
@@ -193,18 +194,21 @@
   }
 }
 
-.comment--new {
-  display: flex;
-}
-
-.comment__avatar,
-.comment__avatar--new {
-  background: #333;
-  border-radius: 50%;
-  height: 3.125rem;
-  margin-right: 1rem;
-  margin-top: 0.25rem;
-  width: 3.125rem;
+.comment {
+  
+  &--new {
+    display: flex;
+  }
+  
+  &__avatar,
+  &__avatar--new {
+    background: #333;
+    border-radius: 50%;
+    height: 3.125rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    width: 3.125rem;
+  }
 }
 
 .comment__form {
@@ -213,6 +217,7 @@
   flex-direction: column;
   width: 100%;
 }
+
 
 .comment__avatar--new {
   margin-top: 1.5rem;

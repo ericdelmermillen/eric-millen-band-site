@@ -129,7 +129,6 @@ function loadShows(showsArr) {
     showsArr.forEach(show => showsContainer.appendChild(show))
 }
 
-
 showsContainer.addEventListener("click", (e) => {
     let showsHTMLCollection = showsContainer.querySelectorAll(".show");
     let clickedChild = e.target.closest(".shows-container > * ");

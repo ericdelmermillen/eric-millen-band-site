@@ -42,94 +42,91 @@
       align-items: center;
       flex-direction: row;
     }
-
-  }
-}
-
-
-.hero__page-header,
-.hero__sub-header {
-  @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 0, $padding-left-tablet: 3rem, $padding-right-tablet: 0);
-}
-
-.hero__page-header {
-  @include page-header($line-height-mobile: 1.75, $line-height-tablet: 1.5);
-  max-width: 60%;
-  
-  @media (min-width: $tablet-width) {
-    @include padding-block($padding-top-tablet: 0);
-    max-width: min(90%, 40rem);
-  }
-}
-
-.hero__sub-header {
-  @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0, $padding-bottom-desktop: 0);
-  @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
-}
-
-.hero__song {
-  @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 1.5rem);
-  border: none;
-  outline: none;
-  width: 100%; 
-  height: 7.5rem;
-  
-  @media (min-width: $tablet-width) {
-    width: 50%;
   }
   
-  @media (min-width: $desktop-width) {
-    margin-top: 2rem;
-    max-width: 40rem;
+  &__page-header,
+  &__sub-header {
+    @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 0, $padding-left-tablet: 3rem, $padding-right-tablet: 0);
+  }
+  
+  &__page-header {
+    @include page-header($line-height-mobile: 1.75, $line-height-tablet: 1.5);
+    max-width: 60%;
+    
+    @media (min-width: $tablet-width) {
+      @include padding-block($padding-top-tablet: 0);
+      max-width: min(90%, 40rem);
+    }
+  }
+  
+  &__sub-header {
+    @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0, $padding-bottom-desktop: 0);
+    @include sub-header($font-size-mobile: 1.25rem, $font-size-tablet: 2.5rem);
+  }
+  
+  &__song {
+    @include padding-inline($padding-left-mobile: 1.5rem, $padding-right-mobile: 1.5rem);
+    border: none;
+    outline: none;
+    width: 100%; 
+    height: 7.5rem;
+    
+    @media (min-width: $tablet-width) {
+      width: 50%;
+    }
+    
+    @media (min-width: $desktop-width) {
+      margin-top: 2rem;
+      max-width: 40rem;
+    }
   }
 }
 
 // Shows Section
-
 .shows {
   @include padding-block($padding-top-mobile: 0rem);
   @include padding-inline;
   width: 100%;
-
-}
-
-.shows__content-container {
-  margin: 0 auto;
-  width: min(100%, $desktop-width);
   
-  @media (min-width: $desktop-width) {
-    display: flex;
-  }
-}
-
-.shows-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
+  &__content-container {
+    margin: 0 auto;
+    width: min(100%, $desktop-width);
     
-  @media (min-width: $tablet-width) {
+    @media (min-width: $desktop-width) {
+      display: flex;
+    }
+  }
 
-    & > .show:first-child {
-      border: none;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+      
+    @media (min-width: $tablet-width) {
+  
+      & > .show:first-child {
+        border: none;
+      }
+    }
+    
+    @media (min-width: $desktop-width) {
+      @include margin-inline(
+        $margin-right-mobile: 0, $margin-right-tablet: 0
+      )
     }
   }
   
-  @media (min-width: $desktop-width) {
-    @include margin-inline(
-      $margin-right-mobile: 0, $margin-right-tablet: 0
-    )
+  &__heading {
+    @include padding-block;
+    @include page-header(
+      $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
+      );
+      padding-left: 1rem;
+      width: 20%;
   }
 }
 
-.shows__heading {
-  @include padding-block;
-  @include page-header(
-    $font-size-mobile: 1.5rem, $font-size-tablet: 3rem, $font-weight-mobile: 600, $font-weight-tablet: 600
-    );
-    padding-left: 1rem;
-    width: 20%;
-}
 
 
 .show {
@@ -178,9 +175,9 @@
   &:not(:first-child) {
     @media (min-width: $tablet-width) {
 
-        .details__heading {
-          display: none;
-        }
+      .details__heading {
+        display: none;
+      }
     }
   }
 

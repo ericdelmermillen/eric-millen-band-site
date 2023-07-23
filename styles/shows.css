@@ -459,6 +459,10 @@ ul a {
   }
 }
 
+.disabled-pointer {
+  pointer-events: none;
+}
+
 .hero {
   background: url("../assets/images/hero-shows.jpg") center center/cover;
   color: #fff;

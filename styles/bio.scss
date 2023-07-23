@@ -42,6 +42,8 @@
   }
 }
     
+
+
 // // Bio Section
 .bio {
   width: 100%;
@@ -70,7 +72,7 @@
 .bio-article {
   @include padding-inline($padding-left-tablet: 4rem, $padding-left-desktop: 5rem);
   
-  &__image {
+  &__hero-image {
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     width: 100%;
   }
@@ -101,8 +103,6 @@
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 1rem, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0, $padding-top-desktop: 0);
     font-weight: 600;
   }
-  
-  
   
   &__paragraph-container {
     @include gap;
@@ -260,11 +260,20 @@
   }
 }
 
-.comment__label {
+.comment-label {
   @include body-copy($font-weight-mobile: 600, $font-weight-tablet: 600);
   color: $silver;
-  padding-bottom: 0.25rem;
+  display: inline-block;
 }
+
+.comment-label__name--min-max-warning,
+.comment-label__comment--min-max-warning {
+  @extend .comment-label;
+  padding-left: 0.5rem;
+  color: red;
+  display: inline-block;
+}
+
 
 // for comment__body if word too long
 .break-word {
@@ -277,6 +286,7 @@
   border-radius: 0.25rem;
   font-family: inherit;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
   min-height: 36px;
   padding: 0.75rem 0.75rem;
   

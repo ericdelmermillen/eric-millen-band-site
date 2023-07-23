@@ -4,15 +4,12 @@
 // e.target.name.value = "";
 // e.target.comment.value = "";
 
-// ** environment variables get caps names
-
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
 const headers = {
     'Content-Type': 'application/json'
 };
-
 
 
 // getComments
@@ -126,6 +123,62 @@ function loadComments(commentsArr) {
     
     commentsArr.forEach(comment => commentsArticle.appendChild(comment));
 }
+
+// keydown event on name input to check legnth
+document.querySelector(".comment__input--name").addEventListener("keyup", (e) => checkNameMinMax(e))
+
+function checkNameMinMax(e) {
+    const minMaxWarningName = document.getElementById("minMaxWarningName");
+    const commentBtn = document.getElementById("commentBtn");
+
+    if (e.target.value.length === 0) {
+        minMaxWarningName.innerText = "";
+        return;
+    }
+    
+    if(e.target.value.length < 2) {
+        console.log(e.target.value.length)
+        commentBtn.classList.add("disabled-pointer")
+        minMaxWarningName.innerText = "MIN CHARACTERS: 2!"
+    } else if (e.target.value.length >= 2 && e.target.value.length <= 50) {
+        commentBtn.classList.remove("disabled-pointer")
+        minMaxWarningName.innerText = ""
+    }
+    
+    if (e.target.value.length > 50) {
+        commentBtn.classList.add("disabled-pointer")
+        minMaxWarningName.innerText = "MAX CHARACTERS: 50!"
+    }
+}
+
+// keydown event on comment input to check legnth
+document.querySelector(".comment__input--text").addEventListener("keyup", (e) => checkCommentMinMax(e))
+
+function checkCommentMinMax(e) {
+    const minMaxWarningText = document.getElementById("minMaxWarningText");
+    const commentBtn = document.getElementById("commentBtn");
+
+    if (e.target.value.length === 0) {
+        minMaxWarningText.innerText = "";
+        return;
+    }
+    
+    if(e.target.value.length < 100) {
+        console.log(e.target.value.length)
+        commentBtn.classList.add("disabled-pointer")
+        minMaxWarningText.innerText = "MIN CHARACTERS: 100!"
+    } else if (e.target.value.length >= 100 && e.target.value.length <= 500) {
+        commentBtn.classList.remove("disabled-pointer")
+        minMaxWarningText.innerText = ""
+    }
+    
+    if (e.target.value.length > 500) {
+        commentBtn.classList.add("disabled-pointer")
+        minMaxWarningText.innerText = "MAX CHARACTERS: 500!"
+    }
+}
+
+
 
 
 // Event Listener on Comment Button

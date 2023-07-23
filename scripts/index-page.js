@@ -24,6 +24,7 @@ function getComments() {
     .catch(error => console.error(error));
 }
 
+
 // createComments array
 function createCommentElemArray(comments) {
 
@@ -64,7 +65,7 @@ function createCommentElemArray(comments) {
         // create comment__heading *need to rename to comment__heading--name(?)
         const comment__heading = document.createElement("p");
         comment__heading.setAttribute("class", "comment__heading");
-        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 30)+"..."
+        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 40)+"..."
         
         commentHeader.appendChild(comment__heading);
         
@@ -88,11 +89,11 @@ function createCommentElemArray(comments) {
 
             let longestWordLength = comment
                 .split(" ")
-                .sort((x, y) => y.length - x.length)[0].length;
+                .sort((x, y) => y.length - x.length)[0]
+                .length;
 
             if(longestWordLength > 30) {
                 commentBody.classList.add("break-word");
-                commentBody.classList.add(`longest-word-length:${longestWordLength}`)
             }
         }
 
@@ -124,165 +125,64 @@ function loadComments(commentsArr) {
     commentsArr.forEach(comment => commentsArticle.appendChild(comment));
 }
 
-// keydown event on name input to check legnth
-document.querySelector(".comment__input--name").addEventListener("keyup", (e) => checkNameMinMax(e))
-
 function checkNameMinMax(e) {
     const minMaxWarningName = document.getElementById("minMaxWarningName");
-    const commentBtn = document.getElementById("commentBtn");
-
-    if (e.target.value.length === 0) {
+    
+    if(e.target.name.value.trim().length < 2) {
+        minMaxWarningName.innerText = "MIN CHARACTERS: 2!";
+        return;
+    } else if (e.target.name.value.trim().length >= 2 && e.target.name.value.trim().length <= 50) {
         minMaxWarningName.innerText = "";
+
+    } else if (e.target.name.value.trim().length > 50) {
+        minMaxWarningName.innerText = "MAX CHARACTERS: 50!";
         return;
     }
-    
-    if(e.target.value.length < 2) {
-        console.log(e.target.value.length)
-        commentBtn.classList.add("disabled-pointer")
-        minMaxWarningName.innerText = "MIN CHARACTERS: 2!"
-    } else if (e.target.value.length >= 2 && e.target.value.length <= 50) {
-        commentBtn.classList.remove("disabled-pointer")
-        minMaxWarningName.innerText = ""
-    }
-    
-    if (e.target.value.length > 50) {
-        commentBtn.classList.add("disabled-pointer")
-        minMaxWarningName.innerText = "MAX CHARACTERS: 50!"
-    }
+    return true
 }
-
-// keydown event on comment input to check legnth
-document.querySelector(".comment__input--text").addEventListener("keyup", (e) => checkCommentMinMax(e))
 
 function checkCommentMinMax(e) {
     const minMaxWarningText = document.getElementById("minMaxWarningText");
-    const commentBtn = document.getElementById("commentBtn");
-
-    if (e.target.value.length === 0) {
+    
+    if (e.target.comment.value.trim().length < 100) {
+        minMaxWarningText.innerText = "MIN CHARACTERS: 100!";
+        return;
+    } else if (e.target.comment.value.trim().length >= 100 && e.target.comment.value.trim().length <= 500) {
         minMaxWarningText.innerText = "";
+
+    } else if (e.target.comment.value.trim().length > 500) {
+        minMaxWarningText.innerText = "MAX CHARACTERS: 500!";
         return;
     }
-    
-    if(e.target.value.length < 100) {
-        console.log(e.target.value.length)
-        commentBtn.classList.add("disabled-pointer")
-        minMaxWarningText.innerText = "MIN CHARACTERS: 100!"
-    } else if (e.target.value.length >= 100 && e.target.value.length <= 500) {
-        commentBtn.classList.remove("disabled-pointer")
-        minMaxWarningText.innerText = ""
-    }
-    
-    if (e.target.value.length > 500) {
-        commentBtn.classList.add("disabled-pointer")
-        minMaxWarningText.innerText = "MAX CHARACTERS: 500!"
-    }
+    return true;
 }
-
-
 
 
 // Event Listener on Comment Button
 commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const commentBtn = document.getElementById("commentBtn");
     
-    // rule for name validation: outline on name input; span with message ?
-    (e.target.name.value.trim().length < 2 || 
-    e.target.name.value.trim().length > 50 || 
-    // rule for comment validation: outline on name input; span with message ?
-    e.target.comment.value.trim().length < 100 || 
-    e.target.comment.value.trim().length > 500)
-
-    // console.log(e.target.name.value)
-
-        ? (alert("Name must be between 2-50 characters.\nComment must be between 100-500 characters."))
-        : (createNewComment(e), getComments());
-
-        //   (*** Does the createNewComment call need to be a promise since we don't know when it will return?)
+    checkNameMinMax(e) && checkCommentMinMax(e) && createNewComment(e) 
+    
+    commentBtn.classList.add("disable-pointer");
+    
+    getComments();
 });
+
 
 // Creates new comment in commentArray
 function createNewComment(e) {
-
     const newComment = {"name": e.target.name.value, "comment": e.target.comment.value};
 
     axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment, {headers})
     .then(response => {
-        console.log(response)
-
         getComments();
+        commentBtn.classList.remove("disable-pointer");
     })
     .catch(error => console.error(error));
-
-    
-    // (***)needs to make post request to comment end point
-    // --> .catch handles error; call errorOnCreateComment
 }
 
-// called after creating new comment
-// function updateComments() {
-//     const commentsArticle = document.querySelector(".comments__article");
-
-//     // clear inputs
-//     document.querySelector('#name').value = "";
-//     document.querySelector('#comment').value = "";
-    
-//     // clear commentsArticle
-
-//     commentsArticle.innerHTML = "";
-    
-//     createCommentElemArray(commentsArray).forEach(comment => commentsArticle.appendChild(comment));
-// }
-
-// creating the comment array
-// function createCommentElemArray(commentsObj) {
-    
-//     const commentsArr = commentsObj.map((commentElem) => {
-
-//         const comment = document.createElement("div");
-//         comment.setAttribute("class", "comment");
-        
-//         const commentAvatar__container = document.createElement("div");
-//         commentAvatar__container.setAttribute("class", "comment-avatar__container");
-        
-//         comment.appendChild(commentAvatar__container);
-        
-//         const commentAvatar = document.createElement("img");
-//         commentAvatar.setAttribute("class", "comment__avatar");
-//         commentAvatar.setAttribute("src", commentElem.avatar__image);
-        
-//         commentAvatar__container.appendChild(commentAvatar);
-        
-//         const commentText = document.createElement("div");
-//         commentText.setAttribute("class", "comment__text");
-//         comment.appendChild(commentText);
-        
-//         const commentHeader = document.createElement("div");
-//         commentHeader.setAttribute("class", "comment__header");
-//         commentText.appendChild(commentHeader);
-        
-//         const comment__heading = document.createElement("p");
-//         comment__heading.setAttribute("class", "comment__heading");
-//         comment__heading.innerText = commentElem.comment__heading;
-        
-//         commentHeader.appendChild(comment__heading);
-        
-//         const commentTimeStamp = document.createElement("p");
-//         commentTimeStamp.setAttribute("class", "comment__time-stamp");
-//         commentTimeStamp.innerText = commentElem.time_stamp;
-        
-//         commentHeader.append(commentTimeStamp);
-        
-//         const commentBody = document.createElement("p");
-//         commentBody.setAttribute("class", "comment__body");
-//         commentBody.innerText = commentElem.comment__body;
-
-//         commentText.appendChild(commentBody);
-
-//         return comment;
-//     })
-
-//     return commentsArr;
-// }
 
 // Year for the copyright in the footer
 const year = document.getElementById("year");
@@ -290,52 +190,4 @@ const year = document.getElementById("year");
     year.textContent = currentYear;
 
 
-
-
-
-// Changes:
-
-// window page load listener
-// 1: page load calls getComments; get request 
-// --> .then returns commentObjectArray from api 
-// --> calls createCommentElemArray (passes commentObjectArray to createCommentElemArray) 
-// --> createElemCommentArray calls loadComments (passes commentElemArray to loadComments)  
-// loadComments appends commentElems to container
-
-
-// comment submit listener
-// 2: createComment: put request passing event to api
-// --> .then returns confirmation
-// --> .then calls getComments get request (.catch calls error function if error returned)
-// --> .then returns commentObjectArray
-
-
-// <-- -->
-
-// Planning:
-// On submit form: --> createCommentObj (need to construct comment before making post request)
-
-//  --> validate name and comment input min and max length
-
-// --> if passes validation --> post request to bandsite api --> ***can call loading function to show something
-
-// --> receives status + new comment back (*** could prepend to parent)
-
-// --> call getComments
-
-// --> when getComments returns promise set loading element to ""
-
-// --> call load comments
-
-
-// * eventListener on textArea for Enter submits form
-document.querySelector(".comment__input--text").addEventListener("keyup", (e) => {
-    if(e.key === "Enter") {
-        console.log("You pushed 'Enter")
-        document.querySelector(".comment__btn").click()
-    }
-})
-
-
-// call get comments on page load
 getComments();

@@ -1190,4 +1190,8 @@ ul a {
 .comment__time-stamp {
   color: #afafaf;
   font-weight: 600;
+}
+
+.disable-pointer {
+  pointer-events: none;
 }/*# sourceMappingURL=bio.css.map */

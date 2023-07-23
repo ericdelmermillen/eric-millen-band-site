@@ -102,6 +102,62 @@ function createCommentElemArray(comments) {
         commentBody.innerText = comment.comment;
 
         commentText.appendChild(commentBody);
+        
+        //  delete & heart container
+        const commentSocials = document.createElement("div");
+        commentSocials.setAttribute("class", "comment__socials")
+
+
+        // delete link
+        const commentDeleteLink = document.createElement("a");
+        commentDeleteLink.setAttribute("href", "#")
+
+
+        // delete icon
+        const commentDeleteIcon = document.createElement("i");
+        commentDeleteIcon.setAttribute("class", "comment__icon--delete")
+        commentDeleteIcon.classList.add("fa")
+        commentDeleteIcon.classList.add("fa-times-circle")
+
+
+        commentDeleteLink.appendChild(commentDeleteIcon);
+
+        commentSocials.appendChild(commentDeleteLink);
+        
+        
+        // heart link
+        const commentLikeLink = document.createElement("a");
+        commentLikeLink.setAttribute("href", "#")
+
+
+        // heart icon
+        const commentLike = document.createElement("i");
+        commentLike.setAttribute("class", "comment__icon--heart")
+        commentLike.classList.add("fa")
+        commentLike.classList.add("fa-heart")
+        
+        
+        // like count
+        const commentLikeCount = document.createElement("span");
+        commentLikeCount.setAttribute("class", "comment__like-count")
+        commentLikeCount.innerText = comment.likes;
+        // *** add return of request here
+
+        commentLike.appendChild(commentLikeCount);
+
+        commentLikeLink.appendChild(commentLike);
+
+
+
+       
+
+        commentSocials.appendChild(commentLikeLink);
+        // <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        
+        // commentBody.appendChild()
+
+
+        commentText.appendChild(commentSocials);
 
         return commentDiv;
     })

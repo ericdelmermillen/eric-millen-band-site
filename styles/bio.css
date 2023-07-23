@@ -1194,4 +1194,24 @@ ul a {
 
 .disable-pointer {
   pointer-events: none;
+}
+
+.comment__socials {
+  padding: 0.25rem;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.comment__icon--heart {
+  color: #bd2f68;
+  letter-spacing: 0.5rem;
+}
+
+.comment__like-count {
+  color: #323232;
+  font-style: normal;
 }/*# sourceMappingURL=bio.css.map */

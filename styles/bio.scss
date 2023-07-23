@@ -342,16 +342,12 @@
   align-items: center;
   justify-content: flex-end;
   gap: 0.75rem;
-  // @include body-copy;
   font-size: 1.25rem;
 }
 
 .comment__icon--heart {
   color: #bd2f68;
-  // text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  // font-size: 1.25rem;
   letter-spacing: 0.5rem;
-  
 }
 
 .comment__like-count {

@@ -1,4 +1,3 @@
-
 // You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
 
 // e.target.name.value = "";
@@ -14,14 +13,46 @@ const headers = {
 
 // getComments
 function getComments() {
-    axios.get(`${BASE_URL}comments?api_key=${API_KEY}`)
-    .then(response => {
-        
-        const commentsArr = createCommentElemArray(response.data);
+    axios
+        .get(`${BASE_URL}comments?api_key=${API_KEY}`)
+        .then(response => {
+            const commentsArr = createCommentElemArray(response.data);
 
-        loadComments(commentsArr);
+            loadComments(commentsArr);
+
+            // Event Listener on like Buttons
+            document.querySelectorAll(".fa-heart").forEach((heartIcon) => {
+                heartIcon.addEventListener("click", (e) => {
+
+                let comment = { "id": e.currentTarget.closest(".comment").id}
+
+                incrementLike(comment);
+            });
+        });
     })
     .catch(error => console.error(error));
+}
+
+function incrementLike(comment) {
+    axios.put(`${BASE_URL}comments/${comment.id}/like?api_key=${API_KEY}`, null,{headers})
+    .then(response => {
+
+        updateLikeInnerText(response.data.id)
+    })
+    .catch(error => console.error(error));
+}
+
+
+function updateLikeInnerText(commentId) {
+    const comments = document.querySelectorAll(".comment");
+
+    comments.forEach(comment => {
+        if(comment.id === commentId) {
+            comment.children[1].children[2].children[1].children[0].innerText++
+            console.log(comment.children[1].children[2].children[1].children[0].innerText);
+        }
+    });
+
 }
 
 
@@ -108,26 +139,13 @@ function createCommentElemArray(comments) {
         commentSocials.setAttribute("class", "comment__socials")
 
 
-        // delete link
-        const commentDeleteLink = document.createElement("a");
-        commentDeleteLink.setAttribute("href", "#")
-
-
         // delete icon
         const commentDeleteIcon = document.createElement("i");
         commentDeleteIcon.setAttribute("class", "comment__icon--delete")
         commentDeleteIcon.classList.add("fa")
         commentDeleteIcon.classList.add("fa-times-circle")
 
-
-        commentDeleteLink.appendChild(commentDeleteIcon);
-
-        commentSocials.appendChild(commentDeleteLink);
-        
-        
-        // heart link
-        const commentLikeLink = document.createElement("a");
-        commentLikeLink.setAttribute("href", "#")
+        commentSocials.appendChild(commentDeleteIcon);
 
 
         // heart icon
@@ -145,17 +163,7 @@ function createCommentElemArray(comments) {
 
         commentLike.appendChild(commentLikeCount);
 
-        commentLikeLink.appendChild(commentLike);
-
-
-
-       
-
-        commentSocials.appendChild(commentLikeLink);
-        // <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        
-        // commentBody.appendChild()
-
+        commentSocials.appendChild(commentLike);
 
         commentText.appendChild(commentSocials);
 
@@ -225,7 +233,6 @@ commentForm.addEventListener("submit", (e) => {
     
     getComments();
 });
-
 
 // Creates new comment in commentArray
 function createNewComment(e) {

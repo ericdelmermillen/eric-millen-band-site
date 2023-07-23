@@ -17,16 +17,29 @@ function getComments() {
         .get(`${BASE_URL}comments?api_key=${API_KEY}`)
         .then(response => {
             const commentsArr = createCommentElemArray(response.data);
+            commentBtn.classList.remove("disable-pointer");
 
             loadComments(commentsArr);
 
-            // Event Listener on like Buttons
+            // Event Listener on delete icons
             document.querySelectorAll(".fa-heart").forEach((heartIcon) => {
                 heartIcon.addEventListener("click", (e) => {
 
                 let comment = { "id": e.currentTarget.closest(".comment").id}
 
                 incrementLike(comment);
+
+            });
+        });
+            // Event Listener on delete icons
+            document.querySelectorAll(".fa-times-circle").forEach((deleteIcon) => {
+                deleteIcon.addEventListener("click", (e) => {
+
+                let comment = { "id": e.currentTarget.closest(".comment").id}
+                    
+                deleteComment(comment);
+
+            
             });
         });
     })
@@ -34,10 +47,20 @@ function getComments() {
 }
 
 function incrementLike(comment) {
-    axios.put(`${BASE_URL}comments/${comment.id}/like?api_key=${API_KEY}`, null,{headers})
+    axios.put(`${BASE_URL}comments/${comment.id}/like?api_key=${API_KEY}`, {headers})
     .then(response => {
 
         updateLikeInnerText(response.data.id)
+    })
+    .catch(error => console.error(error));
+}
+
+function deleteComment(comment) {
+    console.log(comment)
+    axios.delete(`${BASE_URL}comments/${comment.id}/?api_key=${API_KEY}`,{headers})
+    .then(response => {
+        console.log(response)
+        removeDeletedFromDOM(response.data.id)
     })
     .catch(error => console.error(error));
 }
@@ -49,10 +72,17 @@ function updateLikeInnerText(commentId) {
     comments.forEach(comment => {
         if(comment.id === commentId) {
             comment.children[1].children[2].children[1].children[0].innerText++
-            console.log(comment.children[1].children[2].children[1].children[0].innerText);
         }
     });
+}
+function removeDeletedFromDOM(commentId) {
+    const comments = document.querySelectorAll(".comment");
 
+    comments.forEach(comment => {
+        if(comment.id === commentId) {
+            comment.innerHTML = "";
+        }
+    });
 }
 
 

@@ -80,7 +80,7 @@ function removeDeletedFromDOM(commentId) {
 
     comments.forEach(comment => {
         if(comment.id === commentId) {
-            comment.innerHTML = "";
+            comment.outerHTML = "";
         }
     });
 }
@@ -257,11 +257,12 @@ commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const commentBtn = document.getElementById("commentBtn");
     
-    checkNameMinMax(e) && checkCommentMinMax(e) && createNewComment(e) 
+    if (checkNameMinMax(e) && checkCommentMinMax(e)) {
+        createNewComment(e); 
+        commentBtn.classList.add("disable-pointer");
+        getComments();
+    }
     
-    commentBtn.classList.add("disable-pointer");
-    
-    getComments();
 });
 
 // Creates new comment in commentArray

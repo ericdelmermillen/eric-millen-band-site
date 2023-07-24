@@ -463,6 +463,10 @@ ul a {
   pointer-events: none;
 }
 
+.break-word {
+  word-break: break-all;
+}
+
 .hero {
   background: url("../assets/images/hero-shows.jpg") center center/cover;
   color: #fff;

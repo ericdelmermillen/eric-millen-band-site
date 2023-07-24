@@ -207,7 +207,6 @@ ul {
     @include padding-block($padding-bottom-mobile: 1rem, $padding-top-mobile: 0, $padding-bottom-tablet: 2.25rem, $padding-top-tablet: 0);
     display: flex;  
     margin-top: 0.5rem;
-
   }
   
   &__icon {
@@ -298,10 +297,12 @@ ul {
   }
 }
 
-// .display-block {
-//   display: block;
-// }
 
 .disabled-pointer {
   pointer-events: none
+}
+
+// for comment__body if word too long
+.break-word {
+  word-break: break-all;
 }

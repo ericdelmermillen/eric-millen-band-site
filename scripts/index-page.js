@@ -1,8 +1,3 @@
-// You must append ?api_key=<your_api_key_here> to each of your API request URLs (except for /register)
-
-// e.target.name.value = "";
-// e.target.comment.value = "";
-
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
@@ -25,7 +20,7 @@ function getComments() {
             document.querySelectorAll(".fa-heart").forEach((heartIcon) => {
                 heartIcon.addEventListener("click", (e) => {
 
-                let comment = { "id": e.currentTarget.closest(".comment").id}
+                const comment = { "id": e.currentTarget.closest(".comment").id};
 
                 incrementLike(comment);
 
@@ -35,11 +30,9 @@ function getComments() {
             document.querySelectorAll(".fa-times-circle").forEach((deleteIcon) => {
                 deleteIcon.addEventListener("click", (e) => {
 
-                let comment = { "id": e.currentTarget.closest(".comment").id}
+                const comment = { "id": e.currentTarget.closest(".comment").id};
                     
                 deleteComment(comment);
-
-            
             });
         });
     })
@@ -56,22 +49,19 @@ function incrementLike(comment) {
 }
 
 function deleteComment(comment) {
-    console.log(comment)
     axios.delete(`${BASE_URL}comments/${comment.id}/?api_key=${API_KEY}`,{headers})
     .then(response => {
-        console.log(response)
         removeDeletedFromDOM(response.data.id)
     })
     .catch(error => console.error(error));
 }
-
 
 function updateLikeInnerText(commentId) {
     const comments = document.querySelectorAll(".comment");
 
     comments.forEach(comment => {
         if(comment.id === commentId) {
-            comment.children[1].children[2].children[1].children[0].innerText++
+            comment.children[1].children[2].children[1].children[0].innerText++;
         }
     });
 }
@@ -85,14 +75,13 @@ function removeDeletedFromDOM(commentId) {
     });
 }
 
-
 // createComments array
 function createCommentElemArray(comments) {
 
-    let sortedComments = comments.sort((x, y) => y.timestamp - x.timestamp)
+    const sortedComments = comments.sort((x, y) => y.timestamp - x.timestamp);
 
     const commentElems = sortedComments.map((comment) => {
-        let image = comment.image || "./assets/images/user-placeholder.png";
+        const image = comment.image || "./assets/images/user-placeholder.png";
         
         // create comment div
         const commentDiv = document.createElement("div");
@@ -103,14 +92,14 @@ function createCommentElemArray(comments) {
         const commentAvatar__container = document.createElement("div");
         commentAvatar__container.setAttribute("class", "comment-avatar__container");
         
-        commentDiv.appendChild(commentAvatar__container)
+        commentDiv.appendChild(commentAvatar__container);
         
         // create comment__avatar img
         const commentAvatar = document.createElement("img");
         commentAvatar.setAttribute("class", "comment__avatar");
         commentAvatar.setAttribute("src", image);
 
-        commentAvatar__container.appendChild(commentAvatar)
+        commentAvatar__container.appendChild(commentAvatar);
 
         // create comment__text div
         const commentText = document.createElement("div");
@@ -123,14 +112,14 @@ function createCommentElemArray(comments) {
         commentHeader.setAttribute("class", "comment__header");
         commentText.appendChild(commentHeader);
         
-        // create comment__heading *need to rename to comment__heading--name(?)
+        // create comment__heading
         const comment__heading = document.createElement("p");
         comment__heading.setAttribute("class", "comment__heading");
-        comment__heading.innerText = comment.name.length < 30 ? comment.name : comment.name.slice(0, 40)+"..."
+        comment__heading.innerText = comment.name.length < 25 ? comment.name : comment.name.slice(0, 25) + "...";
         
         commentHeader.appendChild(comment__heading);
         
-        // create comment__time-stamp *need to rename to comment__heading--date(?)
+        // create comment__time-stamp
         const commentTimeStamp = document.createElement("p");
         commentTimeStamp.setAttribute("class", "comment__time-stamp");
         commentTimeStamp.innerText = new Date(comment.timestamp).toLocaleDateString(
@@ -148,7 +137,7 @@ function createCommentElemArray(comments) {
         function breakLongWords(comment) {
             commentBody.setAttribute("class", "comment__body");
 
-            let longestWordLength = comment
+            const longestWordLength = comment
                 .split(" ")
                 .sort((x, y) => y.length - x.length)[0]
                 .length;
@@ -158,7 +147,7 @@ function createCommentElemArray(comments) {
             }
         }
 
-        breakLongWords(comment.comment)
+        breakLongWords(comment.comment);
 
         commentBody.innerText = comment.comment;
 
@@ -166,30 +155,29 @@ function createCommentElemArray(comments) {
         
         //  delete & heart container
         const commentSocials = document.createElement("div");
-        commentSocials.setAttribute("class", "comment__socials")
+        commentSocials.setAttribute("class", "comment__socials");
 
 
         // delete icon
         const commentDeleteIcon = document.createElement("i");
-        commentDeleteIcon.setAttribute("class", "comment__icon--delete")
-        commentDeleteIcon.classList.add("fa")
-        commentDeleteIcon.classList.add("fa-times-circle")
+        commentDeleteIcon.setAttribute("class", "comment__icon--delete");
+        commentDeleteIcon.classList.add("fa");
+        commentDeleteIcon.classList.add("fa-times-circle");
 
         commentSocials.appendChild(commentDeleteIcon);
 
 
         // heart icon
         const commentLike = document.createElement("i");
-        commentLike.setAttribute("class", "comment__icon--heart")
-        commentLike.classList.add("fa")
-        commentLike.classList.add("fa-heart")
+        commentLike.setAttribute("class", "comment__icon--heart");
+        commentLike.classList.add("fa");
+        commentLike.classList.add("fa-heart");
         
         
         // like count
         const commentLikeCount = document.createElement("span");
-        commentLikeCount.setAttribute("class", "comment__like-count")
+        commentLikeCount.setAttribute("class", "comment__like-count");
         commentLikeCount.innerText = comment.likes;
-        // *** add return of request here
 
         commentLike.appendChild(commentLikeCount);
 
@@ -200,8 +188,7 @@ function createCommentElemArray(comments) {
         return commentDiv;
     })
 
-    // commentElems.forEach(elem => console.log(elem.innerHTML))
-    return commentElems
+    return commentElems;
 }
 
 
@@ -232,7 +219,7 @@ function checkNameMinMax(e) {
         minMaxWarningName.innerText = "MAX CHARACTERS: 50!";
         return;
     }
-    return true
+    return true;
 }
 
 function checkCommentMinMax(e) {
@@ -255,11 +242,10 @@ function checkCommentMinMax(e) {
 // Event Listener on Comment Button
 commentForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const commentBtn = document.getElementById("commentBtn");
     
     if (checkNameMinMax(e) && checkCommentMinMax(e)) {
         createNewComment(e); 
-        commentBtn.classList.add("disable-pointer");
+        document.getElementById("commentBtn").classList.add("disable-pointer");
         getComments();
     }
     
@@ -271,8 +257,13 @@ function createNewComment(e) {
 
     axios.post(`${BASE_URL}comments?api_key=${API_KEY}`, newComment, {headers})
     .then(response => {
-        getComments();
-        commentBtn.classList.remove("disable-pointer");
+        if(response.status === 200) {
+            console.log(response.status)
+            getComments();
+            commentBtn.classList.remove("disable-pointer");
+        } else {
+            console.error("response: ", response)
+        }
     })
     .catch(error => console.error(error));
 }

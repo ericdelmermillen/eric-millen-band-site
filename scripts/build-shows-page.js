@@ -1,18 +1,9 @@
-// *** Don't foreget to uncomment the iframe
-let showsContainer = document.querySelector(".shows-container");
+const showsContainer = document.querySelector(".shows-container");
 
 const BASE_URL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "api9536be29-b9d2-4068-bda0-2547f8adea65";
 
-// showdates: example return
-// {
-//     "id": 0,
-//     "date": 1630900800000,
-//     "place": "Rockwood Music Hall",
-//     "location": "New York City, NY, United States"
-//   },
-
-window.addEventListener(("load"), getShows());
+window.addEventListener(("load"), getShows);
 
 
 // getShows
@@ -28,28 +19,28 @@ function getShows() {
 
 // create showElemsArray
 function createShowElemsArray(showObjsArr) {
-    let showsArr = showObjsArr.map((showObj) => {
+    const showsArr = showObjsArr.map((showObj) => {
 
         // create show div
-        let show = document.createElement("div");
+        const show = document.createElement("div");
         show.setAttribute("class", "show");
         show.setAttribute("id", showObj.id);
         
         // 1st show details div
-        let showDetailsDate = document.createElement("div");
+        const showDetailsDate = document.createElement("div");
         showDetailsDate.setAttribute("class", "show__details");
         
         show.appendChild(showDetailsDate);
 
         // Date header p
-        let detailsHeadingDate = document.createElement("p");
+        const detailsHeadingDate = document.createElement("p");
         detailsHeadingDate.setAttribute("class", "details__heading");
         detailsHeadingDate.innerText = "DATE";
 
         showDetailsDate.appendChild(detailsHeadingDate);
 
         // Date p
-        let dateDetails = document.createElement("p");
+        const dateDetails = document.createElement("p");
         dateDetails.setAttribute("class", "date__details");
         dateDetails.innerText = new Date(showObj.date).toLocaleDateString(
             "en-US", {
@@ -61,53 +52,53 @@ function createShowElemsArray(showObjsArr) {
         showDetailsDate.appendChild(dateDetails);
 
         // 2nd show details div
-        let showDetailsVenue = document.createElement("div");
+        const showDetailsVenue = document.createElement("div");
         showDetailsVenue.setAttribute("class", "show__details");
         
         show.appendChild(showDetailsVenue);
 
         // Venue header p
-        let detailsHeadingVenue = document.createElement("p");
+        const detailsHeadingVenue = document.createElement("p");
         detailsHeadingVenue.setAttribute("class", "details__heading");
         detailsHeadingVenue.innerText = "VENUE"
         
         showDetailsVenue.appendChild(detailsHeadingVenue);
 
         // Venue p
-        let dateDetailsVenue = document.createElement("p");
+        const dateDetailsVenue = document.createElement("p");
         dateDetailsVenue.setAttribute("class", "venue__details");
         dateDetailsVenue.innerText = showObj.place;
         
         showDetailsVenue.appendChild(dateDetailsVenue);
 
         // 3rd show details div
-        let showDetailsLocation = document.createElement("div");
+        const showDetailsLocation = document.createElement("div");
         showDetailsLocation.setAttribute("class", "show__details");
         
         show.appendChild(showDetailsLocation);
         
         // Location header p
-        let detailsHeadingLocation = document.createElement("p");
+        const detailsHeadingLocation = document.createElement("p");
         detailsHeadingLocation.setAttribute("class", "details__heading");
         detailsHeadingLocation.innerText = "LOCATION";
         
         showDetailsLocation.appendChild(detailsHeadingLocation);
             
         // Venue p
-        let dateDetailsLocation = document.createElement("p");
+        const dateDetailsLocation = document.createElement("p");
         dateDetailsLocation.setAttribute("class", "location__details");
         dateDetailsLocation.innerText = showObj.location;
         
         showDetailsLocation.appendChild(dateDetailsLocation);
     
         // cta div
-        let showCta = document.createElement("div");
+        const showCta = document.createElement("div");
         showCta.setAttribute("class", "show__cta");
         
         show.appendChild(showCta);
         
         // cta button
-        let btnBuyTickets = document.createElement("a");
+        const btnBuyTickets = document.createElement("a");
         btnBuyTickets.setAttribute("class", "btn--buy-tickets");
     
         // Text
@@ -124,72 +115,72 @@ function createShowElemsArray(showObjsArr) {
 }
 // create dummyShow
 function createDummyShow() {
-    let dummyShow = document.createElement("div");
+    const dummyShow = document.createElement("div");
 
         dummyShow.setAttribute("class", "show");
         
-        // // 1st show details div
-        let showDetailsDate = document.createElement("div");
+        // 1st show details div
+        const showDetailsDate = document.createElement("div");
         showDetailsDate.setAttribute("class", "show__details");
         
         dummyShow.appendChild(showDetailsDate);
 
-        // // Date header p
-        let detailsHeadingDate = document.createElement("p");
+        // Date header p
+        const detailsHeadingDate = document.createElement("p");
         detailsHeadingDate.setAttribute("class", "details__heading");
         detailsHeadingDate.innerText = "DATE";
 
         showDetailsDate.appendChild(detailsHeadingDate);
 
-        // // Date p
-        let dateDetails = document.createElement("p");
+        // Date p
+        const dateDetails = document.createElement("p");
         dateDetails.setAttribute("class", "date__details");
         dateDetails.innerText = ""
 
         showDetailsDate.appendChild(dateDetails);
 
-        // // 2nd show details div
-        let showDetailsVenue = document.createElement("div");
+        // 2nd show details div
+        const showDetailsVenue = document.createElement("div");
         showDetailsVenue.setAttribute("class", "show__details");
         
         dummyShow.appendChild(showDetailsVenue);
 
-        // // Venue header p
-        let detailsHeadingVenue = document.createElement("p");
+        // Venue header p
+        const detailsHeadingVenue = document.createElement("p");
         detailsHeadingVenue.setAttribute("class", "details__heading");
         detailsHeadingVenue.innerText = "VENUE"
         
         showDetailsVenue.appendChild(detailsHeadingVenue);
 
-        // // Venue p
-        let dateDetailsVenue = document.createElement("p");
+        // Venue p
+        const dateDetailsVenue = document.createElement("p");
         dateDetailsVenue.setAttribute("class", "venue__details");
         dateDetailsVenue.innerText = "";
         
         showDetailsVenue.appendChild(dateDetailsVenue);
 
-        // // 3rd show details div
-        let showDetailsLocation = document.createElement("div");
+        // 3rd show details div
+        const showDetailsLocation = document.createElement("div");
         showDetailsLocation.setAttribute("class", "show__details");
         
         dummyShow.appendChild(showDetailsLocation);
         
-        // // Location header p
-        let detailsHeadingLocation = document.createElement("p");
+        // Location header p
+        const detailsHeadingLocation = document.createElement("p");
         detailsHeadingLocation.setAttribute("class", "details__heading");
         detailsHeadingLocation.innerText = "LOCATION";
         
         showDetailsLocation.appendChild(detailsHeadingLocation);
             
-        // // Venue p
-        let dateDetailsLocation = document.createElement("p");
+        // Venue p
+        const dateDetailsLocation = document.createElement("p");
         dateDetailsLocation.setAttribute("class", "location__details");
         dateDetailsLocation.innerText = "";
         
         showDetailsLocation.appendChild(dateDetailsLocation);
     
-        // // cta div
-        let showCta = document.createElement("div");
+        // cta div
+        const showCta = document.createElement("div");
         showCta.setAttribute("class", "show__cta");
         
         dummyShow.appendChild(showCta);
@@ -198,15 +189,15 @@ function createDummyShow() {
 }
 
 function loadShows(showsArr) {
-    let dummyShow = createDummyShow();
+    const dummyShow = createDummyShow();
     showsContainer.appendChild(dummyShow)
     
     showsArr.forEach(show => showsContainer.appendChild(show))
 }
 
 showsContainer.addEventListener("click", (e) => {
-    let showsHTMLCollection = showsContainer.querySelectorAll(".show");
-    let clickedChild = e.target.closest(".shows-container > * ");
+    const showsHTMLCollection = showsContainer.querySelectorAll(".show");
+    const clickedChild = e.target.closest(".shows-container > * ");
     
     if (clickedChild !== showsContainer.firstElementChild && clickedChild.classList.contains("selected")) {
         clickedChild.classList.toggle("selected");
@@ -222,9 +213,9 @@ showsContainer.addEventListener("click", (e) => {
 
 document.addEventListener("click", (e) => {
     if(!showsContainer.contains(e.target)) {
-        let shows = showsContainer.children;
+        const shows = showsContainer.children;
 
-        for(let show of shows) {
+        for(const show of shows) {
             show.classList.remove("selected");
         }
     }
